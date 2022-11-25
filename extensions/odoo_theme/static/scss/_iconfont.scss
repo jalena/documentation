@@ -167,6 +167,18 @@
     content: $i-doc-dev;
   }
 }
+/*
+.i-doc-designer {
+  &:before {
+    content: $i-doc-designer;
+  }
+}
+*/
+.i-doc-designer {
+  &:before {
+    content: $i-themes;
+  }
+}
 .i-doc-services {
   &:before {
     content: $i-doc-services;

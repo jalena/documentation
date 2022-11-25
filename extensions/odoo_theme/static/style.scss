@@ -315,6 +315,15 @@ header {
                 content:'#{$i-doc-contribute}';
             }
 
+            /*
+            &.o_menu_designer > .o_toc_entry_wrapper > i:before{
+                content:'#{$i-doc-designer}';
+            }
+            */
+            &.o_menu_designer > .o_toc_entry_wrapper > i:before{
+                content:'#{$i-themes}';
+            }
+
         }
     }
 }
