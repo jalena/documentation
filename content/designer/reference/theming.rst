@@ -314,9 +314,7 @@ you ensure a consistent colored Odoo theme.
    * - o-color-5
      - Blackish
 
-..
-   .. image:: theming/theme-colors.png
-      :align: left
+.. image:: theming/theme-colors.png
       :alt: Theme colors
       :width: 300
 
@@ -362,11 +360,10 @@ generates five color combinations. They come with a background color, a text col
 a link color, primary and secondary button colors which will later be possible to customize by the
 user.
 
-..
-   .. image:: theming/theme-colors-big.png
-      :align: left
-      :alt: Theme colors
-      :width: 300
+
+.. image:: theming/theme-colors-big.png
+  :alt: Theme colors
+  :width: 300
 
 The colors used in a color combination are accessible and possible to override through the BS
 `$colors map`, with a specific prefix (`o-cc` for `color combination`).
@@ -540,14 +537,14 @@ file, and the ones used by odoo).
 
 **Example**
 
-.. code-block:: scss
+.. code-block:: javascript
     :caption: ``/website_airproof/static/src/scss/theme.scss``
 
      blockquote {
        border-radius: $rounded-pill;
        color: o-color('o-color-3');
        font-family: o-website-value('headings-font');
-    }
+     }
 
 Interactivity
 -------------
