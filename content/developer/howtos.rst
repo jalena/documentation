@@ -12,6 +12,7 @@ How-to guides
     howtos/company
     howtos/accounting_localization
     howtos/translations
+    howtos/website_themes
     howtos/provide_iap_services
     howtos/connect_device
 

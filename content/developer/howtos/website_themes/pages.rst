@@ -170,7 +170,7 @@ You can record images in the database and use them later on in your design/code.
 They will also be available for the end user through the Media Dialog.
 
 .. image:: pages/medias-window.png
-      :alt: Medias window
+    :alt: Medias window
 
 Currently supported format by the Website Builder: JPG, GIF, PNG, SVG
 

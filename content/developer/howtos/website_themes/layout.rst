@@ -120,13 +120,13 @@ useful selectors are listed below:
 
    * - Attribute selectors
      - Description
-   * - *[@id="id"]
+   * - \*[@id="id"]
      - Selects a specific id
-   * - *[hasclass("class")]
+   * - \*[hasclass("class")]
      - Selects a specific class
-   * - *[@name="name"]
+   * - \*[@name="name"]
      - Selects a tag with a specific name
-   * - *[@t-call="t-call"]
+   * - \*[@t-call="t-call"]
      - Selects a specific t-call
 
 Position
@@ -196,7 +196,7 @@ generate HTML fragments and pages.
 
 .. admonition:: Reference
 
-   https://www.odoo.com/documentation/15.0/developer/reference/frontend/qweb.html
+   Check our :doc:`documentation about Qweb <../../reference/frontend/qweb>`.
 
 Background
 ==========
@@ -328,7 +328,7 @@ Components
 
 In your custom header, you can call several sub-templates using the `t-call` directive from QWeb:
 
-Logo (see :ref:`next section <reference/layout/logo>` to learn how to record it)
+Logo (see :ref:`next section <website_themes/layout/logo>` to learn how to record it)
 
 .. code-block:: xml
 
@@ -393,7 +393,7 @@ Navbar toggler
        <t t-set="_toggler_class" t-valuef="..."/>
     </t>
 
-.. _reference/layout/logo:
+.. _website_themes/layout/logo:
 
 Logo
 ----
@@ -507,7 +507,7 @@ Drop Zone
 =========
 
 Instead of defining the complete layout for a page, you can create building blocks (snippets) and
-let the user choose where to "drag & drop" them, creating the page layout on their own. We call
+let the user choose where to "drag and drop" them, creating the page layout on their own. We call
 this modular design.
 
 Define an empty area that the user can fill with snippets.
@@ -590,4 +590,3 @@ Make `.pt*` and `.pb*` classes responsive:
           @include o-vspacing($i * 8, .5);
        }
     }
-

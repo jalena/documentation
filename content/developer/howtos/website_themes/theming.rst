@@ -37,14 +37,14 @@ Structure
 Odoo’s themes are packaged like any modules. Even if you are designing a very simple website for
 your company or client, you need to package the theme like an Odoo module.
 
-.. code-block:: xml
+::
 
-   /website_airproof
-    ↳ /data
-    ↳ /i18n
-    ↳ /lib
-    ↳ /static
-    ↳ /views
+    website_airproof
+    ├── data
+    ├── i18n
+    ├── lib
+    ├── static
+    ├── views
     __init__.py
     __manifest__.py
 
@@ -56,15 +56,15 @@ your company or client, you need to package the theme like an Odoo module.
    * - Folder
      - Description
    * - Data
-     - Presets, menus, pages, images, shapes… (*.xml)
+     - Presets, menus, pages, images, shapes… (\*.xml)
    * - i18n
-     - Translations (*.po, *.pot)
+     - Translations (\*.po, \*.pot)
    * - lib
-     - External libraries (*.js)
+     - External libraries (\*.js)
    * - static
-     - Custom assets (*.jpg, *.gif, *.png, *.svg, *.pdf, *.scss, *.js)
+     - Custom assets (\*.jpg, \*.gif, \*.png, \*.svg, \*.pdf, \*.scss, \*.js)
    * - views
-     - Custom views and templates (*.xml)
+     - Custom views and templates (\*.xml)
 
 Initialization
 --------------
@@ -352,8 +352,7 @@ Add the palette you have just created to the list of palettes offered by the Web
        ),
     );
 
-Color Combinations
-^^^^^^^^^^^^^^^^^^
+**Color Combinations**
 
 Based on the five colors palette previously defined, the website builder will automatically
 generates five color combinations. They come with a background color, a text color, headings colors,
@@ -402,7 +401,7 @@ The colors used in a color combination are accessible and possible to override t
    The Website Builder automatically generates a page for you to see the color combinations of the
    theme color palette:
 
-   http://localhost:8069/website/demo/color-combinations
+   `http://localhost:8069/website/demo/color-combinations`
 
 Bootstrap Variables
 -------------------
@@ -460,7 +459,7 @@ dedicated file, added to the `_assets_frontend_helpers` bundle.
 
 .. admonition:: Demo page
 
-   http://localhost:8069/website/demo/bootstrap
+   `http://localhost:8069/website/demo/bootstrap`
 
 Views
 -----
@@ -471,6 +470,7 @@ view.
 By reading the source code, templates related to options are easily spottable.
 
 .. code-block:: xml
+
     <we-button title="..."
        data-name="..."
        data-customize-website-views="website.template_header_default"
@@ -478,6 +478,7 @@ By reading the source code, templates related to options are easily spottable.
        data-img="..."/>
 
 .. code-block:: xml
+
     <template id="..." inherit_id="..." name="..." active="True"/>
     <template id="..." inherit_id="..." name="..." active="False"/>
 
@@ -551,17 +552,17 @@ Interactivity
 
 Odoo supports three different kinds of javascript files:
 
-- `plain javascript files <https://www.odoo.com/documentation/15.0/developer/reference/frontend/javascript_modules.html#frontend-modules-plain-js>`_ (no module system),
-- `native javascript module <https://www.odoo.com/documentation/15.0/developer/reference/frontend/javascript_modules.html#frontend-modules-native-js>`_.
-- `Odoo modules <https://www.odoo.com/documentation/15.0/developer/reference/frontend/javascript_modules.html#frontend-modules-odoo-module>`_ (using a custom module system),
+- :ref:`plain javascript files <frontend/modules/plain_js>` (no module system),
+- :ref:`native javascript module <frontend/modules/native_js>`.
+- :ref:`Odoo modules <frontend/modules/odoo_module>` (using a custom module system),
 
 Most new Odoo javascript code should use the native javascript module system. This is simpler and
 brings the benefits of a better developer experience with better integration with the IDE.
 
 There is an essential point to know: Odoo needs to know which files should be translated into
-`Odoo modules <https://www.odoo.com/documentation/15.0/developer/reference/frontend/javascript_modules.html#frontend-modules-odoo-module>`_ and which files should not be translated. This is an opt-in system: Odoo will look at
-the first line of a JS file and check if it contains the string `@odoo-module`. If so, it will
-automatically be converted to an Odoo module.
+:ref:`Odoo modules <frontend/js_modules>` and which files should not be translated. This is
+an opt-in system: Odoo will look at the first line of a JS file and check if it contains the string
+`@odoo-module`. If so, it will automatically be converted to an Odoo module.
 
 .. code-block:: javascript
 

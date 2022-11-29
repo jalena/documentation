@@ -10,5 +10,4 @@ Odoo Documentation
     applications
     administration
     developer
-    designer
     contributing

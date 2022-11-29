@@ -11,34 +11,38 @@ File structure
 
 Layout
 
-.. code-block:: xml
+::
 
-    /views
-        ↳ /snippets
-            ↳ /options.xml
-            ↳ /s_snippet_name.xml
+    views
+    ├── snippets
+    │   └── options.xml
+    │   └── s_snippet_name.xml
 
 Styles
 
-.. code-block:: xml
+::
 
-    /static
-        ↳ /src
-            ↳ /snippets
-                ↳ /options.scss
-                ↳ /s_snippet_name
-                    ↳ /000.js
-                    ↳ /000.scss
-                    ↳ /000.xml
-                    ↳ /option.js
+    static
+    ├── src
+    │   └── snippets
+    │       └── options.scss
+    │       └── s_snippet_name
+    │           └── 000.js
+    │           └── 000.scss
+    │           └── 000.xml
+    │           └── option.js
 
 .. admonition:: Reference
 
-   https://github.com/odoo/odoo/blob/15.0/addons/website/views/snippets/snippets.xml
+
+
+.. seealso::
+
+   - Check the `templates of the different snippets <https://github.com/odoo/odoo/blob/15.0/addons/website/views/snippets/snippets.xml>`_
 
 .. admonition:: Demo page
 
-   http://localhost:8069/website/demo/snippets
+   `http://localhost:8069/website/demo/snippets`
 
 Layout
 ======
@@ -80,7 +84,7 @@ For inner content snippets, any other HTML tag can be used.
    * - data-snippet
      - ...
 
-The system will automatically add the `data-name` and `data-snippets` attributes during the drag &
+The system will automatically add the `data-name` and `data-snippets` attributes during the drag and
 drop, based on the template's name.
 
 .. warning::
@@ -95,13 +99,13 @@ structure), will be triggered by the Website Builder to make them resizable.
 
     .row > .col-lg-*
 
-Padding on columns & sections
+Padding on columns and sections
 
 .. code-block:: xml
 
     class="pt80 pb80"
 
-Background based on the color palette for columns & sections
+Background based on the color palette for columns and sections
 
 .. code-block:: xml
 
@@ -215,7 +219,7 @@ Create the snippet’s content.
    `data-name` and `data-snippet` attributes have to be specified when a snippet is declared in a
    theme page.
 
-Add your custom snippet to the list of default snippets, so the user will be able to drag & drop it
+Add your custom snippet to the list of default snippets, so the user will be able to drag and drop it
 into the page, directly from the edit panel.
 
 .. code-block:: xml
