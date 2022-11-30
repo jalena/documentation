@@ -32,13 +32,9 @@ Styles
     │           └── 000.xml
     │           └── option.js
 
-.. admonition:: Reference
-
-
-
 .. seealso::
 
-   - Check the `templates of the different snippets <https://github.com/odoo/odoo/blob/15.0/addons/website/views/snippets/snippets.xml>`_
+   - Check the `templates of the different snippets <{GITHUB_PATH}/addons/website/views/snippets/snippets.xml>`_
 
 .. admonition:: Demo page
 
@@ -47,13 +43,13 @@ Styles
 Layout
 ======
 
-Snippets are editable by the end user using the Website Builder UI.
-Some Bootstrap classes are important as **they trigger some Website Builder options**.
+Snippets are editable by the end user using the Website Builder UI. Some Bootstrap classes are
+important as **they trigger some Website Builder options**.
 
 **Wrapper**
 
-Section is the standard main container of any snippet.
-Any section element can be edited like a block of content that you can move or duplicate.
+Section is the standard main container of any snippet. Any section element can be edited like a
+block of content that you can move or duplicate.
 
 .. code-block:: xml
 
@@ -191,7 +187,7 @@ the original one.
     </section>
 
 The `data-vcss` and `data-js` attributes indicate to the system which file version to load for that
-snippet (eg 001.js, 002.scss).
+snippet (eg :file:`001.js`, :file:`002.scss`).
 
 Custom
 ======
@@ -264,8 +260,8 @@ to the UI.
 Options are wrapped in groups. Groups can have properties that define how the included options will
 interact with the user interface.
 
-CSS selector - Bind all the options included into the group to a particular element.
-Can be used in combination with data-target and data-exclude
+CSS selector - Bind all the options included into the group to a particular element. Can be used in
+combination with data-target and data-exclude
 
 .. code-block:: xml
 
@@ -316,9 +312,9 @@ apply. Only one option can be enabled at a time.
         </xpath>
     </template>
 
-.. admonition:: Reference
+.. seealso::
 
-   https://github.com/odoo/odoo/blob/15.0/addons/website/views/snippets/snippets.xml
+   - Check the `templates of the different snippets <{GITHUB_PATH}/addons/website/views/snippets/snippets.xml>`_
 
 **JavaScript Options**
 

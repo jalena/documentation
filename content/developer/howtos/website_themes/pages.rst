@@ -102,8 +102,8 @@ Theme Pages
 Declaration
 -----------
 
-You can add as many pages as you want to your website.
-Instead of defining a `<template>`, create a page object.
+You can add as many pages as you want to your website. Instead of defining a `<template>`, create a
+page object.
 
 .. code-block:: xml
     :caption: ``/website_airproof/data/pages/about_us.xml``
@@ -166,8 +166,8 @@ Medias
 Images
 ------
 
-You can record images in the database and use them later on in your design/code.
-They will also be available for the end user through the Media Dialog.
+You can record images in the database and use them later on in your design/code. They will also be
+available for the end user through the Media Dialog.
 
 .. image:: pages/medias-window.png
     :alt: Medias window
@@ -276,18 +276,16 @@ As content
 Icons
 -----
 
-By default, the icons library Font Awesome  is included within the Website Builder.
-You can place icons anywhere using the CSS Prefix fa and the icon's name.
-Font Awesome is designed to be used with inline elements. You can use `<i>` tag for brevity, but
-using a `<span>` is more semantically correct.
+By default, the icons library Font Awesome  is included within the Website Builder. You can place
+icons anywhere using the CSS Prefix fa and the icon's name. Font Awesome is designed to be used with
+inline elements. You can use `<i>` tag for brevity, but using a `<span>` is more semantically correct.
 
 .. code-block:: xml
 
     <span class="fa fa-picture-o"/>
 
-.. admonition:: Reference
-
-   https://fontawesome.com/v4/icons/
+.. seealso::
+   `Font Awesome <https://fontawesome.com/v4/icons/>`_
 
 Enable Website Builder style options
 

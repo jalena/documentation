@@ -30,11 +30,11 @@ contains the content that makes your page unique.
     </div>
 
 .. note::
-   Cross-pages elements will be the same on every page.
-   Unique elements are related to a specific page only.
+   Cross-pages elements will be the same on every page. Unique elements are related to a specific
+   page only.
 
-Any Odoo XML file starts with encoding specifications.
-After that, you must write your code inside a `<odoo>` tag.
+Any Odoo XML file starts with encoding specifications. After that, you must write your code inside
+a `<odoo>` tag.
 
 .. code-block:: xml
 
@@ -83,8 +83,8 @@ For each Xpath, we will play with two attributes: **expression** and **position*
        </xpath>
     </template>
 
-This XPath will add a welcome message just before the page content.
-You can do a lot more things with Xpath.
+This XPath will add a welcome message just before the page content. You can do a lot more things
+with Xpath.
 
 .. warning::
    Be careful replacing default elements attributes. As your theme will extend the default one,
@@ -194,8 +194,7 @@ Qweb
 QWeb is the primary templating engine used by Odoo. It is an XML templating engine used mostly to
 generate HTML fragments and pages.
 
-.. admonition:: Reference
-
+.. seealso::
    Check our :doc:`documentation about Qweb <../../reference/frontend/qweb>`.
 
 Background
@@ -410,14 +409,14 @@ Record the logo of your website in the database.
 Footer
 ======
 
-By default, Odoo footer contains a section with some static content.
-You can easily add new elements or create your own template.
+By default, Odoo footer contains a section with some static content. You can easily add new elements
+or create your own template.
 
 Standard
 --------
 
-Enable one of the default footer templates.
-Don’t forget that you may need to disable the active footer template first.
+Enable one of the default footer templates. Don’t forget that you may need to disable the active
+footer template first.
 
 .. code-block:: scss
     :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
@@ -438,8 +437,8 @@ Don’t forget that you may need to disable the active footer template first.
 Custom
 ------
 
-Create your own template and add it to the list.
-Don’t forget that you may need to disable the active footer template first.
+Create your own template and add it to the list. Don’t forget that you may need to disable the
+active footer template first.
 
 **Option**
 
@@ -489,8 +488,8 @@ Don’t forget that you may need to disable the active footer template first.
 Copyright
 =========
 
-There is only one template available at the moment for the copyright bar.
-To replace the content or modify the structure.
+There is only one template available at the moment for the copyright bar. To replace the content or
+modify the structure.
 
 .. code-block:: xml
     :caption: ``/website_airproof/views/website_templates.xml``
@@ -566,9 +565,10 @@ As of v4.3.0, Bootstrap ships with the option to enable responsive font sizes, a
 scale more naturally across device and viewport sizes. RFS can be enabled by changing the
 `$enable-responsive-font-sizes` Sass variable to true.
 
-**More info**
+.. seealso::
 
-https://github.com/twbs/rfs/tree/v8.1.0
+   - Check the `Responsive Font Size <https://github.com/twbs/rfs/tree/v8.1.0>`_
+
 
 Website Builder
 ---------------

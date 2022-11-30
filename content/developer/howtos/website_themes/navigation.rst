@@ -13,9 +13,9 @@ In this chapter, you will learn how to :
 Default
 =======
 
-Odoo automatically generates some basic menu items depending on the apps you installed.
-For example, the website app adds two items in the main. These items are linked to pages, also
-automatically created.
+Odoo automatically generates some basic menu items depending on the apps you installed. For example,
+the website app adds two items in the main. These items are linked to pages, also automatically
+created.
 
 **Delete default menu items**
 

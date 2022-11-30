@@ -150,7 +150,7 @@ Define the styles of your shape.
         )
     );
 
-- `hexagons/01`: corresponds to the location of your file in the `shapes` folder.
+- `hexagons/01`: corresponds to the location of your file in the :file:`shapes` folder.
 - `colors`: The color c* you want it to have (this will override the color you specified in your svg).
 
 Last but not least, add your shape to the list of shapes available in the Website Builder.

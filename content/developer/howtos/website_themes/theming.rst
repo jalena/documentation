@@ -13,8 +13,8 @@ module. In this chapter, you will also discover how to:
 Theme Module
 ============
 
-Odoo comes with a default `theme` that provides minimal structure and layout.
-When you create a new theme, you are actually extending it.
+Odoo comes with a default `theme` that provides minimal structure and layout. When you create a new
+theme, you are actually extending it.
 
 Don’t forget to add the directory containing your module to the addons-path command-line argument
 when running Odoo in your development environment.
@@ -69,9 +69,8 @@ your company or client, you need to package the theme like an Odoo module.
 Initialization
 --------------
 
-An Odoo module is also a Python package with a `__init__.py` file, containing import instructions for
-various Python files in the module.
-This file can remain empty for now.
+An Odoo module is also a Python package with a :file:`__init__.py` file, containing import
+instructions for various Python files in the module. This file can remain empty for now.
 
 **Declaration**
 
@@ -126,14 +125,14 @@ required field is the name, but it usually contains much more information.
      - List of SCSS and JS files
 
 .. note::
-   To create a website theme, you only need to install the Odoo Website app.
-   If you need other apps  (Blog, Events, Ecommerce,...), you can also add them.
+   To create a website theme, you only need to install the Odoo Website app. If you need other apps
+   (Blog, Events, Ecommerce,...), you can also add them.
 
 Default Options
 ===============
 
-First try to construct the spirit of your theme by enabling a nice set of Odoo default options.
-This also allows you to ensure two things:
+First try to construct the spirit of your theme by enabling a nice set of Odoo default options. This
+also allows you to ensure two things:
 
 #. You do not re-invent something which already exists. If Odoo provides an option to have a border
    on the footer, don’t recode it yourself. Enable it, then extend it if needed.
@@ -146,7 +145,7 @@ Odoo Variables
 --------------
 
 Odoo declares many CSS rules, most being entirely customizable by overriding the related SCSS
-variables. This can be done by creating a `primary_variables.scss` file and adding it to the
+variables. This can be done by creating a :file:`primary_variables.scss` file and adding it to the
 `_assets_primary_variables` bundle.
 
 **Declaration**
@@ -194,13 +193,13 @@ Global
    That file must only contain definitions and overrides of SCSS variables and mixins
 
 .. example::
-   https://github.com/odoo/odoo/blob/15.0/addons/website/static/src/scss/primary_variables.scss#L1954
+   `Primary Variables <{GITHUB_PATH}addons/website/static/src/scss/primary_variables.scss#L1954>`_
 
 Fonts
 ~~~~~
 
-You can embed any font on your website.
-The Website Builder will automatically make it available in the font selector.
+You can embed any font on your website. The Website Builder will automatically make it available in
+the font selector.
 
 **Declaration**
 
@@ -392,9 +391,10 @@ The colors used in a color combination are accessible and possible to override t
        )
     );
 
-.. admonition:: Reference
+.. seealso::
 
-   https://github.com/odoo/odoo/blob/15.0/addons/web_editor/static/src/scss/web_editor.common.scss#L708
+   - `Color Combinations <{GITHUB_PATH}/addons/web_editor/static/src/scss/web_editor.common.scss#L708>`_
+
 
 .. admonition:: Demo page
 
@@ -406,16 +406,16 @@ The colors used in a color combination are accessible and possible to override t
 Bootstrap Variables
 -------------------
 
-Odoo includes Bootstrap by default.
-This means that you can take advantage of all variables and mixins of the framework.
+Odoo includes Bootstrap by default. This means that you can take advantage of all variables and
+mixins of the framework.
 
 If Odoo does not provide the variable you are looking for, then try to find a Bootstrap variable
 that allows it. Indeed all Odoo layouts respect Bootstrap structures and use Bootstrap components or
 extensions of them. So if you customize a bootstrap variable, you add a generic style for the whole
 user website.
 
-Bootstrap values must not be overridden in the `primary_variables.scss` file but in another
-dedicated file, added to the `_assets_frontend_helpers` bundle.
+Bootstrap values must not be overridden in the :file:`primary_variables.scss` file but in another
+dedicated file, added to the :file:`_assets_frontend_helpers` bundle.
 
 **Declaration**
 
@@ -449,13 +449,12 @@ dedicated file, added to the `_assets_frontend_helpers` bundle.
    That file must only contain definitions and overrides of SCSS variables and mixins.
 
 .. warning::
-   Make sure not to override Bootstrap variables that depend on Odoo variables.
-   Otherwise, you might break the possibility for the user to customize them using the Odoo Website
-   Builder.
+   Make sure not to override Bootstrap variables that depend on Odoo variables. Otherwise, you might
+   break the possibility for the user to customize them using the Odoo Website Builder.
 
-.. admonition:: Reference
+.. seealso::
 
-   https://github.com/odoo/odoo/blob/15.0/addons/website/static/src/scss/bootstrap_overridden.scss
+   - `Bootstrap Overridden <{GITHUB_PATH}/addons/website/static/src/scss/bootstrap_overridden.scss>`_
 
 .. admonition:: Demo page
 
@@ -518,9 +517,10 @@ files to it.
 
 Styles
 ------
-The Odoo Website Builder and Bootstrap are great for defining the basic styles of your website.
-But to provide a unique design, you need to go a step further.
-For this, you can easily add any SCSS file to your theme.
+
+The Odoo Website Builder and Bootstrap are great for defining the basic styles of your website. But
+to provide a unique design, you need to go a step further. For this, you can easily add any SCSS
+file to your theme.
 
 **Declaration**
 
@@ -533,8 +533,8 @@ For this, you can easily add any SCSS file to your theme.
        ],
     },
 
-Feel free to reuse the variables in your `theme.scss` file (both the ones you put in your bootstrap
-file, and the ones used by odoo).
+Feel free to reuse the variables in your :file:`theme.scss` file (both the ones you put in your
+bootstrap file, and the ones used by odoo).
 
 **Example**
 
@@ -560,8 +560,8 @@ Most new Odoo javascript code should use the native javascript module system. Th
 brings the benefits of a better developer experience with better integration with the IDE.
 
 There is an essential point to know: Odoo needs to know which files should be translated into
-:ref:`Odoo modules <frontend/js_modules>` and which files should not be translated. This is
-an opt-in system: Odoo will look at the first line of a JS file and check if it contains the string
+:ref:`Odoo modules <frontend/js_modules>` and which files should not be translated. This is an
+opt-in system: Odoo will look at the first line of a JS file and check if it contains the string
 `@odoo-module`. If so, it will automatically be converted to an Odoo module.
 
 .. code-block:: javascript
@@ -580,9 +580,8 @@ an opt-in system: Odoo will look at the first line of a JS file and check if it 
     },
 
 .. note::
-   If you want to include files from an external library, you can add them into the /lib folder of
+   If you want to include files from an external library, you can add them into the */lib* folder of
    your module.
 
-.. admonition:: Reference
-
-   https://www.odoo.com/documentation/developer/reference/frontend/javascript_reference.html
+.. seealso::
+   :doc:`Javascript Reference <../../reference/frontend/javascript_reference>`
