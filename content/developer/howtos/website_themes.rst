@@ -4,6 +4,11 @@
 Website themes
 ==============
 
+.. image:: website_themes/web-design.png
+    :align: center
+    :alt: Web design
+    :width: 600
+
 The Odoo Website Builder is an excellent tool for creating a website fully-integrated with the other
 Odoo apps. Playing with the theme's options and building blocks is easy and allows you to
 personalize your web presence the way you want. But what if you want to take things even further?
@@ -33,6 +38,5 @@ successes. We invite you to use it as a base to build your own website and adapt
     website_themes/forms
     website_themes/translations
     website_themes/going_live
-    website_themes/advanced
     website_themes/resources
     website_themes/coding_guidelines
