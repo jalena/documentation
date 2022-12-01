@@ -66,12 +66,12 @@ Menu Item
    * - website_id
      - The website in which the item will be added
    * - sequence
-     - Defines the link’s position in the top menu
+     - Defines the link's position in the top menu
 
 New window
 ----------
 
-Open the link’s URL in a new tab.
+Open the link's URL in a new tab.
 
 .. code-block:: xml
 
@@ -143,7 +143,7 @@ Add an item to a dropdown menu.
 Mega Menu
 =========
 
-A mega menu is a dropdown menu with extra possibilities. It’s not just a list of links. In a mega
+A mega menu is a dropdown menu with extra possibilities. It's not just a list of links. In a mega
 menu, you can use any kind of content (texts, images, icons,...).
 
 **Declaration**

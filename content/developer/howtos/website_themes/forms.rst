@@ -101,7 +101,7 @@ BS variables
 ============
 
 As you already know, the Odoo Website Builder creates content based on Bootstrap. This is also true
-for forms. Here is a selection of Bootstrap variables that you can play with, but don’t hesitate to
+for forms. Here is a selection of Bootstrap variables that you can play with, but don't hesitate to
 check the `full list of variables that are available <https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss>`_.
 
 .. code-block:: scss

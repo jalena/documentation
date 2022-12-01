@@ -8,7 +8,7 @@ In this chapter, you will learn how to:
 - Create a custom footer
 - Modify a standard template
 - Add a copyright section
-- Improve your website’s responsiveness
+- Improve your website's responsiveness
 
 Default
 =======
@@ -231,7 +231,7 @@ You can define a color or an image as the background of your website.
 Header
 ======
 
-By default, Odoo header contains a responsive navigation menu and the company’s logo. You can
+By default, Odoo header contains a responsive navigation menu and the company's logo. You can
 easily add new elements or create your own template.
 
 Standard
@@ -240,7 +240,7 @@ Standard
 Enable one of the header default templates.
 
 .. important::
-   Don’t forget that you may need to disable the active header template first.
+   Don't forget that you may need to disable the active header template first.
 
 .. code-block:: scss
     :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
@@ -264,7 +264,7 @@ Custom
 Create your own template and add it to the list.
 
 .. important::
-   Don’t forget that you may need to disable the active header template first.
+   Don't forget that you may need to disable the active header template first.
 
 **Option**
 
@@ -415,7 +415,7 @@ or create your own template.
 Standard
 --------
 
-Enable one of the default footer templates. Don’t forget that you may need to disable the active
+Enable one of the default footer templates. Don't forget that you may need to disable the active
 footer template first.
 
 .. code-block:: scss
@@ -437,7 +437,7 @@ footer template first.
 Custom
 ------
 
-Create your own template and add it to the list. Don’t forget that you may need to disable the
+Create your own template and add it to the list. Don't forget that you may need to disable the
 active footer template first.
 
 **Option**

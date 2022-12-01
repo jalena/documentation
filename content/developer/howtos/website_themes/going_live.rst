@@ -2,7 +2,7 @@
 Going Live
 ==========
 
-Once you’ve finished all the web design and development work, it’s time to deploy it on a
+Once you've finished all the web design and development work, it's time to deploy it on a
 development or on a production database.
 
 Module Import

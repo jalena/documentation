@@ -213,7 +213,7 @@ Just like background shapes, it is possible to create your own image shapes : ju
 steps !
 
 First, you have to create a SVG file for your shape with a ration 1:1 and  `id="filterPath"` on the
-path. You can then convert your SVG file using this `script <https://github.com/odoo/odoo/tree/dbcb37ec80bb0fef0115c879c15bdc7073894290/addons/web_editor/static/image_shapes>`_. Once it’s done, you can add your shape
+path. You can then convert your SVG file using this `script <https://github.com/odoo/odoo/tree/dbcb37ec80bb0fef0115c879c15bdc7073894290/addons/web_editor/static/image_shapes>`_. Once it's done, you can add your shape
 in your module :
 
 `/website_airproof/static/image_shapes/blob/01.svg`

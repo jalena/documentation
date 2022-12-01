@@ -2,7 +2,7 @@
 Theming
 =======
 
-After your development environment is fully set up, let’s start building the skeleton of your theme
+After your development environment is fully set up, let's start building the skeleton of your theme
 module. In this chapter, you will also discover how to:
 
 - Enable/disable Website Builder standard options and templates
@@ -16,7 +16,7 @@ Theme Module
 Odoo comes with a default `theme` that provides minimal structure and layout. When you create a new
 theme, you are actually extending it.
 
-Don’t forget to add the directory containing your module to the addons-path command-line argument
+Don't forget to add the directory containing your module to the addons-path command-line argument
 when running Odoo in your development environment.
 
 Technical Naming
@@ -34,7 +34,7 @@ The very first step is to create a new directory.
 Structure
 ---------
 
-Odoo’s themes are packaged like any modules. Even if you are designing a very simple website for
+Odoo's themes are packaged like any modules. Even if you are designing a very simple website for
 your company or client, you need to package the theme like an Odoo module.
 
 ::
@@ -135,7 +135,7 @@ First try to construct the spirit of your theme by enabling a nice set of Odoo d
 also allows you to ensure two things:
 
 #. You do not re-invent something which already exists. If Odoo provides an option to have a border
-   on the footer, don’t recode it yourself. Enable it, then extend it if needed.
+   on the footer, don't recode it yourself. Enable it, then extend it if needed.
 #. You ensure that the user can still use all of Odoo's features with your theme. Again, if Odoo
    provides an option to have a border on the footer and that you recode it yourself, you may break
    the default option or make it useless, giving the user a bad experience. Your option might also

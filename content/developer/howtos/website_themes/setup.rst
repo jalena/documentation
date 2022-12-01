@@ -29,7 +29,7 @@ Every Odoo Application works in the same way; they are built in the same logic:
 
 :menuselection:`A Model --> with Fields --> with Relational fields that link to other models`
 
-:menuselection:`Each model has Views that represent all its fields --> Backend & frontend views`
+:menuselection:`Each model has Views that represent all its fields --> Backend and frontend views`
 
 Models
 ~~~~~~
@@ -69,7 +69,7 @@ them interact easily.
 - **One2many**: This is the reverse of Many2one. In a model, I have a field (= one) which lists the
   records (= many) of other tables. For example, the "Order Lines" tab on a quotation. We will see a
   list of several products ordered in one field.
-- **Many2many**: It’s several records linked to several records (several can be selected). For
+- **Many2many**: It's several records linked to several records (several can be selected). For
   example, the fact that you can put several tags on the same product and several products can have
   the same tag.
 
@@ -99,14 +99,14 @@ and allow a high level of customization of the screens that they control.
   the model. You must not make any changes directly to this view. This allows us to update an Odoo
   database without overwriting the client's modifications (which will have been made on a duplicate
   view). Odoo only updates standard views.
-- **Inherited views**: It’s a duplicated view. If there is a duplicate view, there will be two views
+- **Inherited views**: It's a duplicated view. If there is a duplicate view, there will be two views
   with the same name in the database. But the duplicated view will not have an ID; there is an ID
   only for the standard view.
 
 Dump
 ----
 
-Please note that this part is optional. If you don’t need to import an existing database, you can
+Please note that this part is optional. If you don't need to import an existing database, you can
 directly go to the next chapter: `Theme Module <https://docs.google.com/document/d/1AUDx1rdOyxecQ0Errf-AB7_OwevaiOxcYYhIHajct_Y/edit#heading=h.f0h9qbqq40pb>`_
 
 **Odoo SaaS**
@@ -133,9 +133,42 @@ directly go to the next chapter: `Theme Module <https://docs.google.com/document
   .. image:: setup/database-backup.png
     :alt: Database backup
 
-
 Import
 ------
+
+Please note that this part is optional. If you don't need to import an existing database, you can
+directly go to the next chapter: :doc:`Theme Module <theming>`
+
+**Move Filestore**
+
+Copy/paste all the folders included in the filestore folder to the right location on your computer:
+
+- macOS: `/Users/<User>/Library/Application Support/Odoo/filestore/<database_name>`
+- Linux: `/home/<User>/.local/share/Odoo/filestore/<database_name>`
+
+.. note::
+   `/Library` is a hidden folder.
+
+**Database setup**
+
+Create an empty database:
+
+.. code-block:: xml
+
+    createdb <database_name>
+
+Import the SQL file in the database that you just created:
+
+.. code-block:: xml
+
+    psql <database_name> < dump.sql
+
+Reset admin user password:
+
+.. code-block:: xml
+
+    psql \c <database_name>
+    update res_users set login='admin', password='admin' where id=2;
 
 Getting Started
 ===============
@@ -143,11 +176,85 @@ Getting Started
 Running Odoo
 ------------
 
+Once all dependencies are set up, Odoo can be launched by running `odoo-bin`, the command-line
+interface of the server. It is located at the root of the Odoo Community directory.
+
+- :ref:`Windows <setup/install/source/linux/running_odoo>`
+- :ref:`Linux <setup/install/source/linux/running_odoo>`
+- :ref:`Mac OS <setup/install/source/linux/running_odoo>`
+- `Docker <https://hub.docker.com/_/odoo/>`_
+
+To configure the server, you can specify command-line arguments or a configuration file. For this
+documentation, we're going to use the first method.
+
+The CLI offers several functionalities related to Odoo. You can use it to run the server, scaffold
+an Odoo Theme, populate a database, or count the number of lines of code.
+
 Shell Script
 ------------
+
+A typical way to run the server would be to add all the command line arguments to a `.sh` script.
+
+**Example:**
+
+.. code-block:: xml
+
+    ./odoo-bin --addons-path=../enterprise,addons --db-filter=<database> -d <database> --without-demo=all -i website --dev=xml
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 20 80
+
+   * - Folder
+     - Description
+   * - --addons-path
+     - Comma-separated list of directories in which modules are stored. These directories are
+       scanned for modules.
+   * - -d
+
+       --database
+     - database(s) used when installing or updating modules.
+   * - --db-filter
+     - Hides databases that do not match the filter.
+   * - -i
+
+       --init
+     - Comma-separated list of modules to install before running the server. (requires `-d`)
+   * - -u
+
+       --update
+     - Comma-separated list of modules to update before running the server. (requires `-d`)
+   * - --without-demo
+     - Disable demo data loading for modules installed comma-separated, use all for all modules.
+       (requires `-d` and `-i`)
+   * - --dev
+     - Comma-separated list of features. For development purposes only. :ref:`More info <reference/cmdline/dev>`
+
+.. seealso::
+   :ref:`Command-line Arguments <reference/cmdline/server>`
 
 Sign In
 -------
 
+After the server has started (the INFO log `odoo.modules.loading: Modules loaded.` is printed), open
+`http://localhost:8069` in your web browser, and log in with the base administrator account.
+
+Use **admin** for the Email and, again, **admin** for the Password. That's it! You just logged into your own
+Odoo database!
+
+.. image:: setup/welcome-homepage.png
+    :alt: Welcome homepage
+
+.. tip::
+   Hit *CTRL+C* to stop the server. Do it twice if needed.
+
 Developer Mode
 --------------
+
+The developer mode also known as debug mode is useful for development as it gives access to
+additional tools. In the next chapters, we will always assume that you have enabled the developer
+mode.
+
+.. seealso::
+   :ref:`How to enable the developer mode <developer-mode>`

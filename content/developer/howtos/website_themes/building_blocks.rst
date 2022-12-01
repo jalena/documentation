@@ -195,7 +195,7 @@ Custom
 Declaration
 -----------
 
-Create the snippet’s content.
+Create the snippet's content.
 
 .. code-block:: xml
     :caption: ``/website_airproof/views/snippets/s_airproof_snippet.xml``
@@ -251,7 +251,7 @@ into the page, directly from the edit panel.
 Options
 -------
 
-Options allow publishers to edit a snippet’s appearance using the Website Builder’s UI. Using
+Options allow publishers to edit a snippet's appearance using the Website Builder's UI. Using
 Website Builder functionalities, you can create snippet options easily and automatically add them
 to the UI.
 

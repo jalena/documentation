@@ -396,6 +396,8 @@ needed:
 #. Edit the System Environment's variable `PATH` to add the folder where `rtlcss.cmd` is located
    (typically: `C:\\Users\\<user>\\AppData\\Roaming\\npm\\`).
 
+.. _setup/install/source/linux/running_odoo:
+
 Running Odoo
 ~~~~~~~~~~~~
 
