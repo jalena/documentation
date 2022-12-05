@@ -6,9 +6,9 @@ With the Website Builder, you can easily modify the navigation to fit your needs
 
 In this chapter, you will learn how to :
 
-- Delete and create menu items
-- Create a dropdown menu
-- Create a mega menu
+- Delete and create menu items.
+- Create a dropdown menu.
+- Create a mega menu.
 
 Default
 =======
@@ -58,15 +58,15 @@ Menu Item
    * - Field
      - Description
    * - name
-     - Link text
+     - Link text.
    * - url
-     - Value of the href attribute
+     - Value of the href attribute.
    * - parent_id
-     - The menu in which the item will be added
+     - The menu in which the item will be added.
    * - website_id
-     - The website in which the item will be added
+     - The website in which the item will be added.
    * - sequence
-     - Defines the link's position in the top menu
+     - Defines the link's position in the top menu.
 
 New window
 ----------
@@ -138,7 +138,7 @@ Add an item to a dropdown menu.
    * - Field
      - Description
    * - parent_id
-     - The dropdown in which the item will be added
+     - The dropdown in which the item will be added.
 
 Mega Menu
 =========
@@ -174,8 +174,8 @@ menu, you can use any kind of content (texts, images, icons,...).
    * - Field
      - Description
    * - is_mega_menu
-     - Enable the mega menu feature
+     - Enable the mega menu feature.
    * - mega_menu_classes
-     - Custom classes to be added to the main element
+     - Custom classes to be added to the main element.
    * - mega_menu_content
-     - Default content of the mega menu
+     - Default content of the mega menu.

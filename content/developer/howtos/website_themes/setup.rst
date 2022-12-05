@@ -36,7 +36,7 @@ Models
 
 The basis of Odoo are the models. Models have fields in which records are stored. These records are
 stored in a database (these records are therefore linked to a model). In Odoo, you can find the
-different models in:
+different models in the backend.
 
 **Example:**
 
@@ -64,7 +64,7 @@ them interact easily.
 
 - **Many2one**: In a model, I have a field (= one) that I fill in by choosing from a list of records
   (= many) from another model. In Odoo, this field will always be named `"xxx_id"` whereas the
-  many2many will have an "s": `"xxx_ids"`. For example, the "Customer" field on a quotation. We will
+  many2many will have an "s": `"xxx_ids"`. For example, the *Customer* field on a quotation. We will
   have a list of several customers from which we must choose one.
 - **One2many**: This is the reverse of Many2one. In a model, I have a field (= one) which lists the
   records (= many) of other tables. For example, the "Order Lines" tab on a quotation. We will see a
@@ -100,8 +100,8 @@ and allow a high level of customization of the screens that they control.
   database without overwriting the client's modifications (which will have been made on a duplicate
   view). Odoo only updates standard views.
 - **Inherited views**: It's a duplicated view. If there is a duplicate view, there will be two views
-  with the same name in the database. But the duplicated view will not have an ID; there is an ID
-  only for the standard view.
+  with the same name in the database. But the duplicated view will not have an ID; there is only an 
+  ID for the standard view.
 
 Dump
 ----

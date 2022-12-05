@@ -129,6 +129,8 @@ page object.
         </field>
     </record>
 
+.. todo:: Missing description in table ...
+
 .. list-table::
    :header-rows: 1
    :stub-columns: 1
@@ -137,13 +139,13 @@ page object.
    * - Field
      - Description
    * - name
-     - Page name
+     - Page name.
    * - is_published
-     - Define if the page is published (visible to visitors)
+     - Define if the page is published (visible to visitors).
    * - key
      - ...
    * - url
-     - URL where the page is reachable
+     - URL where the page is reachable.
    * - type
      - ...
    * - arch
@@ -172,7 +174,7 @@ available for the end user through the Media Dialog.
 .. image:: pages/medias-window.png
     :alt: Medias window
 
-Currently supported format by the Website Builder: JPG, GIF, PNG, SVG
+Currently supported format by the Website Builder: JPG, GIF, PNG, SVG.
 
 **Declaration**
 
@@ -186,6 +188,8 @@ Currently supported format by the Website Builder: JPG, GIF, PNG, SVG
         <field name="public" eval="True"/>
     </record>
 
+.. todo:: Missing description in table ...
+
 .. list-table::
    :header-rows: 1
    :stub-columns: 1
@@ -194,27 +198,27 @@ Currently supported format by the Website Builder: JPG, GIF, PNG, SVG
    * - Field
      - Description
    * - name
-     - Page name
+     - Page name.
    * - data
-     - Define if the page is published (visible to visitors)
+     - Define if the page is published (visible to visitors).
    * - res_model
      - ...
    * - public
      - ...
 
-Use as a background image
+Use as a background image.
 
 .. code-block:: xml
 
     <section style="background-image: url('/web/image/website_airproof.img_about_01');">
 
-Use as a regular image
+Use as a regular image.
 
 .. code-block:: xml
 
     <img src="/web/image/website_airproof.img_about_01" alt=""/>
 
-Use as a regular image with a color filter
+Use as a regular image with a color filter.
 
 .. code-block:: xml
 
@@ -230,7 +234,7 @@ Use as a regular image with a color filter
 Videos
 ------
 
-As background
+As background.
 
 .. code-block:: xml
 
@@ -246,9 +250,9 @@ As background
    * - Attribute
      - Description
    * - data-bg-video-src
-     - Video URL
+     - Video URL.
 
-As content
+As content.
 
 .. code-block:: xml
 
@@ -269,15 +273,15 @@ As content
    * - Attribute
      - Description
    * - data-oe-expression
-     - Video URL
+     - Video URL.
    * - src
-     - Video URL
+     - Video URL.
 
 Icons
 -----
 
-By default, the icons library Font Awesome  is included within the Website Builder. You can place
-icons anywhere using the CSS Prefix fa and the icon's name. Font Awesome is designed to be used with
+By default, the Font Awesome icons library is included within the Website Builder. You can place
+icons anywhere using the CSS Prefix `fa` and the icon's name. Font Awesome is designed to be used with
 inline elements. You can use `<i>` tag for brevity, but using a `<span>` is more semantically correct.
 
 .. code-block:: xml
@@ -287,13 +291,13 @@ inline elements. You can use `<i>` tag for brevity, but using a `<span>` is more
 .. seealso::
    `Font Awesome <https://fontawesome.com/v4/icons/>`_
 
-Enable Website Builder style options
+Enable Website Builder style options.
 
 .. code-block:: xml
 
     <span class="fa fa-2x fa-picture-o rounded-circle"/>
 
-To increase icon sizes (fa-2x, fa-3x, fa-4x, or fa-5x classes)
+To increase icon sizes (fa-2x, fa-3x, fa-4x, or fa-5x classes).
 
 .. code-block:: xml
 

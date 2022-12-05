@@ -7,9 +7,9 @@ different languages.
 
 In this chapter, you will learn how to:
 
-- Translate the content of a module
-- Import and Export translations
-- Integrate translations to a module
+- Translate the content of a module.
+- Import and Export translations.
+- Integrate translations to a module.
 
 Frontend
 ========
@@ -56,7 +56,7 @@ the :file:`.po` file afterwards if you want.
 PO file
 =======
 
-Translate directly with :file:`.po` file
+Translate directly with :file:`.po` file.
 
 .. code-block:: po
     :caption: ``/website_coconuts/i18n/fr_BE.po``

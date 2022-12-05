@@ -9,7 +9,7 @@ and options.
 File structure
 ==============
 
-Layout
+Layout.
 
 ::
 
@@ -18,7 +18,7 @@ Layout
     │   └── options.xml
     │   └── s_snippet_name.xml
 
-Styles
+Styles.
 
 ::
 
@@ -48,7 +48,7 @@ important as **they trigger some Website Builder options**.
 
 **Wrapper**
 
-Section is the standard main container of any snippet. Any section element can be edited like a
+The standard main container of any snippet is `section`. Any section element can be edited like a
 block of content that you can move or duplicate.
 
 .. code-block:: xml
@@ -65,6 +65,8 @@ For inner content snippets, any other HTML tag can be used.
         <!-- Content -->
     </div>
 
+.. todo:: Missing description in table ...
+
 .. list-table::
    :header-rows: 1
    :stub-columns: 1
@@ -73,10 +75,10 @@ For inner content snippets, any other HTML tag can be used.
    * - Attribute
      - Description
    * - class
-     - Unique class name for this snippet
+     - Unique class name for this snippet.
    * - data-name
-     - Displayed in the right panel as the name of the snippet.
-       If not found, it will fallback to “Block”
+     - Displayed in the right panel as the name of the snippet. If not found, it will fallback to
+       *Block*.
    * - data-snippet
      - ...
 
@@ -88,68 +90,68 @@ drop, based on the template's name.
 
 **Columns**
 
-Any large bootstrap columns directly descending from a .row element (respecting Bootstrap
+Any large bootstrap columns directly descending from a `.row` element (respecting Bootstrap
 structure), will be triggered by the Website Builder to make them resizable.
 
 .. code-block:: css
 
     .row > .col-lg-*
 
-Padding on columns and sections
+Padding on columns and sections.
 
 .. code-block:: xml
 
     class="pt80 pb80"
 
-Background based on the color palette for columns and sections
+Background based on the color palette for columns and sections.
 
 .. code-block:: xml
 
     class="o_cc o_cc*"
 
-Make an element not editable
+Make an element not editable.
 
 .. code-block:: xml
 
     <div class="o_not_editable">
 
-Enable Columns selector
+Enable Columns selector.
 
 .. code-block:: xml
 
     <div class="container s_allow_columns">
 
-Disable Columns option
+Disable Columns option.
 
 .. code-block:: xml
 
     <div class="row s_nb_column_fixed">
 
-Disable Size option of all child columns
+Disable Size option of all child columns.
 
 .. code-block:: xml
 
     <div class="row s_col_no_resize">
 
-Disable Size option for one column
+Disable Size option for one column.
 
 .. code-block:: xml
 
     <div class="col-lg-* s_col_no_resize">
 
-Disable Background Color option of all columns
+Disable Background Color option of all columns.
 
 .. code-block:: xml
 
     <div class="row s_col_no_bgcolor">
 
-Disable Background Color option of one column
+Disable Background Color option of one column.
 
 .. code-block:: xml
 
     <div class="col-lg-* s_col_no_bgcolor">
 
-Parallax
+Parallax.
 
 .. code-block:: xml
 
@@ -160,7 +162,7 @@ Parallax
         </div>
     </section>
 
-Color filter
+Color filter.
 
 .. code-block:: xml
 
@@ -244,9 +246,9 @@ into the page, directly from the edit panel.
    * - Attribute
      - Description
    * - t-snippet
-     - The template to use
+     - The template to use.
    * - t-thumbnail
-     - The path to the snippet thumbnail
+     - The path to the snippet thumbnail.
 
 Options
 -------
@@ -261,7 +263,7 @@ Options are wrapped in groups. Groups can have properties that define how the in
 interact with the user interface.
 
 CSS selector - Bind all the options included into the group to a particular element. Can be used in
-combination with data-target and data-exclude
+combination with `data-target` and `data-exclude`.
 
 .. code-block:: xml
 
@@ -274,6 +276,8 @@ Custom method name - Is used to bind custom Javascript methods.
     <div data-js="CustomMethodName" data-selector="...">
 
 CSS selector - Defines the list of elements where the snippet can be dropped into.
+
+.. todo:: no css selector ...
 
 .. code-block:: xml
 
@@ -342,18 +346,18 @@ The Website Builder provides several events you can use to trigger your custom f
      - Description
    * - start
      - Fires when the publisher selects the snippet for the first time in an editing session or
-       when the snippet is drag-dropped into the page
+       when the snippet is drag-dropped into the page.
    * - onFocus
      - Fires each time the snippet is selected by the user or when the snippet is drag-dropped into
-       the page
+       the page.
    * - onBlur
-     - This event occurs when a snippet loses focus
+     - This event occurs when a snippet loses focus.
    * - onClone
-     - Fires just after a snippet is duplicated
+     - Fires just after a snippet is duplicated.
    * - onRemove
-     - It occurs just before that the snippet is removed
+     - It occurs just before that the snippet is removed.
    * - onBuilt
      - Fires just after that the snippet is dragged and dropped into a drop zone. When this event
-       is triggered, the content is already inserted in the page
+       is triggered, the content is already inserted in the page.
    * - cleanForSave
-     - It triggers before the publisher saves the page
+     - It triggers before the publisher saves the page.

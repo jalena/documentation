@@ -5,10 +5,10 @@ Theming
 After your development environment is fully set up, let's start building the skeleton of your theme
 module. In this chapter, you will also discover how to:
 
-- Enable/disable Website Builder standard options and templates
-- Define the colors and the fonts to use for your design
-- Get the most of Bootstrap variables
-- Add custom styles and javascript
+- Enable/disable Website Builder standard options and templates.
+- Define the colors and the fonts to use for your design.
+- Get the most of Bootstrap variables.
+- Add custom styles and javascript.
 
 Theme Module
 ============
@@ -105,24 +105,24 @@ required field is the name, but it usually contains much more information.
    * - Field
      - Description
    * - name
-     - Human-readable name of the module (required)
+     - Human-readable name of the module (required).
    * - description
-     - Extended description for the module, in reStructuredText
+     - Extended description for the module, in reStructuredText.
    * - category
-     - Classification category within Odoo
+     - Classification category within Odoo.
    * - version
-     - Odoo version this module is addressing
+     - Odoo version this module is addressing.
    * - author
-     - Name of the module author
+     - Name of the module author.
    * - license
-     - Distribution license for the module
+     - Distribution license for the module.
    * - depends
      - Odoo modules which must be loaded before this one, either because this module uses features
-       they create or because it alters resources they define
+       they create or because it alters resources they define.
    * - data
-     - List of XML files
+     - List of XML files.
    * - assets
-     - List of SCSS and JS files
+     - List of SCSS and JS files.
 
 .. note::
    To create a website theme, you only need to install the Odoo Website app. If you need other apps
@@ -193,7 +193,7 @@ Global
    That file must only contain definitions and overrides of SCSS variables and mixins
 
 .. example::
-   `Primary Variables <{GITHUB_PATH}addons/website/static/src/scss/primary_variables.scss#L1954>`_
+   `Primary Variables <{GITHUB_PATH}/addons/website/static/src/scss/primary_variables.scss#L1954>`_
 
 Fonts
 ~~~~~
@@ -354,7 +354,7 @@ Add the palette you have just created to the list of palettes offered by the Web
 **Color Combinations**
 
 Based on the five colors palette previously defined, the website builder will automatically
-generates five color combinations. They come with a background color, a text color, headings colors,
+generate five color combinations. They come with a background color, a text color, headings colors,
 a link color, primary and secondary button colors which will later be possible to customize by the
 user.
 
@@ -481,7 +481,7 @@ By reading the source code, templates related to options are easily spottable.
     <template id="..." inherit_id="..." name="..." active="True"/>
     <template id="..." inherit_id="..." name="..." active="False"/>
 
-**Example**: Change menu items horizontal alignment
+**Example**: Change menu items horizontal alignment.
 
 .. code-block:: xml
     :caption: ``/website_airproof/data/presets.xml``
@@ -492,7 +492,7 @@ By reading the source code, templates related to options are easily spottable.
 
 The same logic can be used for others Odoo Apps as well.
 
-**Example**: E-commerce - Display Products Categories
+**Example**: E-commerce - Display Products Categories.
 
 .. code-block:: xml
 
@@ -500,7 +500,7 @@ The same logic can be used for others Odoo Apps as well.
        <field name="active" eval="False"/>
     </record>
 
-**Example**: Portal - Disable Language Selector
+**Example**: Portal - Disable Language Selector.
 
 .. code-block:: xml
 
@@ -511,7 +511,7 @@ The same logic can be used for others Odoo Apps as well.
 Assets
 ======
 
-For this part, we will refer to the  assets_frontend bundle, located in the web module. This bundle
+For this part, we will refer to the `assets_frontend` bundle, located in the web module. This bundle
 specifies the list of assets loaded by the Website Builder, and our goal is to add our SCSS and JS
 files to it.
 
@@ -552,9 +552,9 @@ Interactivity
 
 Odoo supports three different kinds of javascript files:
 
-- :ref:`plain javascript files <frontend/modules/plain_js>` (no module system),
+- :ref:`plain javascript files <frontend/modules/plain_js>` (no module system).
 - :ref:`native javascript module <frontend/modules/native_js>`.
-- :ref:`Odoo modules <frontend/modules/odoo_module>` (using a custom module system),
+- :ref:`Odoo modules <frontend/modules/odoo_module>` (using a custom module system).
 
 Most new Odoo javascript code should use the native javascript module system. This is simpler and
 brings the benefits of a better developer experience with better integration with the IDE.
@@ -575,12 +575,12 @@ opt-in system: Odoo will look at the first line of a JS file and check if it con
 
     'assets': {
        'web.assets_frontend': [
-          'website_airproof/static/src/scss/theme.js',
+          'website_airproof/static/src/js/theme.js',
        ],
     },
 
 .. note::
-   If you want to include files from an external library, you can add them into the */lib* folder of
+   If you want to include files from an external library, you can add them into the `/lib` folder of
    your module.
 
 .. seealso::

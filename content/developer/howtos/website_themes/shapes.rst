@@ -6,22 +6,22 @@ Shapes are very useful if you want to add some personality to your website.
 
 In this chapter, you will learn how to :
 
-- Add standard background shape and image shape to your content
-- Add a custom background shape
-- Add a custom image shape
+- Add standard background shape and image shape to your content.
+- Add a custom background shape.
+- Add a custom image shape.
 
 Background Shapes
 =================
 
 Background shapes are SVG images that you can add as a decorative background in your different
-sections. Each shape has one or several customizable colours. Some of them are also animated.
+sections. Each shape has one or several customizable colors. Some of them are also animated.
 
 Standard
 --------
 
 By default, there is a large selection of background shapes that can be used in your website.
 
-Use
+Use.
 
 .. code-block:: xml
 
@@ -34,7 +34,7 @@ Use
 
 - `data-oe-shape-data` : the location of your shape.
 
-You can flip the shape on the horizontally or vertically using the X or Y axis
+You can flip the shape on the horizontally or vertically using the X or Y axis.
 
 .. code-block:: xml
 
@@ -49,20 +49,20 @@ You can also change the default colour mapping of your shape.
 
 First, put the c* colour (here `4`).
 
-Then, the replacement colour (here `3`). These replacement colours also range from 1 to 5:
+Then, the replacement colour (here `3`). These replacement colors also range from 1 to 5:
 
-- `1` = background colour of the colour preset 1 (o-cc1)
-- `2` = background colour of the colour preset 2 (o-cc2)
-- `3` = background colour of the colour preset 3 (o-cc3)
-- `4` = background colour of the colour preset 4 (o-cc4)
-- `5` = background colour of the colour preset 5 (o-cc5)
+- `1` = background colour of the colour preset 1 (o-cc1).
+- `2` = background colour of the colour preset 2 (o-cc2).
+- `3` = background colour of the colour preset 3 (o-cc3).
+- `4` = background colour of the colour preset 4 (o-cc4).
+- `5` = background colour of the colour preset 5 (o-cc5).
 
 .. code-block:: scss
     :caption: ``/website_airproof/static/src/scss/boostrap_overridden.scss``
 
     $o-bg-shapes: change-shape-colors-mapping('web_editor', 'Zigs/06', (4: 3, 5: 1));
 
-Add extra colours mapping: this allows you to add a colour variant to the template of a shape,
+Add extra colors mapping: this allows you to add a colour variant to the template of a shape,
 while keeping the original as well.
 
 .. code-block:: scss
@@ -118,6 +118,8 @@ Declare your shape file.
         <field name="public" eval="True"/>
     </record>
 
+.. todo:: Missing description in table ...
+
 .. list-table::
    :header-rows: 1
    :stub-columns: 1
@@ -126,13 +128,13 @@ Declare your shape file.
    * - Field
      - Description
    * - name
-     - Name of the shape
+     - Name of the shape.
    * - datas
-     - The path to the shape
+     - The path to the shape.
    * - url
      - ...
    * - public
-     - Make the shape available for later edit
+     - Make the shape available for later edit.
 
 Define the styles of your shape.
 
@@ -150,7 +152,7 @@ Define the styles of your shape.
         )
     );
 
-- `hexagons/01`: corresponds to the location of your file in the :file:`shapes` folder.
+- `hexagons/01`: corresponds to the location of your file in the `shapes` folder.
 - `colors`: The color c* you want it to have (this will override the color you specified in your svg).
 
 Last but not least, add your shape to the list of shapes available in the Website Builder.
@@ -172,14 +174,14 @@ Image Shapes
 ============
 
 Image shapes are SVG that you can add as a clipping mask on your website images. Some shapes have
-customizable colours and some are animated.
+customizable colors and some are animated.
 
 Standard
 --------
 
 By default, there is a large selection of image shapes that can be used in your website.
 
-Use
+Use.
 
 .. code-block:: xml
 
@@ -198,9 +200,9 @@ Use
    * - Attribute
      - Description
    * - data-shape
-     - Location of the shape
+     - Location of the shape.
    * - data-shape-colors
-     - The colors applied to your shape
+     - The colors applied to your shape.
 
 .. warning::
    It might be possible that your image shape is not applied after your changes. Just open the

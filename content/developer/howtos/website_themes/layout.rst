@@ -4,11 +4,11 @@ Layout
 
 In this chapter, you will learn how to:
 
-- Create a custom header
-- Create a custom footer
-- Modify a standard template
-- Add a copyright section
-- Improve your website's responsiveness
+- Create a custom header.
+- Create a custom footer.
+- Modify a standard template.
+- Add a copyright section.
+- Improve your website's responsiveness.
 
 Default
 =======
@@ -66,9 +66,9 @@ A view will be coded like this:
    * - Attribute
      - Description
    * - id
-     - Name of the modified view
+     - Name of the modified view.
    * - inherited_id
-     - Name of the standard view
+     - Name of the standard view.
 
 For each Xpath, we will play with two attributes: **expression** and **position**.
 
@@ -108,10 +108,10 @@ useful selectors are listed below:
    * - Descendent selectors
      - Description
    * - /
-     - Selects from the root node
+     - Selects from the root node.
    * - //
      - Selects nodes in the document from the current node that match the selection no matter where
-       they are
+       they are.
 
 .. list-table::
    :header-rows: 1
@@ -121,13 +121,13 @@ useful selectors are listed below:
    * - Attribute selectors
      - Description
    * - \*[@id="id"]
-     - Selects a specific id
+     - Selects a specific id.
    * - \*[hasclass("class")]
-     - Selects a specific class
+     - Selects a specific class.
    * - \*[@name="name"]
-     - Selects a tag with a specific name
+     - Selects a tag with a specific name.
    * - \*[@t-call="t-call"]
-     - Selects a specific t-call
+     - Selects a specific t-call.
 
 Position
 --------
@@ -143,15 +143,15 @@ listed below:
    * - Position
      - Description
    * - replace
-     - Replaces the targeted node with the Xpath content
+     - Replaces the targeted node with the Xpath content.
    * - inside
-     - Adds the Xpath content inside the targeted node
+     - Adds the Xpath content inside the targeted node.
    * - before
-     - Adds the Xpath content before the targeted node
+     - Adds the Xpath content before the targeted node.
    * - after
-     - Adds the Xpath content after the targeted node
+     - Adds the Xpath content after the targeted node.
    * - attributes
-     - Adds the Xpath content inside an attribute
+     - Adds the Xpath content inside an attribute.
 
 Examples
 --------
@@ -287,11 +287,11 @@ Create your own template and add it to the list.
    * - Attribute
      - Description
    * - data-customize-website-views
-     - The template to enable
+     - The template to enable.
    * - data-customize-website-variable
-     - The name given to the variable
+     - The name given to the variable.
    * - data-img
-     - The thumbnail it will display in the choices of header offered in the Website Builder UI
+     - The thumbnail it will display in the choices of header offered in the Website Builder UI.
 
 .. code-block:: scss
     :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
@@ -327,7 +327,7 @@ Components
 
 In your custom header, you can call several sub-templates using the `t-call` directive from QWeb:
 
-Logo (see :ref:`next section <website_themes/layout/logo>` to learn how to record it)
+**Logo** (see :ref:`next section <website_themes/layout/logo>` to learn how to record it).
 
 .. code-block:: xml
 
@@ -335,7 +335,7 @@ Logo (see :ref:`next section <website_themes/layout/logo>` to learn how to recor
        <t t-set="_link_class" t-valuef="..."/>
     </t>
 
-Menu
+**Menu**.
 
 .. code-block:: xml
 
@@ -346,7 +346,7 @@ Menu
        </t>
     </t>
 
-Sign In
+**Sign In**.
 
 .. code-block:: xml
 
@@ -355,7 +355,7 @@ Sign In
        <t t-set="_link_class" t-valuef="nav-link"/>
     </t>
 
-User dropdown
+**User dropdown**.
 
 .. code-block:: xml
 
@@ -368,7 +368,7 @@ User dropdown
        <t t-set="_dropdown_menu_class" t-valuef="..."/>
     </t>
 
-Language selector
+**Language selector**.
 
 .. code-block:: xml
 
@@ -376,7 +376,7 @@ Language selector
        <t t-set="_div_classes" t-valuef="..."/>
     </t>
 
-Call to action
+**Call to action**.
 
 .. code-block:: xml
 
@@ -384,7 +384,7 @@ Call to action
        <t t-set="_div_classes" t-valuef="..."/>
     </t>
 
-Navbar toggler
+**Navbar toggler**.
 
 .. code-block:: xml
 
@@ -488,8 +488,9 @@ active footer template first.
 Copyright
 =========
 
-There is only one template available at the moment for the copyright bar. To replace the content or
-modify the structure.
+There is only one template available at the moment for the copyright bar.
+
+To replace the content or modify the structure:
 
 .. code-block:: xml
     :caption: ``/website_airproof/views/website_templates.xml``
@@ -515,6 +516,8 @@ Define an empty area that the user can fill with snippets.
 
     <div id="oe_structure_layout_01" class="oe_structure"/>
 
+.. todo:: Missing description in table ...
+
 .. list-table::
    :header-rows: 1
    :stub-columns: 1
@@ -523,9 +526,9 @@ Define an empty area that the user can fill with snippets.
    * - Class
      - Description
    * - oe_structure
-     - Define a drag and drop area for the user
+     - Define a drag and drop area for the user.
    * - oe_structure_solo
-     - Only one snippet can be dropped in this area
+     - Only one snippet can be dropped in this area.
    * - oe_empty
      - ...
    * - oe_structure_not_nearest
@@ -551,13 +554,10 @@ Some hints to help you make your website responsive.
 Bootstrap
 ---------
 
-**Breakpoints**
+.. seealso::
 
-https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
-
-**Display**
-
-https://getbootstrap.com/docs/4.6/utilities/display/
+   - `Breakpoints <https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints>`_
+   - `Display <https://getbootstrap.com/docs/4.6/utilities/display/>`_
 
 **Font-size**
 
@@ -567,7 +567,7 @@ scale more naturally across device and viewport sizes. RFS can be enabled by cha
 
 .. seealso::
 
-   - Check the `Responsive Font Size <https://github.com/twbs/rfs/tree/v8.1.0>`_
+   Check the `Responsive Font Size <https://github.com/twbs/rfs/tree/v8.1.0>`_
 
 
 Website Builder

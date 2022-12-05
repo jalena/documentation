@@ -41,24 +41,24 @@ no overlap.
 SCSS
 ====
 
-- Use Bootstrap native classes as much as possible
-- Prefix all your custom classes
-- Use underscore lowercase notation to name class, e.g.: .x_nav, .x_nav_item
-- Avoid using ID tag
+- Use Bootstrap native classes as much as possible.
+- Prefix all your custom classes.
+- Use underscore lowercase notation to name class, e.g.: `.x_nav`, `.x_nav_item`.
+- Avoid using ID tag.
 
 JS
 ==
 
-- Use a linter (JSHint,...)
-- Never add minified JavaScript libraries
-- Add `'use strict';` on top of every odoo JS module
-- Variables and functions should be *camelcased* (`myVariable`) instead of *snakecased* (`my_variable`)
+- Use a linter (JSHint,...).
+- Never add minified JavaScript libraries.
+- Add `'use strict';` on top of every odoo JS module.
+- Variables and functions should be *camelcased* (`myVariable`) instead of *snakecased* (`my_variable`).
 - Do not name a variable event, use `ev.` This is to avoid bugs on non-Chrome browsers as Chrome is
   magically assigning a global event variable (so if you use the event variable without declaring
   it, it will be fine on chrome but crash on every other browser).
-- Use strict comparisons (`===` instead of `==`)
+- Use strict comparisons (`===` instead of `==`).
 - Double quotes for all textual strings (such as `"Hello"`), and single quotes for all other strings,
-  such as a CSS selector `'.x_nav_item'`
+  such as a CSS selector `.x_nav_item`.
 - Always use `this._super.apply(this, arguments)`;
 
 .. seealso::

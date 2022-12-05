@@ -4,8 +4,10 @@ Gradients
 
 Love them or hate them, gradients are here to stay.
 
-- Add a gradient to a section or a title
-- Add your own gradient to the Website Builder palette
+In this chapter, you will discover how to:
+
+- Add a gradient to a section or a title.
+- Add your own gradient to the Website Builder palette.
 
 Standard Gradient
 =================
@@ -14,7 +16,7 @@ In standard, you already have a selection of gradients that you can select direc
 Builder. However, in a custom theme, we will add the gradient directly in the section tag with a
 style attribute.
 
-Use
+Use.
 
 .. code-block:: xml
 
@@ -22,7 +24,7 @@ Use
         <!-- Content -->
     </section>
 
-To apply a gradient on text, we will use a font tag with the `text-gradient` class
+To apply a gradient on text, we will use a font tag with the `text-gradient` class.
 
 .. code-block:: xml
 
