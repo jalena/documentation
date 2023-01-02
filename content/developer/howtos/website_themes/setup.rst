@@ -43,19 +43,24 @@ different models in the backend.
 .. image:: setup/models-page.png
     :alt: Models page
 
+.. note::
+    To access models, you need to activate the :ref:`developer mode <developer-mode>`.
+
 Fields
 ~~~~~~
 
 In a model, we will centralize fields (field names we need to target in our code).
 
-**Classic fields**
+Classic fields
+**************
 
 - Date
 - Char
 - Selection
 - …
 
-**Relational fields**
+Relational fields
+*****************
 
 These are fields that will call a field from another model. In other words, when we have linked a
 record with another record (located on another template), we will be able to retrieve the content of
@@ -80,12 +85,14 @@ Views are what define how records should be displayed to end-users. They are spe
 means that they can be edited independently from the models that they represent. They are flexible
 and allow a high level of customization of the screens that they control.
 
-**Back-end vs Front-end**
+Back-end vs Front-end
+*********************
 
 - **Back-end view**: KanBan view, List view, Form view...
 - **Front-end view**: Qweb view
 
-**Static vs Dynamic**
+Static vs Dynamic
+*****************
 
 - **Static views**: These are static content pages, like the homepage. For these pages, you can
   choose the url and set some properties like published, indexed, etc.
@@ -93,7 +100,8 @@ and allow a high level of customization of the screens that they control.
   is dynamic and is accessible to all by default. But there is a way to change this with access
   rights.
 
-**Standard vs Inherited**
+Standard vs Inherited
+*********************
 
 - **Standard views**: This is the "base" view, implemented by Odoo, which is directly derived from
   the model. You must not make any changes directly to this view. This allows us to update an Odoo
@@ -107,31 +115,33 @@ Dump
 ----
 
 Please note that this part is optional. If you don't need to import an existing database, you can
-directly go to the next chapter: `Theme Module <https://docs.google.com/document/d/1AUDx1rdOyxecQ0Errf-AB7_OwevaiOxcYYhIHajct_Y/edit#heading=h.f0h9qbqq40pb>`_
+directly go to the next chapter: :ref:`Theming <theming>`
 
-**Odoo SaaS**
+Odoo SaaS
+~~~~~~~~~
 
 - Go to: `<database_url>/saas_worker/dump`
 
-**Odoo.sh**
+Odoo.sh
+~~~~~~~
 
-- Connect to Odoo.sh
-- Select the branch you want to make a backup of
-- Choose the *BACKUPS* tab.
-- Click the *Create Backup* button.
-- When the process is over, a notification will appear.
-- Open it and click the *Go to Backup* button.
-- Click on the *Download* icon button. Choose the *testing* option for *purpose* and *with filestore*
-  for the *Filestore* option.
+#. Connect to Odoo.sh
+#. Select the branch you want to make a backup of
+#. Choose the *BACKUPS* tab.
+#. Click the *Create Backup* button.
+#. When the process is over, a notification will appear.
+#. Open it and click the *Go to Backup* button.
+#. Click on the *Download* icon button. Choose the *testing* option for *purpose* and *with filestore*
+   for the *Filestore* option.
 
-  .. image:: setup/download-backup.png
-    :alt: Download backup
+   .. image:: setup/download-backup.png
+     :alt: Download backup
 
-- You will receive a notification when the dump is ready to be downloaded. Open it and click on
-  *Download* to get your dump.
+#. You will receive a notification when the dump is ready to be downloaded. Open it and click on
+   *Download* to get your dump.
 
-  .. image:: setup/database-backup.png
-    :alt: Database backup
+   .. image:: setup/database-backup.png
+     :alt: Database backup
 
 Import
 ------
@@ -139,7 +149,8 @@ Import
 Please note that this part is optional. If you don't need to import an existing database, you can
 directly go to the next chapter: :doc:`Theme Module <theming>`
 
-**Move Filestore**
+Move Filestore
+~~~~~~~~~~~~~~
 
 Copy/paste all the folders included in the filestore folder to the right location on your computer:
 
@@ -149,7 +160,8 @@ Copy/paste all the folders included in the filestore folder to the right locatio
 .. note::
    `/Library` is a hidden folder.
 
-**Database setup**
+Database setup
+~~~~~~~~~~~~~~
 
 Create an empty database:
 

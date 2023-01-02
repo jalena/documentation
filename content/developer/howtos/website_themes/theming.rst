@@ -1,3 +1,5 @@
+.. _theming:
+
 =======
 Theming
 =======
@@ -55,7 +57,7 @@ your company or client, you need to package the theme like an Odoo module.
 
    * - Folder
      - Description
-   * - Data
+   * - data
      - Presets, menus, pages, images, shapes… (\*.xml)
    * - i18n
      - Translations (\*.po, \*.pot)
@@ -169,7 +171,7 @@ By reading the source code, variables related to options are easily spottable.
    data-customize-website-variable="'Sidebar'"
    data-img="..."/>
 
-These variables can be overridden through the `$o-website-value-palettes` map.
+These variables can be overridden through the `$o-website-value-palettes` map for example.
 
 Global
 ~~~~~~
@@ -390,6 +392,10 @@ The colors used in a color combination are accessible and possible to override t
           ),
        )
     );
+
+.. note::
+   In each `o-cc*`, replace the `*` with the digit (from 1 to 5) corresponding to the color
+   combination you are trying to target.
 
 .. seealso::
 

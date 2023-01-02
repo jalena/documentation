@@ -34,7 +34,7 @@ contains the content that makes your page unique.
    page only.
 
 Any Odoo XML file starts with encoding specifications. After that, you must write your code inside
-a `<odoo>` tag.
+an `<odoo>` tag.
 
 .. code-block:: xml
 
@@ -66,9 +66,11 @@ A view will be coded like this:
    * - Attribute
      - Description
    * - id
-     - Name of the modified view.
+     - id for the modified view.
    * - inherited_id
-     - Name of the standard view.
+     - id of the standard view.
+   * - name
+     - Human-readable name of the modified view.
 
 For each Xpath, we will play with two attributes: **expression** and **position**.
 
@@ -93,8 +95,8 @@ with Xpath.
 .. note::
    Every time you create a new template or a new record, you will have to update your module.
 
-Expression
-----------
+Expressions
+-----------
 
 XPath uses path expressions to select nodes in an XML document. The node is selected by following
 a path or steps. Selectors will be used inside the expression to target the right element. The most
@@ -120,6 +122,9 @@ useful selectors are listed below:
 
    * - Attribute selectors
      - Description
+   * - \*
+     - Selects any XML tag. `*` can be replaced by a specific tag if the selection needs to be
+       more precise.
    * - \*[@id="id"]
      - Selects a specific id.
    * - \*[hasclass("class")]
@@ -164,12 +169,14 @@ This Xpath will add a `<div>` before the `<nav>` that is a direct child of the `
        <div>Some content before the header</div>
     </xpath>
 
-This Xpath will add `x_airproof_header` in the class attribute of the header.
+This Xpath will add `x_airproof_header` in the class attribute of the header. You also need to
+define a `separator` attribute to add a space before the class you are adding. You could also use
+the `remove` attribute to remove a specific class.
 
 .. code-block:: xml
 
     <xpath expr="//header" position="attributes">
-       <attribute name="class" add="x_airproof_header" remove="" separator=" "/>
+       <attribute name="class" add="x_airproof_header" separator=" "/>
     </xpath>
 
 This Xpath will remove the first element with a `.breadcrumb` class.
@@ -268,6 +275,8 @@ Create your own template and add it to the list.
 
 **Option**
 
+Use this code to add an option in the Website Builder for your new custom header.
+
 .. code-block:: xml
     :caption: ``/website_airproof/data/presets.xml``
 
@@ -291,7 +300,11 @@ Create your own template and add it to the list.
    * - data-customize-website-variable
      - The name given to the variable.
    * - data-img
-     - The thumbnail it will display in the choices of header offered in the Website Builder UI.
+     - The thumbnail related to your custom template shown in the templates selection in the Website
+       Builder.
+
+Now you have to define explicitly that you want to use your custom template in the Odoo SASS
+variables.
 
 .. code-block:: scss
     :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
@@ -327,7 +340,8 @@ Components
 
 In your custom header, you can call several sub-templates using the `t-call` directive from QWeb:
 
-**Logo** (see :ref:`next section <website_themes/layout/logo>` to learn how to record it).
+Logo
+~~~~
 
 .. code-block:: xml
 
@@ -335,7 +349,17 @@ In your custom header, you can call several sub-templates using the `t-call` dir
        <t t-set="_link_class" t-valuef="..."/>
     </t>
 
-**Menu**.
+Don't forget to record the logo of your website in the database.
+
+.. code-block:: xml
+    :caption: ``/website_airproof/data/images.xml``
+
+    <record id="website.default_website" model="website">
+       <field name="logo" type="base64" file="website_airproof/static/src/img/content/logo.png"/>
+    </record>
+
+Menu
+~~~~
 
 .. code-block:: xml
 
@@ -346,7 +370,8 @@ In your custom header, you can call several sub-templates using the `t-call` dir
        </t>
     </t>
 
-**Sign In**.
+Sign In
+~~~~~~~
 
 .. code-block:: xml
 
@@ -355,7 +380,8 @@ In your custom header, you can call several sub-templates using the `t-call` dir
        <t t-set="_link_class" t-valuef="nav-link"/>
     </t>
 
-**User dropdown**.
+User dropdown
+~~~~~~~~~~~~~
 
 .. code-block:: xml
 
@@ -368,7 +394,8 @@ In your custom header, you can call several sub-templates using the `t-call` dir
        <t t-set="_dropdown_menu_class" t-valuef="..."/>
     </t>
 
-**Language selector**.
+Language selector
+~~~~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
@@ -376,7 +403,8 @@ In your custom header, you can call several sub-templates using the `t-call` dir
        <t t-set="_div_classes" t-valuef="..."/>
     </t>
 
-**Call to action**.
+Call to action
+~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
@@ -384,27 +412,14 @@ In your custom header, you can call several sub-templates using the `t-call` dir
        <t t-set="_div_classes" t-valuef="..."/>
     </t>
 
-**Navbar toggler**.
+Navbar toggler
+~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
     <t t-call="website.navbar_toggler">
        <t t-set="_toggler_class" t-valuef="..."/>
     </t>
-
-.. _website_themes/layout/logo:
-
-Logo
-----
-
-Record the logo of your website in the database.
-
-.. code-block:: xml
-    :caption: ``/website_airproof/data/images.xml``
-
-    <record id="website.default_website" model="website">
-       <field name="logo" type="base64" file="website_airproof/static/src/img/content/logo.png"/>
-    </record>
 
 Footer
 ======
@@ -490,7 +505,7 @@ Copyright
 
 There is only one template available at the moment for the copyright bar.
 
-To replace the content or modify the structure:
+To replace the content or modify its structure, you can add your own code into the following Xpath :
 
 .. code-block:: xml
     :caption: ``/website_airproof/views/website_templates.xml``
@@ -510,7 +525,7 @@ Instead of defining the complete layout for a page, you can create building bloc
 let the user choose where to "drag and drop" them, creating the page layout on their own. We call
 this modular design.
 
-Define an empty area that the user can fill with snippets.
+You can define an empty area that the user can fill with snippets:
 
 .. code-block:: xml
 
