@@ -21,7 +21,7 @@ In your custom theme, you can easily define an animation on a column. You simply
 classes : `o_animate` and `o_anim_fade_in`. The second class will change depending on the type of
 animation you want to use;
 
-Use
+**Use**
 
 .. code-block:: xml
 

@@ -13,21 +13,21 @@ Odoo SaaS
 
 For the first import:
 
-- Create a ZIP file of your module.
-- Connect to the project database.
-- Enable the *Developer Tools*.
-- Go to *Apps* and check that the module *Base import module* is installed.
-- Click on *Import Module* in the menu and upload your ZIP file.
-- Check the *Force Init* box.
+#. Create a ZIP file of your module.
+#. Connect to the project database.
+#. Enable the *Developer Tools*.
+#. Go to *Apps* and check that the module *Base import module* is installed.
+#. Click on *Import Module* in the menu and upload your ZIP file.
+#. Check the *Force Init* box.
 
 In case you have made changes to your module and need to re-import it:
 
-- Create a ZIP file of your module.
-- Connect to the project database.
-- Enable the *Developer Tools*.
-- Click on the Debug mode icon and select *Become Superuser*.
-- Import your module.
-- Log out and log in again to deactivate the *Superuser* mode.
+#. Create a ZIP file of your module.
+#. Connect to the project database.
+#. Enable the *Developer Tools*.
+#. Click on the Debug mode icon and select *Become Superuser*.
+#. Import your module.
+#. Log out and log in again to deactivate the *Superuser* mode.
 
 .. warning::
    The ZIP file size must be less than 50Mb.

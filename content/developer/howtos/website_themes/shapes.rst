@@ -21,7 +21,7 @@ Standard
 
 By default, there is a large selection of background shapes that can be used in your website.
 
-Use.
+**Use**
 
 .. code-block:: xml
 
@@ -34,7 +34,7 @@ Use.
 
 - `data-oe-shape-data` : the location of your shape.
 
-You can flip the shape on the horizontally or vertically using the X or Y axis.
+You can flip the shape horizontally or vertically using the X or Y axis.
 
 .. code-block:: xml
 
@@ -45,7 +45,13 @@ You can flip the shape on the horizontally or vertically using the X or Y axis.
         </div>
     </section>
 
+Colors mapping
+~~~~~~~~~~~~~~
+
 You can also change the default colour mapping of your shape.
+
+Switch colors mapping
+*********************
 
 First, put the c* colour (here `4`).
 
@@ -61,6 +67,9 @@ Then, the replacement colour (here `3`). These replacement colors also range fro
     :caption: ``/website_airproof/static/src/scss/boostrap_overridden.scss``
 
     $o-bg-shapes: change-shape-colors-mapping('web_editor', 'Zigs/06', (4: 3, 5: 1));
+
+Add extra colors mapping
+************************
 
 Add extra colors mapping: this allows you to add a colour variant to the template of a shape,
 while keeping the original as well.
@@ -212,9 +221,9 @@ Custom
 ------
 
 Just like background shapes, it is possible to create your own image shapes : just follow these
-steps !
+steps!
 
-First, you have to create a SVG file for your shape with a ration 1:1 and  `id="filterPath"` on the
+First, you have to create a SVG file for your shape with a ratio 1:1 and  `id="filterPath"` on the
 path. You can then convert your SVG file using this `script <https://github.com/odoo/odoo/tree/dbcb37ec80bb0fef0115c879c15bdc7073894290/addons/web_editor/static/image_shapes>`_. Once it's done, you can add your shape
 in your module :
 

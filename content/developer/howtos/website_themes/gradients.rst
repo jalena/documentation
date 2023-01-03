@@ -16,7 +16,7 @@ In standard, you already have a selection of gradients that you can select direc
 Builder. However, in a custom theme, we will add the gradient directly in the section tag with a
 style attribute.
 
-Use.
+**Use**
 
 .. code-block:: xml
 

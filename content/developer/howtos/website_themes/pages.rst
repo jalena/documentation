@@ -17,6 +17,7 @@ Default pages are built this way:
         <t t-call="website.layout">
 
             <!-- Variables -->
+            <t t-set="additional_title" t-value="'Home'" />
 
             <div id="wrap" class="oe_structure oe_empty">
 
@@ -52,12 +53,6 @@ Hide the Header:
     <t t-set="no_header" t-value="true"/>
 
 Hide the Footer:
-
-.. code-block:: xml
-
-    <t t-set="no_footer" t-value="true"/>
-
-Hide the Copyright:
 
 .. code-block:: xml
 
@@ -199,7 +194,7 @@ Currently supported format by the Website Builder: JPG, GIF, PNG, SVG.
      - Description
    * - name
      - Page name.
-   * - data
+   * - datas
      - Define if the page is published (visible to visitors).
    * - res_model
      - ...

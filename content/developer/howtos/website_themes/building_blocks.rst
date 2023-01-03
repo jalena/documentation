@@ -82,7 +82,7 @@ For inner content snippets, any other HTML tag can be used.
    * - data-snippet
      - ...
 
-The system will automatically add the `data-name` and `data-snippets` attributes during the drag and
+The system will automatically add the `data-name` and `data-snippet` attributes during the drag and
 drop, based on the template's name.
 
 .. warning::
