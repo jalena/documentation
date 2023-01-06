@@ -105,7 +105,7 @@ Standard vs Inherited
 
 - **Standard views**: This is the "base" view, implemented by Odoo, which is directly derived from
   the model. You must not make any changes directly to this view. This allows us to update an Odoo
-  database without overwriting the client's modifications (which will have been made on a duplicate
+  database without overwriting the client's modifications (which will have been made in an inherited
   view). Odoo only updates standard views.
 - **Inherited views**: It's a duplicated view. If there is a duplicate view, there will be two views
   with the same name in the database. But the duplicated view will not have an ID; there is only an 

@@ -46,6 +46,17 @@ your company or client, you need to package the theme like an Odoo module.
     ├── i18n
     ├── lib
     ├── static
+    │   ├── description
+    │   ├── fonts
+    │   ├── image_shapes // Shapes for images
+    │   ├── shapes // Shapes for background
+    │   └── src
+    │       ├── img
+    │       │   ├── content // For those used in the pages of your website
+    │       │   └── wbuilder // For those used in the builder
+    │       ├── js
+    │       ├── scss
+    │       └── snippets // custom snippets
     ├── views
     __init__.py
     __manifest__.py
@@ -109,7 +120,7 @@ required field is the name, but it usually contains much more information.
    * - name
      - Human-readable name of the module (required).
    * - description
-     - Extended description for the module, in reStructuredText.
+     - Extended description for the module, in `reStructuredText <https://en.wikipedia.org/wiki/ReStructuredText>`_.
    * - category
      - Classification category within Odoo.
    * - version
