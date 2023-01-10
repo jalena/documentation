@@ -24,7 +24,7 @@ successes. We invite you to use it as a base to build your own website and adapt
    This documentation is meant to work with Odoo 15.0
 
 .. toctree::
-    :titlesonly:
+    :maxdepth: 2
 
     website_themes/setup
     website_themes/theming
@@ -39,4 +39,3 @@ successes. We invite you to use it as a base to build your own website and adapt
     website_themes/translations
     website_themes/going_live
     website_themes/resources
-    website_themes/coding_guidelines

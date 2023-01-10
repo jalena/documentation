@@ -148,6 +148,8 @@ page object.
 
 Using `<t t-call="website.layout">` we will use the Odoo default page layout with our code.
 
+.. _header_overlay:
+
 Header Overlay
 --------------
 

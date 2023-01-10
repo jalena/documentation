@@ -154,6 +154,14 @@ also allows you to ensure two things:
    the default option or make it useless, giving the user a bad experience. Your option might also
    not work as well with all the other Odoo features relying on it.
 
+.. tip::
+   - Use 4 spaces per indentation level.
+   - Do not use tabs.
+   - Never mix spaces and tabs.
+
+.. seealso::
+   :doc:`Coding Guidelines <../../../contributing/development/coding_guidelines>`
+
 Odoo Variables
 --------------
 
@@ -363,6 +371,10 @@ Add the palette you have just created to the list of palettes offered by the Web
           'color-palettes-name':              'airproof',
        ),
     );
+
+.. image:: theming/theme-colors-airproof.png
+      :alt: Theme colors Airproof
+      :width: 800
 
 **Color Combinations**
 
@@ -600,5 +612,19 @@ opt-in system: Odoo will look at the first line of a JS file and check if it con
    If you want to include files from an external library, you can add them into the `/lib` folder of
    your module.
 
+.. tip::
+   - Use a linter (JSHint,...).
+   - Never add minified JavaScript libraries.
+   - Add `'use strict';` on top of every odoo JS module.
+   - Variables and functions should be *camelcased* (`myVariable`) instead of *snakecased* (`my_variable`).
+   - Do not name a variable event, use `ev.` This is to avoid bugs on non-Chrome browsers as Chrome is
+     magically assigning a global event variable (so if you use the event variable without declaring
+     it, it will be fine on chrome but crash on every other browser).
+   - Use strict comparisons (`===` instead of `==`).
+   - Double quotes for all textual strings (such as `"Hello"`), and single quotes for all other strings,
+     such as a CSS selector `.x_nav_item`.
+   - Always use `this._super.apply(this, arguments)`;
+
 .. seealso::
-   :doc:`Javascript Reference <../../reference/frontend/javascript_reference>`
+   - Detailed JS guidelines: `Odoo Wiki <https://github.com/odoo/odoo/wiki/Javascript-coding-guidelines>`_
+   - Detailed Odoo Javascript framework: :doc:`Javascript Reference <../../reference/frontend/javascript_reference>`

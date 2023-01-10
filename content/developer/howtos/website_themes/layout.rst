@@ -43,6 +43,13 @@ an `<odoo>` tag.
        ...
     </odoo>
 
+.. note::
+   File naming is important to quickly find information through all modules. File names should only
+   contain lowercase, alphanumerics, and underscores: a-z, 0-9, _
+
+   Always add an empty newline at the end of your file. This can be easily configured in your IDE to
+   be done automatically.
+
 Xpath
 =====
 
@@ -94,6 +101,11 @@ with Xpath.
 
 .. note::
    Every time you create a new template or a new record, you will have to update your module.
+
+.. note::
+   *XML IDs* of inheriting views should use the same *ID* as the original record. It helps to find
+   all inheritance at a glance. As final *XML IDs* are prefixed by the module that creates them,
+   there is no overlap.
 
 Expressions
 -----------
@@ -170,13 +182,21 @@ This Xpath will add a `<div>` before the `<nav>` that is a direct child of the `
     </xpath>
 
 This Xpath will add `x_airproof_header` in the class attribute of the header. You also need to
-define a `separator` attribute to add a space before the class you are adding. You could also use
-the `remove` attribute to remove a specific class.
+define a `separator` attribute to add a space before the class you are adding.
 
 .. code-block:: xml
 
     <xpath expr="//header" position="attributes">
        <attribute name="class" add="x_airproof_header" separator=" "/>
+    </xpath>
+
+This Xpath will remove `x_airproof_header` in the class attribute of the header. In this case, you
+don't need to use the `separator` attribute.
+
+.. code-block:: xml
+
+    <xpath expr="//header" position="attributes">
+       <attribute name="class" remove="x_airproof_header" />
     </xpath>
 
 This Xpath will remove the first element with a `.breadcrumb` class.
@@ -421,6 +441,10 @@ Navbar toggler
        <t t-set="_toggler_class" t-valuef="..."/>
     </t>
 
+.. seealso::
+    You can add a :ref:`Header Overlay <header_overlay>` to position your header over the content of
+    your page. This has to be done in each page individually.
+
 Footer
 ======
 
@@ -544,10 +568,6 @@ You can define an empty area that the user can fill with snippets:
      - Define a drag and drop area for the user.
    * - oe_structure_solo
      - Only one snippet can be dropped in this area.
-   * - oe_empty
-     - ...
-   * - oe_structure_not_nearest
-     - ...
 
 You can also populate an existing drop zone with your content:
 
@@ -596,12 +616,16 @@ Hide a specific `<section>` on mobile:
        <!-- Content -->
     </section>
 
-Make `.pt*` and `.pb*` classes responsive:
+You can also hide a `<col>` on mobile:
 
-.. code-block:: scss
+.. code-block:: xml
 
-    @include media-breakpoint-down(lg) {
-       @for $i from 0 through (256 / 8) {
-          @include o-vspacing($i * 8, .5);
-       }
-    }
+    <section>
+       <div class="container">
+          <div class="row d-flex align-items-stretch">
+             <div class="col-lg-4 d-none d-md-block">
+                <!-- Content -->
+             </div>
+          </div>
+       </div>
+    </section>

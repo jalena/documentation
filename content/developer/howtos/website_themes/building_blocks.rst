@@ -162,12 +162,45 @@ Parallax.
         </div>
     </section>
 
-Color filter.
+Add a black color filter with an opacity of 50%.
 
 .. code-block:: xml
 
     <section>
         <div class="o_we_bg_filter bg-black-50"/>
+        <div class="container">
+            <!-- Content -->
+        </div>
+    </section>
+
+Add a white color filter with an opacity of 85%.
+
+.. code-block:: xml
+
+    <section>
+        <div class="o_we_bg_filter bg-white-85"/>
+        <div class="container">
+            <!-- Content -->
+        </div>
+    </section>
+
+Add a custom color filter.
+
+.. code-block:: xml
+
+    <section>
+        <div class="o_we_bg_filter" style="background-color: rgba(39, 110, 114, 0.54) !important;"/>
+        <div class="container">
+            <!-- Content -->
+        </div>
+    </section>
+
+Add a custom gradient filter.
+
+.. code-block:: xml
+
+    <section>
+        <div class="o_we_bg_filter" style="background-image: linear-gradient(135deg, rgba(255, 204, 51, 0.5) 0%, rgba(226, 51, 255, 0.5) 100%) !important;"/>
         <div class="container">
             <!-- Content -->
         </div>
@@ -217,6 +250,12 @@ Create the snippet's content.
    `data-name` and `data-snippet` attributes have to be specified when a snippet is declared in a
    theme page.
 
+.. tip::
+   - Use Bootstrap native classes as much as possible.
+   - Prefix all your custom classes.
+   - Use underscore lowercase notation to name class, e.g.: `.x_nav`, `.x_nav_item`.
+   - Avoid using ID tag.
+
 Add your custom snippet to the list of default snippets, so the user will be able to drag and drop it
 into the page, directly from the edit panel.
 
@@ -262,20 +301,20 @@ to the UI.
 Options are wrapped in groups. Groups can have properties that define how the included options will
 interact with the user interface.
 
-CSS selector - Bind all the options included into the group to a particular element. Can be used in
+`data-selector` - Bind all the options included into the group to a particular element. Can be used in
 combination with `data-target` and `data-exclude`.
 
 .. code-block:: xml
 
     <div data-selector="section, h1, .custom_class, #custom_id">
 
-Custom method name - Is used to bind custom Javascript methods.
+`data-js` - Is used to bind custom Javascript methods.
 
 .. code-block:: xml
 
     <div data-js="CustomMethodName" data-selector="...">
 
-CSS selector - Defines the list of elements where the snippet can be dropped into.
+`data-drop-in` - Defines the list of elements where the snippet can be dropped into.
 
 .. todo:: no css selector ...
 
@@ -283,7 +322,7 @@ CSS selector - Defines the list of elements where the snippet can be dropped int
 
     <div data-selector="..." data-drop-in="...">
 
-CSS selector - Defines the list of elements that the snippet can be dropped beside.
+`data-drop-near` - Defines the list of elements that the snippet can be dropped beside.
 
 .. code-block:: xml
 
