@@ -9,8 +9,8 @@ The building blocks are classified into four categories :
 
 #. **Structure blocks** : to bring basic structure to the website
 #. **Feature blocks** : to describe the features of a product or service
-#. **Dynamic Content blocks** : to provide structure to the content of the website
-#. **Inner Content blocks** : to be added in other building blocks
+#. **Dynamic Content blocks** : blocks that are animated or have an interaction with the backend
+#. **Inner Content blocks** : to be dropped inside other building blocks
 
 In this chapter, we will explore how to create custom building blocks
 and options.
