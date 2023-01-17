@@ -19,7 +19,7 @@ Master data is usually part of the technical or business requirements for the mo
 words, such data is often necessary for the module to work properly. This data will always be
 installed when installing the module.
 
-We already met technical data previously since we have defined :ref:`views <reference/views>` and
+We already met technical data previously since we have defined :ref:`views <reference/view_record>` and
 :ref:`actions <reference/actions>`. Those are one kind of master data.
 
 On top of technical data, business data can be defined, e.g. countries, currencies, units of measure,

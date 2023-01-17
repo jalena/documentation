@@ -167,7 +167,8 @@ developer/reference/orm.rst                               developer/reference/ad
 developer/reference/reports.rst                           developer/reference/addons/reports.rst
 developer/reference/security.rst                          developer/reference/addons/security.rst
 developer/reference/testing.rst                           developer/reference/addons/testing.rst
-developer/reference/views.rst                             developer/reference/addons/views.rst
+developer/reference/view_record.rst                       developer/reference/addons/view_record.rst
+developer/user_interface/views.rst                             developer/reference/addons/views.rst
 developer/reference/javascript_cheatsheet.rst             developer/reference/javascript/javascript_cheatsheet.rst
 developer/reference/javascript_reference.rst              developer/reference/javascript/javascript_reference.rst
 developer/reference/mobile.rst                            developer/reference/javascript/mobile.rst

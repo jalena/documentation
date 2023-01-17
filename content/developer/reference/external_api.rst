@@ -874,7 +874,7 @@ Provides information about Odoo models via its various fields.
     list of the model's fields through a :class:`~odoo.fields.One2many` to
     :ref:`reference/webservice/inspection/fields`
 ``view_ids``
-    :class:`~odoo.fields.One2many` to the :ref:`reference/views` defined
+    :class:`~odoo.fields.One2many` to the :ref:`user_interface/views` defined
     for the model
 ``access_ids``
     :class:`~odoo.fields.One2many` relation to the

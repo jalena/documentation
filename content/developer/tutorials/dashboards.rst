@@ -23,7 +23,7 @@ using this ``board`` module, but it is much easier to do as an Enterprise view. 
 and has extra features not available in ``board``. Some other dashboards within Odoo also exist,
 but they are custom made and are beyond the scope of this tutorial.
 
-The documentation related to this topic can be found in :ref:`reference/views/dashboard`.
+The documentation related to this topic can be found in :ref:`reference/user_interface/views/dashboard`.
 
 File Structure
 ==============
@@ -129,7 +129,7 @@ Aggregations
 Building a dashboard view is very similar to what you have previously done in
 :ref:`tutorials/getting_started/07_basicviews`. For the dashboard view, we use the `dashboard` root
 element and choose from its possible tags (see all the possibilities and their attributes in the
-:ref:`reference/views/dashboard` documentation). So a simple dashboard example is:
+:ref:`reference/user_interface/views/dashboard` documentation). So a simple dashboard example is:
 
 .. code-block:: xml
 

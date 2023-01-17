@@ -64,13 +64,13 @@ An Odoo module **can** contain a number of elements:
     these classes are automatically mapped to database columns thanks to the
     :abbr:`ORM (Object-Relational Mapping)` layer.
 
-:ref:`Object views <reference/views>`
+:ref:`Object views <user_interface/views>`
     Define UI display
 
 :ref:`Data files <reference/data>`
     XML or CSV files declaring the model data:
 
-    * :ref:`views <reference/views>` or :ref:`reports <reference/reports>`,
+    * :ref:`views <user_interface/views>` or :ref:`reports <reference/reports>`,
     * configuration data (modules parametrization, :ref:`security rules <reference/security>`),
     * demonstration data
     * and more

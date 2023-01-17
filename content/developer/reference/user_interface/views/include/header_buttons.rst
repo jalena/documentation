@@ -1,7 +1,7 @@
 .. rst-class:: o-definition-list
 
 ``header``
-  defines custom buttons similar to :ref:`list view buttons <reference/views/list/button>` in the control panel
+  defines custom buttons similar to :ref:`list view buttons <reference/user_interface/views/list/button>` in the control panel
   that perform an action/call a model's method.
 
   .. code-block:: xml
@@ -16,7 +16,7 @@
   .. rst-class:: o-definition-list
 
   ``button``
-    as a :ref:`list view button <reference/views/list/button>` which accepts an extra attribute when placed in a `header`:
+    as a :ref:`list view button <reference/user_interface/views/list/button>` which accepts an extra attribute when placed in a `header`:
 
     .. rst-class:: o-definition-list
 

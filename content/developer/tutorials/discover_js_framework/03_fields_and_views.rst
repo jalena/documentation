@@ -204,7 +204,7 @@ whenever it is set to true.
      <{GITHUB_PATH}/addons/account/static/src/components/account_type_selection/account_type_selection.js>`_
    - `Example: A field inheriting another (XML)
      <{GITHUB_PATH}/addons/account/static/src/components/account_type_selection/account_type_selection.xml>`_
-   - :ref:`Documentation on xpath <reference/views/inheritance>`
+   - :ref:`Documentation on xpath <reference/view_record/inheritance>`
 
 4. Message for some customers
 =============================

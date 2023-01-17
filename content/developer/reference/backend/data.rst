@@ -236,7 +236,7 @@ Defines an ``ir.ui.menu`` record with a number of defaults and fallbacks:
 ``template``
 ------------
 
-Creates a :ref:`QWeb view <reference/views/qweb>` requiring only the ``arch``
+Creates a :ref:`QWeb view <reference/user_interface/views/qweb>` requiring only the ``arch``
 section of the view, and allowing a few *optional* attributes:
 
 ``id``

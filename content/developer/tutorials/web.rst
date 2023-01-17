@@ -535,7 +535,7 @@ characteristics:
 .. note::
    The rationale behind using QWeb instead of existing javascript template
    engines is the extensibility of pre-existing (third-party) templates, much
-   like Odoo :ref:`views <reference/views>`.
+   like Odoo :ref:`views <reference/view_record>`.
 
    Most javascript template engines are text-based which precludes easy
    structural extensibility where an XML-based templating engine can be
@@ -1819,7 +1819,7 @@ multiple views depending on the original action's requirements:
 The Views
 ~~~~~~~~~
 
-Most :ref:`Odoo views <reference/views>` are implemented through a subclass
+Most :ref:`Odoo views <reference/view_record>` are implemented through a subclass
 of :class:`odoo.web.View` which provides a bit of generic basic structure
 for handling events and displaying model information.
 

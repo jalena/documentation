@@ -23,7 +23,7 @@ List
 ====
 
 **Reference**: the documentation related to this topic can be found in
-:ref:`reference/views/list`.
+:ref:`reference/user_interface/views/list`.
 
 .. note::
 
@@ -72,7 +72,7 @@ Form
 ====
 
 **Reference**: the documentation related to this topic can be found in
-:ref:`reference/views/form`.
+:ref:`reference/user_interface/views/form`.
 
 .. note::
 
@@ -134,7 +134,7 @@ Search
 ======
 
 **Reference**: the documentation related to this topic can be found in
-:ref:`reference/views/search`.
+:ref:`reference/user_interface/views/search`.
 
 .. note::
 
@@ -154,7 +154,7 @@ Search
 
 Search views are slightly different from the list and form views since they don't display
 *content*. Although they apply to a specific model, they are used to filter
-other views' content (generally aggregated views such as :ref:`reference/views/list`).
+other views' content (generally aggregated views such as :ref:`reference/user_interface/views/list`).
 Beyond the difference in use case, they are defined the same way.
 
 Their root element is ``<search>``. The most basic version of this view simply

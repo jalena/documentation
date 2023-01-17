@@ -165,7 +165,7 @@ View Inheritance
 ================
 
 **Reference**: the documentation related to this topic can be found in
-:ref:`reference/views/inheritance`.
+:ref:`reference/view_record/inheritance`.
 
 .. note::
 

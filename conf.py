@@ -56,6 +56,7 @@ master_doc = 'index'
 exclude_patterns = [
     'locale',
     'README.*',
+    '**/include',
     'bin', 'include', 'lib',
     'odoo',
 ]

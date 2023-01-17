@@ -73,6 +73,7 @@ like this:
             'web/static/lib/bootstrap/**/*',
             'web/static/src/js/boot.js',
             'web/static/src/js/webclient.js',
+            'web/static/src/xml/webclient.xml',
         ],
         'web.qunit_suite_tests': [
             'web/static/src/js/webclient_tests.js',
@@ -92,9 +93,6 @@ know:
 
 - `web.assets_frontend`: this bundle is about all that is specific to the public
   website: ecommerce, portal, forum, blog, ...
-
-- `web.assets_qweb`: all static XML templates used in the backend environment
-  and in the point of sale.
 
 - `web.qunit_suite_tests`: all javascript qunit testing code (tests, helpers, mocks)
 
