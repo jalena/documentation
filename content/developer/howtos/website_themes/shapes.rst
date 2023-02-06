@@ -2,130 +2,125 @@
 Shapes
 ======
 
-Shapes are very useful if you want to add some personality to your website.
+Shapes are handy if you want to add personality to your website.
 
-In this chapter, you will learn how to :
+In this chapter, you will learn how to add standard and custom background and image shapes.
 
-- Add standard background shape and image shape to your content.
-- Add a custom background shape.
-- Add a custom image shape.
-
-Background Shapes
+Background shapes
 =================
 
-Background shapes are SVG images that you can add as a decorative background in your different
-sections. Each shape has one or several customizable colors. Some of them are also animated.
+Background shapes are SVG files that you can add as a decorative background in your different
+sections. Each shape has one or several customizable colors, and some of them are animated.
 
 Standard
 --------
 
-By default, there is a large selection of background shapes that can be used in your website.
+A large selection of default background shapes is available.
 
 **Use**
 
 .. code-block:: xml
 
-    <section data-oe-shape-data="{'shape':'web_editor/Zigs/06'}">
-        <div class="o_we_shape o_web_editor_Zigs_06"/>
-        <div class="container">
-            <!-- Content -->
+   <section data-oe-shape-data="{'shape':'web_editor/Zigs/06'}">
+       <div class="o_we_shape o_web_editor_Zigs_06"/>
+       <div class="container">
+           <!-- Content -->
         </div>
-    </section>
+   </section>
 
-- `data-oe-shape-data` : the location of your shape.
+`data-oe-shape-data` is the location of your shape.
 
-You can flip the shape horizontally or vertically using the X or Y axis.
+Flip the shape horizontally or vertically by using the X or Y axis.
 
 .. code-block:: xml
 
-    <section data-oe-shape-data="{'shape':'web_editor/Zigs/06','flip':[x,y]}">
-        <div class="o_we_shape o_we_flip_x o_we_flip_y o_web_editor_Zigs_06"/>
-        <div class="container">
-            <!-- Content -->
-        </div>
-    </section>
+   <section data-oe-shape-data="{'shape':'web_editor/Zigs/06','flip':[x,y]}">
+       <div class="o_we_shape o_we_flip_x o_we_flip_y o_web_editor_Zigs_06"/>
+       <div class="container">
+           <!-- Content -->
+       </div>
+   </section>
 
 Colors mapping
 ~~~~~~~~~~~~~~
 
-You can also change the default colour mapping of your shape.
+You can also change the default color mapping of your shape.
 
 Switch colors mapping
 *********************
 
-First, put the c* colour (here `4`).
+First, put the c* color (here `4`).
 
-Then, the replacement colour (here `3`). These replacement colors also range from 1 to 5:
+Then, the replacement color (here `3`). These replacement colors also range from 1 to 5:
 
-- `1` = background colour of the colour preset 1 (o-cc1).
-- `2` = background colour of the colour preset 2 (o-cc2).
-- `3` = background colour of the colour preset 3 (o-cc3).
-- `4` = background colour of the colour preset 4 (o-cc4).
-- `5` = background colour of the colour preset 5 (o-cc5).
+- `1` = background color of the color preset 1 (o-cc1).
+- `2` = background color of the color preset 2 (o-cc2).
+- `3` = background color of the color preset 3 (o-cc3).
+- `4` = background color of the color preset 4 (o-cc4).
+- `5` = background color of the color preset 5 (o-cc5).
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/boostrap_overridden.scss``
+   :caption: ``/website_airproof/static/src/scss/boostrap_overridden.scss``
 
-    $o-bg-shapes: change-shape-colors-mapping('web_editor', 'Zigs/06', (4: 3, 5: 1));
+   $o-bg-shapes: change-shape-colors-mapping('web_editor', 'Zigs/06', (4: 3, 5: 1));
 
 Add extra colors mapping
 ************************
 
-Add extra colors mapping: this allows you to add a colour variant to the template of a shape,
-while keeping the original as well.
+Adding extra color mapping allows you to add a color variant to the template of a shape while
+keeping the original.
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/boostrap_overridden.scss``
+   :caption: ``/website_airproof/static/src/scss/boostrap_overridden.scss``
 
-    $o-bg-shapes: add-extra-shape-colors-mapping('web_editor', 'Zigs/06', 'second', (4: 3, 5: 1));
+   $o-bg-shapes: add-extra-shape-colors-mapping('web_editor', 'Zigs/06', 'second', (4: 3, 5: 1));
 
 .. code-block:: xml
 
-    <section data-oe-shape-data="{'shape':'web_editor/Zigs/06'}">
-        <div class="o_we_shape o_web_editor_Zigs_06 o_second_extra_shape_mapping"/>
-        <div class="container">
-            <!-- Content -->
-        </div>
-    </section>
+   <section data-oe-shape-data="{'shape':'web_editor/Zigs/06'}">
+       <div class="o_we_shape o_web_editor_Zigs_06 o_second_extra_shape_mapping"/>
+       <div class="container">
+           <!-- Content -->
+       </div>
+   </section>
 
 Custom
 ------
 
-Sometimes, the standard shapes might not be enough and your design might require one or several
-custom shapes to be created. No problem here!
+Sometimes, your design might require creating one or several custom shapes.
 
-Firstly, you need to create a SVG file for your shape, like this one.
+Firstly, you need to create an SVG file for your shape.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/static/shapes/hexagons/01.svg``
+   :caption: ``/website_airproof/static/shapes/hexagons/01.svg``
 
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="86" height="100">
-        <polygon points="0 25, 43 0, 86 25, 86 75, 43 100, 0 75" style="fill: #3AADAA;"/>
-    </svg>
+   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="86" height="100">
+       <polygon points="0 25, 43 0, 86 25, 86 75, 43 100, 0 75" style="fill: #3AADAA;"/>
+   </svg>
 
 Make sure to use colors from the default Odoo palette for your shape.
 
 .. code-block:: scss
 
-    default_palette = {
-        '1': '#3AADAA',
-        '2': '#7C6576',
-        '3': '#F6F6F6',
-        '4': '#FFFFFF',
-        '5': '#383E45',
-    }
+   default_palette = {
+       '1': '#3AADAA',
+       '2': '#7C6576',
+       '3': '#F6F6F6',
+       '4': '#FFFFFF',
+       '5': '#383E45',
+   }
 
 Declare your shape file.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/shapes.xml``
+   :caption: ``/website_airproof/data/shapes.xml``
 
-    <record id="shape_hexagon_01" model="ir.attachment">
-        <field name="name">01.svg</field>
-        <field name="datas" type="base64" file="website_airproof/static/shapes/hexagons/01.svg"/>
-        <field name="url">/web_editor/shape/illustration/hexagons/01.svg</field>
-        <field name="public" eval="True"/>
-    </record>
+   <record id="shape_hexagon_01" model="ir.attachment">
+       <field name="name">01.svg</field>
+       <field name="datas" type="base64" file="website_airproof/static/shapes/hexagons/01.svg"/>
+       <field name="url">/web_editor/shape/illustration/hexagons/01.svg</field>
+       <field name="public" eval="True"/>
+   </record>
 
 .. todo:: Missing description in table ...
 
@@ -137,69 +132,70 @@ Declare your shape file.
    * - Field
      - Description
    * - name
-     - Name of the shape.
+     - Name of the shape
    * - datas
-     - The path to the shape.
+     - Path to the shape
    * - url
      - ...
    * - public
-     - Make the shape available for later edit.
+     - Makes the shape available for later editing.
 
 Define the styles of your shape.
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
+   :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
 
-    $o-bg-shapes: map-merge($o-bg-shapes,
-        (
-            'illustration': map-merge(
-                map-get($o-bg-shapes, 'illustration') or (),
-                (
-                    'hexagons/01': ('position': center center, 'size': auto 100%, 'colors': (1), 'repeat-y': false),
-                ),
-            ),
-        )
-    );
+   $o-bg-shapes: map-merge($o-bg-shapes,
+       (
+           'illustration': map-merge(
+               map-get($o-bg-shapes, 'illustration') or (),
+               (
+                   'hexagons/01': ('position': center center, 'size': auto 100%, 'colors': (1), 'repeat-y': false),
+               ),
+           ),
+       )
+   );
 
-- `hexagons/01`: corresponds to the location of your file in the `shapes` folder.
-- `colors`: The color c* you want it to have (this will override the color you specified in your svg).
+- `hexagons/01` corresponds to the location of your file in the `shapes` folder.
+- `colors` represents the color c* you want it to have (this will override the color you specified
+  in your SVG).
 
-Last but not least, add your shape to the list of shapes available in the Website Builder.
+Lastly, add your shape to the list of shapes available on the Website Builder.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/views/snippets/options.xml``
+   :caption: ``/website_airproof/views/snippets/options.xml``
 
-    <template id="snippet_options_background_options" inherit_id="website.snippet_options_background_options" name="Shapes">
-        <xpath expr="//*[hasclass('o_we_shape_menu')]/*[last()]" position="after">
-            <we-select-page string="Theme">
-                <we-button data-shape="illustration/hexagons/01" data-select-label="Hexagon 01"/>
-            </we-select-page>
-        </xpath>
-    </template>
+   <template id="snippet_options_background_options" inherit_id="website.snippet_options_background_options" name="Shapes">
+       <xpath expr="//*[hasclass('o_we_shape_menu')]/*[last()]" position="after">
+           <we-select-page string="Theme">
+               <we-button data-shape="illustration/hexagons/01" data-select-label="Hexagon 01"/>
+           </we-select-page>
+       </xpath>
+   </template>
 
-Your custom shape is now ready and you can use it in the same way as the other standard shapes.
+Your custom shape can now be used the same way as standard shapes.
 
-Image Shapes
+Image shapes
 ============
 
-Image shapes are SVG that you can add as a clipping mask on your website images. Some shapes have
-customizable colors and some are animated.
+Image shapes are SVG files you can add as a clipping mask on your images. Some shapes have
+customizable colors, and some are animated.
 
 Standard
 --------
 
-By default, there is a large selection of image shapes that can be used in your website.
+A large selection of default image shapes is available.
 
-Use.
+**Use**
 
 .. code-block:: xml
 
-    <img src="..."
-        class="img img-fluid mx-auto"
-        alt="..."
-        data-shape="web_editor/solid/blob_2_solid_str"
-        data-shape-colors="#35979C;;;;"
-    >
+   <img src="..."
+       class="img img-fluid mx-auto"
+       alt="..."
+       data-shape="web_editor/solid/blob_2_solid_str"
+       data-shape-colors="#35979C;;;;"
+   >
 
 .. list-table::
    :header-rows: 1
@@ -209,10 +205,10 @@ Use.
    * - Attribute
      - Description
    * - data-shape
-     - Location of the shape.
+     - Location of the shape
    * - data-shape-colors
-     - The colors applied to your shape.
+     - Colors applied to the shape
 
 .. warning::
-   It might be possible that your image shape is not applied after your changes. Just open the
-   Website Builder and save the page to force the loading of the shape.
+   Sometimes, your image shape might not be applied after adding your changes. To fix the issue,
+   open the Website Builder and save the page to force the shape to load.

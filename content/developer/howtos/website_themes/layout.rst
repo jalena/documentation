@@ -13,57 +13,53 @@ In this chapter, you will learn how to:
 Default
 =======
 
-An Odoo page is the visual result of combining two kinds of elements, cross-pages and unique. By
-default, Odoo provides you with a Header, a Footer (cross-pages), and a unique main element that
-contains the content that makes your page unique.
+An Odoo page combines cross-page and unique elements. Cross-pages elements are the same on every
+page, while unique elements are only related to a specific page. By default, a page has two
+cross-page elements, the header and the footer, and a unique main element that contains the specific
+content of that page.
 
 .. code-block:: xml
 
-    <div id="wrapwrap">
-       <header/>
-          <main>
-             <div id="wrap" class="oe_structure">
-                <!-- Page Content -->
-             </div>
-          </main>
-       <footer/>
-    </div>
-
-.. note::
-   Cross-pages elements will be the same on every page. Unique elements are related to a specific
-   page only.
+   <div id="wrapwrap">
+      <header/>
+         <main>
+            <div id="wrap" class="oe_structure">
+               <!-- Page Content -->
+            </div>
+         </main>
+      <footer/>
+   </div>
 
 Any Odoo XML file starts with encoding specifications. After that, you must write your code inside
 an `<odoo>` tag.
 
 .. code-block:: xml
 
-    <?xml version="1.0" encoding="utf-8" ?>
-    <odoo>
-       ...
-    </odoo>
+   <?xml version="1.0" encoding="utf-8" ?>
+   <odoo>
+      ...
+   </odoo>
 
 .. note::
-   File naming is important to quickly find information through all modules. File names should only
-   contain lowercase, alphanumerics, and underscores: a-z, 0-9, _
+   Using precise file names is important to find information through all modules quickly. File names
+   should only contain lowercase alphanumerics and underscores.
 
-   Always add an empty newline at the end of your file. This can be easily configured in your IDE to
-   be done automatically.
+   Always add an empty line at the end of your file. This can be done automatically by configuring
+   your IDE.
 
-Xpath
+XPath
 =====
 
 XPath (XML Path Language) is an expression language that enables you to navigate through elements
-and attributes in an XML document easily. We are going to use XPath to extend standard Odoo
-templates.
+and attributes in an XML document easily. XPath is used to extend standard Odoo templates.
 
-A view will be coded like this:
+A view is coded the following way.
 
 .. code-block:: xml
 
-    <template id="..." inherit_id="..." name="...">
-       <!-- Content -->
-    </template>
+   <template id="..." inherit_id="..." name="...">
+      <!-- Content -->
+   </template>
 
 .. list-table::
    :header-rows: 1
@@ -73,46 +69,42 @@ A view will be coded like this:
    * - Attribute
      - Description
    * - id
-     - id for the modified view.
+     - ID of the modified view
    * - inherited_id
-     - id of the standard view.
+     - ID of the standard view
    * - name
-     - Human-readable name of the modified view.
+     - Human-readable name of the modified view
 
-For each Xpath, we will play with two attributes: **expression** and **position**.
+For each XPath, you modify two attributes: **expression** and **position**.
 
 **Example**
 
 .. code-block:: xml
-    :caption: ``/website_airproof/views/website_templates.xml``
+   :caption: ``/website_airproof/views/website_templates.xml``
 
-    <template id="layout" inherit_id="website.layout" name="Welcome Message">
-       <xpath expr="//header" position="before">
-          <!-- Content -->
-       </xpath>
-    </template>
+   <template id="layout" inherit_id="website.layout" name="Welcome Message">
+      <xpath expr="//header" position="before">
+         <!-- Content -->
+      </xpath>
+   </template>
 
-This XPath will add a welcome message just before the page content. You can do a lot more things
-with Xpath.
+This XPath adds a welcome message right before the page content.
 
 .. warning::
-   Be careful replacing default elements attributes. As your theme will extend the default one,
-   your changes will take priority in any future Odoo update.
+   Be careful when replacing default elements' attributes. As your theme extends the default one,
+   your changes will take priority over any future Odoo update.
 
 .. note::
-   Every time you create a new template or a new record, you will have to update your module.
-
-.. note::
-   *XML IDs* of inheriting views should use the same *ID* as the original record. It helps to find
-   all inheritance at a glance. As final *XML IDs* are prefixed by the module that creates them,
-   there is no overlap.
+   - You should update your module every time you create a new template or record.
+   - *XML IDs* of inheriting views should use the same *ID* as the original record. It helps to find
+     all inheritance at a glance. As final *XML IDs* are prefixed by the module that creates them,
+     there is no overlap.
 
 Expressions
 -----------
 
-XPath uses path expressions to select nodes in an XML document. The node is selected by following
-a path or steps. Selectors will be used inside the expression to target the right element. The most
-useful selectors are listed below:
+XPath uses path expressions to select nodes in an XML document. Selectors are used inside the
+expression to target the right element. The most useful ones are listed below.
 
 .. list-table::
    :header-rows: 1
@@ -138,7 +130,7 @@ useful selectors are listed below:
      - Selects any XML tag. `*` can be replaced by a specific tag if the selection needs to be
        more precise.
    * - \*[@id="id"]
-     - Selects a specific id.
+     - Selects a specific ID.
    * - \*[hasclass("class")]
      - Selects a specific class.
    * - \*[@name="name"]
@@ -149,8 +141,8 @@ useful selectors are listed below:
 Position
 --------
 
-The position will define where the code will be placed inside the template. The possible values are
-listed below:
+The position defines where the code is placed inside the template. The possible values are listed
+below:
 
 .. list-table::
    :header-rows: 1
@@ -160,69 +152,69 @@ listed below:
    * - Position
      - Description
    * - replace
-     - Replaces the targeted node with the Xpath content.
+     - Replaces the targeted node with the XPath content.
    * - inside
-     - Adds the Xpath content inside the targeted node.
+     - Adds the XPath content inside the targeted node.
    * - before
-     - Adds the Xpath content before the targeted node.
+     - Adds the XPath content before the targeted node.
    * - after
-     - Adds the Xpath content after the targeted node.
+     - Adds the XPath content after the targeted node.
    * - attributes
-     - Adds the Xpath content inside an attribute.
+     - Adds the XPath content inside an attribute.
 
 Examples
 --------
 
-This Xpath will add a `<div>` before the `<nav>` that is a direct child of the `<header>`.
+This XPath adds a `<div>` before the `<nav>` that is a direct child of the `<header>`.
 
 .. code-block:: xml
 
-    <xpath expr="//header/nav" position="before">
-       <div>Some content before the header</div>
-    </xpath>
+   <xpath expr="//header/nav" position="before">
+      <div>Some content before the header</div>
+   </xpath>
 
-This Xpath will add `x_airproof_header` in the class attribute of the header. You also need to
-define a `separator` attribute to add a space before the class you are adding.
-
-.. code-block:: xml
-
-    <xpath expr="//header" position="attributes">
-       <attribute name="class" add="x_airproof_header" separator=" "/>
-    </xpath>
-
-This Xpath will remove `x_airproof_header` in the class attribute of the header. In this case, you
-don't need to use the `separator` attribute.
+This XPath adds `x_airproof_header` in the class attribute of the header. You also need to define a
+`separator` attribute to add a space before the class you are adding.
 
 .. code-block:: xml
 
-    <xpath expr="//header" position="attributes">
-       <attribute name="class" remove="x_airproof_header" />
-    </xpath>
+   <xpath expr="//header" position="attributes">
+      <attribute name="class" add="x_airproof_header" separator=" "/>
+   </xpath>
 
-This Xpath will remove the first element with a `.breadcrumb` class.
-
-.. code-block:: xml
-
-    <xpath expr="//*[hasclass('breadcrumb')]" position="replace"/>
-
-This Xpath will add a extra `<li>` element after the last child of the `<ul>` element.
+This XPath removes `x_airproof_header` in the class attribute of the header. In this case, you don't
+need to use the `separator` attribute.
 
 .. code-block:: xml
 
-    <xpath expr="//ul" position="inside">
-       <li>Last element of the list</li>
-    </xpath>
+   <xpath expr="//header" position="attributes">
+      <attribute name="class" remove="x_airproof_header" />
+   </xpath>
 
-You will find more details about Xpath in this `Cheat Sheet <https://devhints.io/xpath>`_.
+This XPath removes the first element with a `.breadcrumb` class.
 
-Qweb
+.. code-block:: xml
+
+   <xpath expr="//*[hasclass('breadcrumb')]" position="replace"/>
+
+This XPath adds an extra `<li>` element after the last child of the `<ul>` element.
+
+.. code-block:: xml
+
+   <xpath expr="//ul" position="inside">
+      <li>Last element of the list</li>
+   </xpath>
+
+You can find more information about XPath in this `cheat sheet <https://devhints.io/xpath>`_.
+
+QWeb
 ====
 
-QWeb is the primary templating engine used by Odoo. It is an XML templating engine used mostly to
+QWeb is the primary templating engine used by Odoo. It is an XML templating engine mainly used to
 generate HTML fragments and pages.
 
 .. seealso::
-   Check our :doc:`documentation about Qweb <../../reference/frontend/qweb>`.
+   :doc:`QWeb templates documentation <../../reference/frontend/qweb>`.
 
 Background
 ==========
@@ -232,34 +224,34 @@ You can define a color or an image as the background of your website.
 **Colors**
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
+   :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
 
-    $o-color-palettes: map-merge($o-color-palettes,
-       (
-          'airproof': (
-             'o-cc1-bg':                     'o-color-5',
-             'o-cc5-bg':                     'o-color-1',
-          ),
-        )
-    );
+   $o-color-palettes: map-merge($o-color-palettes,
+      (
+         'airproof': (
+            'o-cc1-bg':                     'o-color-5',
+            'o-cc5-bg':                     'o-color-1',
+         ),
+       )
+   );
 
-**Image / Pattern**
+**Image / pattern**
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
+   :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
 
-    $o-website-values-palettes: (
-       (
-          'body-image': '/website_airproof/static/src/img/background-lines.svg',
-          'body-image-type': 'image' or 'pattern'
-       )
-    );
+   $o-website-values-palettes: (
+      (
+         'body-image': '/website_airproof/static/src/img/background-lines.svg',
+         'body-image-type': 'image' or 'pattern'
+      )
+   );
 
 Header
 ======
 
-By default, Odoo header contains a responsive navigation menu and the company's logo. You can
-easily add new elements or create your own template.
+By default, the header contains a responsive navigation menu and the company's logo. You can easily
+add new elements or create your own template.
 
 Standard
 --------
@@ -270,20 +262,20 @@ Enable one of the header default templates.
    Don't forget that you may need to disable the active header template first.
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
+   :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
 
-    $o-website-values-palettes: (
-       (
-          'header-template': 'Contact',
-       ),
-    );
+   $o-website-values-palettes: (
+      (
+         'header-template': 'Contact',
+      ),
+   );
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/presets.xml``
+   :caption: ``/website_airproof/data/presets.xml``
 
-    <record id="website.template_header_contact" model="ir.ui.view">
-       <field name="active" eval="True"/>
-    </record>
+   <record id="website.template_header_contact" model="ir.ui.view">
+      <field name="active" eval="True"/>
+   </record>
 
 Custom
 ------
@@ -295,18 +287,18 @@ Create your own template and add it to the list.
 
 **Option**
 
-Use this code to add an option in the Website Builder for your new custom header.
+Use the following code to add an option for your new custom header on the Website Builder.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/presets.xml``
+   :caption: ``/website_airproof/data/presets.xml``
 
-    <template id="template_header_opt" inherit_id="website.snippet_options" name="Header Template - Option">
-       <xpath expr="//we-select[@data-variable='header-template']" position="inside">
-          <we-button title="airproof"
-             data-customize-website-views="website_airproof.header"
-             data-customize-website-variable="'airproof'"  data-img="/website_airproof/static/src/img/wbuilder/template_header_opt.svg"/>
-       </xpath>
-    </template>
+   <template id="template_header_opt" inherit_id="website.snippet_options" name="Header Template - Option">
+      <xpath expr="//we-select[@data-variable='header-template']" position="inside">
+         <we-button title="airproof"
+            data-customize-website-views="website_airproof.header"
+            data-customize-website-variable="'airproof'"  data-img="/website_airproof/static/src/img/wbuilder/template_header_opt.svg"/>
+      </xpath>
+   </template>
 
 .. list-table::
    :header-rows: 1
@@ -316,44 +308,43 @@ Use this code to add an option in the Website Builder for your new custom header
    * - Attribute
      - Description
    * - data-customize-website-views
-     - The template to enable.
+     - The template to enable
    * - data-customize-website-variable
-     - The name given to the variable.
+     - The name given to the variable
    * - data-img
-     - The thumbnail related to your custom template shown in the templates selection in the Website
-       Builder.
+     - The thumbnail of the custom template shown in the templates selection on the Website Builder
 
-Now you have to define explicitly that you want to use your custom template in the Odoo SASS
+Now you have to explicitly define that you want to use your custom template in the Odoo SASS
 variables.
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
+   :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
 
-    $o-website-values-palettes: (
-       (
-          'header-template': 'airproof',
-       ),
-    );
+   $o-website-values-palettes: (
+      (
+         'header-template': 'airproof',
+      ),
+   );
 
 **Layout**
 
 .. code-block:: xml
-    :caption: ``/website_airproof/views/website_templates.xml``
+   :caption: ``/website_airproof/views/website_templates.xml``
 
-    <record id="header" model="ir.ui.view">
-       <field name="name">Airproof Header</field>
-       <field name="type">qweb</field>
-       <field name="key">website_airproof.header</field>
-       <field name="inherit_id" ref="website.layout"/>
-       <field name="mode">extension</field>
-       <field name="arch" type="xml">
-          <xpath expr="//header//nav" position="replace">
-             <!-- Static Content -->
-             <!-- Components -->
-             <!-- Editable areas -->
-          </xpath>
-       </field>
-    </record>
+   <record id="header" model="ir.ui.view">
+      <field name="name">Airproof Header</field>
+      <field name="type">qweb</field>
+      <field name="key">website_airproof.header</field>
+      <field name="inherit_id" ref="website.layout"/>
+      <field name="mode">extension</field>
+      <field name="arch" type="xml">
+         <xpath expr="//header//nav" position="replace">
+            <!-- Static Content -->
+            <!-- Components -->
+            <!-- Editable areas -->
+         </xpath>
+      </field>
+   </record>
 
 Components
 ----------
@@ -365,90 +356,90 @@ Logo
 
 .. code-block:: xml
 
-    <t t-call="website.placeholder_header_brand">
-       <t t-set="_link_class" t-valuef="..."/>
-    </t>
+   <t t-call="website.placeholder_header_brand">
+      <t t-set="_link_class" t-valuef="..."/>
+   </t>
 
 Don't forget to record the logo of your website in the database.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/images.xml``
+   :caption: ``/website_airproof/data/images.xml``
 
-    <record id="website.default_website" model="website">
-       <field name="logo" type="base64" file="website_airproof/static/src/img/content/logo.png"/>
-    </record>
+   <record id="website.default_website" model="website">
+      <field name="logo" type="base64" file="website_airproof/static/src/img/content/logo.png"/>
+   </record>
 
 Menu
 ~~~~
 
 .. code-block:: xml
 
-    <t t-foreach="website.menu_id.child_id" t-as="submenu">
-       <t t-call="website.submenu">
-          <t t-set="item_class" t-valuef="nav-item"/>
-          <t t-set="link_class" t-valuef="nav-link"/>
-       </t>
-    </t>
+   <t t-foreach="website.menu_id.child_id" t-as="submenu">
+      <t t-call="website.submenu">
+         <t t-set="item_class" t-valuef="nav-item"/>
+         <t t-set="link_class" t-valuef="nav-link"/>
+      </t>
+   </t>
 
-Sign In
+Sign in
 ~~~~~~~
 
 .. code-block:: xml
 
-    <t t-call="portal.placeholder_user_sign_in">
-       <t t-set="_item_class" t-valuef="nav-item"/>
-       <t t-set="_link_class" t-valuef="nav-link"/>
-    </t>
+   <t t-call="portal.placeholder_user_sign_in">
+      <t t-set="_item_class" t-valuef="nav-item"/>
+      <t t-set="_link_class" t-valuef="nav-link"/>
+   </t>
 
 User dropdown
 ~~~~~~~~~~~~~
 
 .. code-block:: xml
 
-    <t t-call="portal.user_dropdown">
-       <t t-set="_user_name" t-value="true"/>
-       <t t-set="_icon" t-value="false"/>
-       <t t-set="_avatar" t-value="false"/>
-       <t t-set="_item_class" t-valuef="nav-item dropdown"/>
-       <t t-set="_link_class" t-valuef="nav-link"/>
-       <t t-set="_dropdown_menu_class" t-valuef="..."/>
-    </t>
+   <t t-call="portal.user_dropdown">
+      <t t-set="_user_name" t-value="true"/>
+      <t t-set="_icon" t-value="false"/>
+      <t t-set="_avatar" t-value="false"/>
+      <t t-set="_item_class" t-valuef="nav-item dropdown"/>
+      <t t-set="_link_class" t-valuef="nav-link"/>
+      <t t-set="_dropdown_menu_class" t-valuef="..."/>
+   </t>
 
 Language selector
 ~~~~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
-    <t t-call="website.placeholder_header_language_selector">
-       <t t-set="_div_classes" t-valuef="..."/>
-    </t>
+   <t t-call="website.placeholder_header_language_selector">
+      <t t-set="_div_classes" t-valuef="..."/>
+   </t>
 
 Call to action
 ~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
-    <t t-call="website.placeholder_header_call_to_action">
-       <t t-set="_div_classes" t-valuef="..."/>
-    </t>
+   <t t-call="website.placeholder_header_call_to_action">
+      <t t-set="_div_classes" t-valuef="..."/>
+   </t>
 
 Navbar toggler
 ~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
-    <t t-call="website.navbar_toggler">
-       <t t-set="_toggler_class" t-valuef="..."/>
-    </t>
+   <t t-call="website.navbar_toggler">
+      <t t-set="_toggler_class" t-valuef="..."/>
+   </t>
 
 .. seealso::
-    You can add a :ref:`Header Overlay <header_overlay>` to position your header over the content of
-    your page. This has to be done in each page individually.
+   You can add a :ref:`header overlay <header_overlay>` to position your header over the content of
+   your page. It has to be done on each page individually.
 
 Footer
 ======
 
-By default, Odoo footer contains a section with some static content. You can easily add new elements
+By default, the footer contains a section with some static content. You can easily add new elements
 or create your own template.
 
 Standard
@@ -458,20 +449,20 @@ Enable one of the default footer templates. Don't forget that you may need to di
 footer template first.
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
+   :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
 
-    $o-website-values-palettes: (
-       (
-          'header-template': 'Contact',
-       ),
-    );
+   $o-website-values-palettes: (
+      (
+         'header-template': 'Contact',
+      ),
+   );
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/presets.xml``
+   :caption: ``/website_airproof/data/presets.xml``
 
-    <record id="website.template_header_contact" model="ir.ui.view">
-       <field name="active" eval="True"/>
-    </record>
+   <record id="website.template_header_contact" model="ir.ui.view">
+      <field name="active" eval="True"/>
+   </record>
 
 Custom
 ------
@@ -482,27 +473,27 @@ active footer template first.
 **Option**
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/presets.xml``
+   :caption: ``/website_airproof/data/presets.xml``
 
-    <template id="template_header_opt" inherit_id="website.snippet_options" name="Footer Template - Option">
-       <xpath expr="//we-select[@data-variable='footer-template']" position="inside">
-          <we-button title="airproof"
-             data-customize-website-views="website_airproof.footer"
-             data-customize-website-variable="'airproof'"
-             data-img="/website_airproof/static/src/img/wbuilder/template_header_opt.svg"/>
-       </xpath>
-    </template>
+   <template id="template_header_opt" inherit_id="website.snippet_options" name="Footer Template - Option">
+      <xpath expr="//we-select[@data-variable='footer-template']" position="inside">
+         <we-button title="airproof"
+            data-customize-website-views="website_airproof.footer"
+            data-customize-website-variable="'airproof'"
+            data-img="/website_airproof/static/src/img/wbuilder/template_header_opt.svg"/>
+      </xpath>
+   </template>
 
 **Declaration**
 
 .. code-block:: scss
-    :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
+   :caption: ``/website_airproof/static/src/scss/primary_variables.scss``
 
-    $o-website-values-palettes: (
-       (
-          'footer-template': 'airproof',
-       ),
-    );
+   $o-website-values-palettes: (
+      (
+         'footer-template': 'airproof',
+      ),
+   );
 
 **Layout**
 
@@ -529,7 +520,7 @@ Copyright
 
 There is only one template available at the moment for the copyright bar.
 
-To replace the content or modify its structure, you can add your own code into the following Xpath :
+To replace the content or modify its structure, you can add your own code to the following XPath.
 
 .. code-block:: xml
     :caption: ``/website_airproof/views/website_templates.xml``
@@ -542,18 +533,18 @@ To replace the content or modify its structure, you can add your own code into t
        </xpath>
     </template>
 
-Drop Zone
+Drop zone
 =========
 
-Instead of defining the complete layout for a page, you can create building blocks (snippets) and
-let the user choose where to "drag and drop" them, creating the page layout on their own. We call
-this modular design.
+Instead of defining the complete layout of a page, you can create building blocks (snippets) and
+let the user choose where to drag and drop them, creating the page layout on their own. We call
+this *modular design*.
 
-You can define an empty area that the user can fill with snippets:
+You can define an empty area that the user can fill with snippets.
 
 .. code-block:: xml
 
-    <div id="oe_structure_layout_01" class="oe_structure"/>
+   <div id="oe_structure_layout_01" class="oe_structure"/>
 
 .. todo:: Missing description in table ...
 
@@ -565,11 +556,11 @@ You can define an empty area that the user can fill with snippets:
    * - Class
      - Description
    * - oe_structure
-     - Define a drag and drop area for the user.
+     - Define a drag-and-drop area for the user.
    * - oe_structure_solo
      - Only one snippet can be dropped in this area.
 
-You can also populate an existing drop zone with your content:
+You can also populate an existing drop zone with your content.
 
 .. code-block:: xml
 
@@ -584,31 +575,30 @@ You can also populate an existing drop zone with your content:
 Responsive
 ==========
 
-Some hints to help you make your website responsive.
+You can find some hints below to help you make your website responsive.
 
 Bootstrap
 ---------
 
 .. seealso::
+   - `Bootstrap documentation on responsive breakpoints
+     <https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints>`_
+   - `Bootstrap documentation on display property
+     <https://getbootstrap.com/docs/4.6/utilities/display/>`_
 
-   - `Breakpoints <https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints>`_
-   - `Display <https://getbootstrap.com/docs/4.6/utilities/display/>`_
-
-**Font-size**
+**Font size**
 
 As of v4.3.0, Bootstrap ships with the option to enable responsive font sizes, allowing text to
-scale more naturally across device and viewport sizes. RFS can be enabled by changing the
+scale more naturally across device and viewport sizes. Enable them by changing the
 `$enable-responsive-font-sizes` Sass variable to true.
 
 .. seealso::
-
-   Check the `Responsive Font Size <https://github.com/twbs/rfs/tree/v8.1.0>`_
-
+   `Responsive Font Size GitHub <https://github.com/twbs/rfs/tree/v8.1.0>`_
 
 Website Builder
 ---------------
 
-Hide a specific `<section>` on mobile:
+Hide a specific `<section>` on mobile.
 
 .. code-block:: xml
 
@@ -616,16 +606,16 @@ Hide a specific `<section>` on mobile:
        <!-- Content -->
     </section>
 
-You can also hide a `<col>` on mobile:
+Hide a `<col>` on mobile.
 
 .. code-block:: xml
 
-    <section>
-       <div class="container">
-          <div class="row d-flex align-items-stretch">
-             <div class="col-lg-4 d-none d-md-block">
-                <!-- Content -->
-             </div>
-          </div>
-       </div>
-    </section>
+   <section>
+      <div class="container">
+         <div class="row d-flex align-items-stretch">
+            <div class="col-lg-4 d-none d-md-block">
+               <!-- Content -->
+            </div>
+         </div>
+      </div>
+   </section>

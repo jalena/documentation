@@ -1,24 +1,23 @@
 ===============
-Building Blocks
+Building blocks
 ===============
 
-Building blocks (also known as Snippets) are how users design and layout pages, they are important
+Building blocks, also known as snippets, are how users design and layout pages. They are important
 XML elements of your design.
 
-The building blocks are classified into four categories :
+The building blocks are classified into four categories:
 
-#. **Structure blocks** : to bring basic structure to the website
-#. **Feature blocks** : to describe the features of a product or service
-#. **Dynamic Content blocks** : blocks that are animated or have an interaction with the backend
-#. **Inner Content blocks** : to be dropped inside other building blocks
+#. **Structure blocks**: to give a basic structure to the website
+#. **Feature blocks**: to describe the features of a product or service
+#. **Dynamic Content blocks**: blocks that are animated or interact with the backend
+#. **Inner Content blocks**: blocks used inside other building blocks
 
-In this chapter, we will explore how to create custom building blocks
-and options.
+In this chapter, you will learn how to create custom building blocks and options.
 
 File structure
 ==============
 
-Layout.
+The layout's file structure is the following.
 
 ::
 
@@ -27,7 +26,7 @@ Layout.
     │   └── options.xml
     │   └── s_snippet_name.xml
 
-Styles.
+The styles' file structure is the following.
 
 ::
 
@@ -42,8 +41,8 @@ Styles.
     │           └── option.js
 
 .. seealso::
-
-   - Check the `templates of the different snippets <{GITHUB_PATH}/addons/website/views/snippets/snippets.xml>`_
+   `XML templates of the different snippets
+   <{GITHUB_PATH}/addons/website/views/snippets/snippets.xml>`_
 
 .. admonition:: Demo page
 
@@ -52,27 +51,28 @@ Styles.
 Layout
 ======
 
-Snippets are editable by the end user using the Website Builder UI. Some Bootstrap classes are
-important as **they trigger some Website Builder options**.
+Snippets are editable by the user using the Website Builder. Some Bootstrap classes are important as
+**they trigger some Website Builder options**.
 
-**Wrapper**
+Wrapper
+-------
 
 The standard main container of any snippet is `section`. Any section element can be edited like a
 block of content that you can move or duplicate.
 
 .. code-block:: xml
 
-    <section class="s_snippet_name" data-name="..." data-snippet="...">
-        <!-- Content -->
-    </section>
+   <section class="s_snippet_name" data-name="..." data-snippet="...">
+       <!-- Content -->
+   </section>
 
 For inner content snippets, any other HTML tag can be used.
 
 .. code-block:: xml
 
-    <div class="s_snippet_name" data-name="..." data-snippet="...">
-        <!-- Content -->
-    </div>
+   <div class="s_snippet_name" data-name="..." data-snippet="...">
+       <!-- Content -->
+   </div>
 
 .. todo:: Missing description in table ...
 
@@ -84,176 +84,176 @@ For inner content snippets, any other HTML tag can be used.
    * - Attribute
      - Description
    * - class
-     - Unique class name for this snippet.
+     - Unique class name for this snippet
    * - data-name
-     - Displayed in the right panel as the name of the snippet. If not found, it will fallback to
+     - Displayed in the right panel as the name of the snippet. If not found, it will fall back to
        *Block*.
    * - data-snippet
      - ...
 
-The system will automatically add the `data-name` and `data-snippet` attributes during the drag and
-drop, based on the template's name.
+The system automatically adds the `data-name` and `data-snippet` attributes during the drag and
+drop based on the template's name.
 
 .. warning::
    Those attributes should be specifically added when a snippet is declared in a theme page.
 
-**Columns**
+Columns
+-------
 
-Any large bootstrap columns directly descending from a `.row` element (respecting Bootstrap
-structure), will be triggered by the Website Builder to make them resizable.
+Any large Bootstrap columns directly descending from a `.row` element (respecting Bootstrap
+structure) will be triggered by the Website Builder to make them resizable.
 
 .. code-block:: css
 
-    .row > .col-lg-*
+   .row > .col-lg-*
 
-Padding on columns and sections.
-
-.. code-block:: xml
-
-    class="pt80 pb80"
-
-Background based on the color palette for columns and sections.
+Add padding on columns and sections.
 
 .. code-block:: xml
 
-    class="o_cc o_cc*"
+   class="pt80 pb80"
+
+Add background based on the color palette for columns and sections.
+
+.. code-block:: xml
+
+   class="o_cc o_cc*"
 
 Make an element not editable.
 
 .. code-block:: xml
 
-    <div class="o_not_editable">
+   <div class="o_not_editable">
 
-Enable Columns selector.
-
-.. code-block:: xml
-
-    <div class="container s_allow_columns">
-
-Disable Columns option.
+Enable the columns selector.
 
 .. code-block:: xml
 
-    <div class="row s_nb_column_fixed">
+   <div class="container s_allow_columns">
 
-Disable Size option of all child columns.
-
-.. code-block:: xml
-
-    <div class="row s_col_no_resize">
-
-Disable Size option for one column.
+Disable the columns option.
 
 .. code-block:: xml
 
-    <div class="col-lg-* s_col_no_resize">
+   <div class="row s_nb_column_fixed">
 
-Disable Background Color option of all columns.
-
-.. code-block:: xml
-
-    <div class="row s_col_no_bgcolor">
-
-Disable Background Color option of one column.
+Disable the size option of all child columns.
 
 .. code-block:: xml
 
-    <div class="col-lg-* s_col_no_bgcolor">
+   <div class="row s_col_no_resize">
 
-Parallax.
+Disable the size option for one column.
 
 .. code-block:: xml
 
-    <section class="parallax s_parallax_is_fixed s_parallax_no_overflow_hidden" data-scroll-background-ratio="1">
-        <span class="s_parallax_bg oe_img_bg o_bg_img_center" style="background-image: url('...'); background-position: 50% 75%;"/>
-        <div class="container">
-            <!-- Content -->
-        </div>
-    </section>
+   <div class="col-lg-* s_col_no_resize">
+
+Disable the background color option for all columns.
+
+.. code-block:: xml
+
+   <div class="row s_col_no_bgcolor">
+
+Disable the background color option of one column.
+
+.. code-block:: xml
+
+   <div class="col-lg-* s_col_no_bgcolor">
+
+Add parallax effect.
+
+.. code-block:: xml
+
+   <section class="parallax s_parallax_is_fixed s_parallax_no_overflow_hidden" data-scroll-background-ratio="1">
+       <span class="s_parallax_bg oe_img_bg o_bg_img_center" style="background-image: url('...'); background-position: 50% 75%;"/>
+       <div class="container">
+           <!-- Content -->
+       </div>
+   </section>
 
 Add a black color filter with an opacity of 50%.
 
 .. code-block:: xml
 
-    <section>
-        <div class="o_we_bg_filter bg-black-50"/>
-        <div class="container">
-            <!-- Content -->
-        </div>
-    </section>
+   <section>
+       <div class="o_we_bg_filter bg-black-50"/>
+       <div class="container">
+           <!-- Content -->
+       </div>
+   </section>
 
 Add a white color filter with an opacity of 85%.
 
 .. code-block:: xml
 
-    <section>
-        <div class="o_we_bg_filter bg-white-85"/>
-        <div class="container">
-            <!-- Content -->
-        </div>
-    </section>
+   <section>
+       <div class="o_we_bg_filter bg-white-85"/>
+       <div class="container">
+           <!-- Content -->
+       </div>
+   </section>
 
 Add a custom color filter.
 
 .. code-block:: xml
 
-    <section>
-        <div class="o_we_bg_filter" style="background-color: rgba(39, 110, 114, 0.54) !important;"/>
-        <div class="container">
-            <!-- Content -->
-        </div>
-    </section>
+   <section>
+       <div class="o_we_bg_filter" style="background-color: rgba(39, 110, 114, 0.54) !important;"/>
+       <div class="container">
+           <!-- Content -->
+       </div>
+   </section>
 
 Add a custom gradient filter.
 
 .. code-block:: xml
 
-    <section>
-        <div class="o_we_bg_filter" style="background-image: linear-gradient(135deg, rgba(255, 204, 51, 0.5) 0%, rgba(226, 51, 255, 0.5) 100%) !important;"/>
-        <div class="container">
-            <!-- Content -->
-        </div>
-    </section>
-
+   <section>
+       <div class="o_we_bg_filter" style="background-image: linear-gradient(135deg, rgba(255, 204, 51, 0.5) 0%, rgba(226, 51, 255, 0.5) 100%) !important;"/>
+       <div class="container">
+           <!-- Content -->
+       </div>
+   </section>
 
 Styles
 ======
 
-**Compatibility system**
+Compatibility system
+--------------------
 
-When a snippet has a `data-vcss` or `data-vjs` attribute, it means it is an updated version, not
-the original one.
+When a snippet has a `data-vcss` or `data-vjs` attribute, it means it is an updated version, not the
+original one.
 
 .. code-block:: xml
 
-    <section class="s_snippet_name" data-vcss="..." data-js="...">
-        <!-- Content -->
-    </section>
+   <section class="s_snippet_name" data-vcss="..." data-js="...">
+       <!-- Content -->
+   </section>
 
 The `data-vcss` and `data-js` attributes indicate to the system which file version to load for that
-snippet (eg :file:`001.js`, :file:`002.scss`).
+snippet (e.g., :file:`001.js`, :file:`002.scss`).
 
 Custom
 ======
 
-Declaration
------------
-
 Create the snippet's content.
 
+**Declaration**
+
 .. code-block:: xml
-    :caption: ``/website_airproof/views/snippets/s_airproof_snippet.xml``
+   :caption: ``/website_airproof/views/snippets/s_airproof_snippet.xml``
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <odoo>
+   <?xml version="1.0" encoding="utf-8"?>
+   <odoo>
 
-        <template id="s_airproof_snippet" name="...">
-            <section class="s_airproof_snippet">
-                <!-- Content -->
-            </section>
-        </template>
+       <template id="s_airproof_snippet" name="...">
+           <section class="s_airproof_snippet">
+               <!-- Content -->
+           </section>
+       </template>
 
-    </odoo>
+   </odoo>
 
 .. warning::
    `data-name` and `data-snippet` attributes have to be specified when a snippet is declared in a
@@ -262,29 +262,29 @@ Create the snippet's content.
 .. tip::
    - Use Bootstrap native classes as much as possible.
    - Prefix all your custom classes.
-   - Use underscore lowercase notation to name class, e.g.: `.x_nav`, `.x_nav_item`.
+   - Use underscore lowercase notation to name classes, e.g., `.x_nav`, `.x_nav_item`.
    - Avoid using ID tag.
 
-Add your custom snippet to the list of default snippets, so the user will be able to drag and drop it
-into the page, directly from the edit panel.
+Add your custom snippet to the list of default snippets, so the user can drag and drop it on the
+page, directly from the edit panel.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/views/snippets/options.xml``
+   :caption: ``/website_airproof/views/snippets/options.xml``
 
-    <template id="snippets" inherit_id="website.snippets" name="Custom Snippets">
-        <xpath expr="//*[@id='default_snippets']" position="before">
-            <t id="x_theme_snippets">
-                <div id="x_theme_snippets_category" class="o_panel">
-                    <div class="o_panel_header">Theme</div>
-                    <div class="o_panel_body">
-                        <t t-snippet="website_airproof.s_airproof_snippet" t-thumbnail="/website_airproof/static/src/img/wbuilder/s_airproof_snippet.svg">
-                            <keywords>Snippet</keywords>
-                        </t>
-                    </div>
-                </div>
-            </t>
-        </xpath>
-    </template>
+   <template id="snippets" inherit_id="website.snippets" name="Custom Snippets">
+       <xpath expr="//*[@id='default_snippets']" position="before">
+           <t id="x_theme_snippets">
+               <div id="x_theme_snippets_category" class="o_panel">
+                   <div class="o_panel_header">Theme</div>
+                   <div class="o_panel_body">
+                       <t t-snippet="website_airproof.s_airproof_snippet" t-thumbnail="/website_airproof/static/src/img/wbuilder/s_airproof_snippet.svg">
+                           <keywords>Snippet</keywords>
+                       </t>
+                   </div>
+               </div>
+           </t>
+       </xpath>
+   </template>
 
 .. list-table::
    :header-rows: 1
@@ -294,94 +294,95 @@ into the page, directly from the edit panel.
    * - Attribute
      - Description
    * - t-snippet
-     - The template to use.
+     - The template to use
    * - t-thumbnail
-     - The path to the snippet thumbnail.
+     - The path to the snippet thumbnail
 
 Options
 -------
 
-Options allow publishers to edit a snippet's appearance using the Website Builder's UI. Using
-Website Builder functionalities, you can create snippet options easily and automatically add them
-to the UI.
+Options allow users to edit a snippet's appearance using the Website Builder. You can create
+snippet options easily and automatically add them to the Website Builder.
 
-**Options group properties**
+Groups properties
+-----------------
 
-Options are wrapped in groups. Groups can have properties that define how the included options will
+Options are wrapped in groups. Groups can have properties that define how the included options
 interact with the user interface.
 
-`data-selector` - Bind all the options included into the group to a particular element. Can be used in
-combination with `data-target` and `data-exclude`.
+`data-selector` binds all the options included in the group to a particular element. It can be used
+in combination with `data-target` and `data-exclude`.
 
 .. code-block:: xml
 
-    <div data-selector="section, h1, .custom_class, #custom_id">
+   <div data-selector="section, h1, .custom_class, #custom_id">
 
-`data-js` - Is used to bind custom Javascript methods.
+`data-js` binds custom JavaScript methods.
 
 .. code-block:: xml
 
-    <div data-js="CustomMethodName" data-selector="...">
+   <div data-js="CustomMethodName" data-selector="...">
 
-`data-drop-in` - Defines the list of elements where the snippet can be dropped into.
+`data-drop-in` defines the list of elements where the snippet can be dropped into.
 
 .. todo:: no css selector ...
 
 .. code-block:: xml
 
-    <div data-selector="..." data-drop-in="...">
+   <div data-selector="..." data-drop-in="...">
 
-`data-drop-near` - Defines the list of elements that the snippet can be dropped beside.
+`data-drop-near` defines the list of elements where the snippet can be dropped beside.
 
 .. code-block:: xml
 
-    <div data-selector="..." data-drop-near="...">
+   <div data-selector="..." data-drop-near="...">
 
-**SCSS options**
+SCSS options
+------------
 
 Options can apply standard or custom CSS classes to the snippet. Depending on the method that you
-choose, the UI will behave differently.
+choose, the user interface will behave differently.
 
 `data-select-class="..."`
 
-More data-select-class in the same group defines a list of classes that the user can choose to
-apply. Only one option can be enabled at a time.
+More `data-select-class` in the same group define a list of classes the user can apply. Only one
+option can be enabled at a time.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/views/snippets/options.xml``
+   :caption: ``/website_airproof/views/snippets/options.xml``
 
-    <template id="snippet_options" inherit_id="website.snippet_options" name="...">
-        <xpath expr="." position="inside">
+   <template id="snippet_options" inherit_id="website.snippet_options" name="...">
+       <xpath expr="." position="inside">
 
-            <div data-selector="h1, h2, h3, h4, h5, h6">
-                <we-select string="Headings">
-                    <we-button data-select-class="">Default</we-button>
-                    <we-button data-select-class="x_custom_class_01">01</we-button>
-                    <we-button data-select-class="x_custom_class_02">02</we-button>
-                </we-select>
-            </div>
+           <div data-selector="h1, h2, h3, h4, h5, h6">
+               <we-select string="Headings">
+                   <we-button data-select-class="">Default</we-button>
+                   <we-button data-select-class="x_custom_class_01">01</we-button>
+                   <we-button data-select-class="x_custom_class_02">02</we-button>
+               </we-select>
+           </div>
 
-        </xpath>
-    </template>
+       </xpath>
+   </template>
 
 .. seealso::
+   `XML templates of the different snippets
+   <{GITHUB_PATH}/addons/website/views/snippets/snippets.xml>`_
 
-   - Check the `templates of the different snippets <{GITHUB_PATH}/addons/website/views/snippets/snippets.xml>`_
+JavaScript options
+------------------
 
-**JavaScript Options**
-
-As we said before, the data-js attribute can be assigned to an options group in order to define a
-custom method.
+The `data-js` attribute can be assigned to an options group in order to define a custom method.
 
 .. code-block:: javascript
 
-    /** @odoo-module */
+   /** @odoo-module */
 
-    import options from 'web_editor.snippets.options';
+   import options from 'web_editor.snippets.options';
 
-    options.registry.CustomMethodName = options.Class.extend({
-        //
-    });
+   options.registry.CustomMethodName = options.Class.extend({
+       //
+   });
 
 The Website Builder provides several events you can use to trigger your custom functions.
 
@@ -393,19 +394,19 @@ The Website Builder provides several events you can use to trigger your custom f
    * - Event
      - Description
    * - start
-     - Fires when the publisher selects the snippet for the first time in an editing session or
-       when the snippet is drag-dropped into the page.
+     - Occurs when the publisher selects the snippet for the first time in an editing session or
+       when the snippet is drag-and-dropped on the page.
    * - onFocus
-     - Fires each time the snippet is selected by the user or when the snippet is drag-dropped into
-       the page.
+     - Occurs each time the snippet is selected by the user or when the snippet is drag-and-dropped
+       on the page.
    * - onBlur
-     - This event occurs when a snippet loses focus.
+     - Occurs when a snippet loses focus.
    * - onClone
-     - Fires just after a snippet is duplicated.
+     - Occurs just after a snippet is duplicated.
    * - onRemove
-     - It occurs just before that the snippet is removed.
+     - Occurs just before the snippet is removed.
    * - onBuilt
-     - Fires just after that the snippet is dragged and dropped into a drop zone. When this event
-       is triggered, the content is already inserted in the page.
+     - Occurs just after the snippet is drag-and-dropped on a drop zone. When this event is
+       triggered, the content is already inserted in the page.
    * - cleanForSave
-     - It triggers before the publisher saves the page.
+     - Occurs before the publisher saves the page.

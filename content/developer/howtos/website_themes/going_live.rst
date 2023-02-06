@@ -1,42 +1,37 @@
 ==========
-Going Live
+Going live
 ==========
 
-Once you've finished all the web design and development work, it's time to deploy it on a
-development or on a production database.
+Once you have finished all the web design and development work, it's time to deploy it on a
+development or production database.
 
-Module Import
+Module import
 =============
 
 Odoo SaaS
 ---------
 
-For the first import:
+Follow these steps the first time you import a module:
 
 #. Create a ZIP file of your module.
 #. Connect to the project database.
-#. Enable the *Developer Tools*.
-#. Go to *Apps* and check that the module *Base import module* is installed.
-#. Click on *Import Module* in the menu and upload your ZIP file.
-#. Check the *Force Init* box.
+#. Enable the :ref:`developer mode <developer-mode>`.
+#. Go to :guilabel:`Apps`, search for `base_import_module`, and install it if necessary.
+#. Click on :guilabel:`Import Module` in the menu.
+#. Upload your ZIP file, tick :guilabel:`Force init`, and click the :guilabel:`Import App` button.
 
-In case you have made changes to your module and need to re-import it:
-
-#. Create a ZIP file of your module.
-#. Connect to the project database.
-#. Enable the *Developer Tools*.
-#. Click on the Debug mode icon and select *Become Superuser*.
-#. Import your module.
-#. Log out and log in again to deactivate the *Superuser* mode.
+If you need to re-import a module after making some changes, follow the same steps, but before
+importing the module, open the developer menu and select :guilabel:`Become Superuser`. To leave the
+Superuser mode, log out and log back in.
 
 .. warning::
-   The ZIP file size must be less than 50Mb.
+   The ZIP file size must be less than 50 MB.
 
 Odoo.sh
 -------
 
-- Go to *Apps* and click on *Update Apps List* in the menu.
-- Search for your module in the list and install it.
+Go to :guilabel:`Apps` and click on :guilabel:`Update Apps List` in the menu. Search for your module
+in the list and install it.
 
 .. seealso::
-   - :doc:`Introduction to Odoo.sh <../../../administration/odoo_sh/overview/introduction>`
+   :doc:`Introduction to Odoo.sh <../../../administration/odoo_sh/overview/introduction>`

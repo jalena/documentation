@@ -2,127 +2,125 @@
 Pages
 =====
 
-In this chapter, you will learn how to declare static pages for your website.
+In this chapter, you will learn how to declare static pages.
 
-Default Pages
+Default pages
 =============
 
-In Odoo, few static pages (Home, Contact us, 404,...) come along any default website.
-
-Default pages are built this way:
-
-.. code-block:: xml
-
-    <template id="website.homepage" name="Homepage">
-        <t t-call="website.layout">
-
-            <!-- Variables -->
-            <t t-set="additional_title" t-value="'Home'" />
-
-            <div id="wrap" class="oe_structure oe_empty">
-
-                <!-- Content -->
-
-            </div>
-
-        </t>
-    </template>
-
-Define the meta title:
+In Odoo, websites come with a few default static pages (Home, Contact us, 404, ...). They are built
+the following way.
 
 .. code-block:: xml
 
-    <t t-set="additional_title" t-value="'...'"/>
+   <template id="website.homepage" name="Homepage">
+       <t t-call="website.layout">
 
-Define the meta description:
+           <!-- Variables -->
+           <t t-set="additional_title" t-value="'Home'" />
 
-.. code-block:: xml
+           <div id="wrap" class="oe_structure oe_empty">
 
-    <t t-set="meta_description" t-value="'...'"/>
+               <!-- Content -->
 
-Add a CSS class to the page:
+           </div>
 
-.. code-block:: xml
+       </t>
+   </template>
 
-    <t t-set="pageName" t-value="'...'"/>
-
-Hide the Header:
-
-.. code-block:: xml
-
-    <t t-set="no_header" t-value="true"/>
-
-Hide the Footer:
+Define the meta title.
 
 .. code-block:: xml
 
-    <t t-set="no_footer" t-value="true"/>
+   <t t-set="additional_title" t-value="'...'"/>
 
-If needed, you can deactivate default pages.
-
-.. code-block:: xml
-    :caption: ``/website_airproof/data/pages/home.xml``
-
-    <record id="website.homepage" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
+Define the meta description.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/pages/contactus.xml``
 
-    <record id="website.contactus" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
+   <t t-set="meta_description" t-value="'...'"/>
 
-Alternatively, you can also replace the default content of these pages using Xpath.
+Add a CSS class to the page.
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/pages/404.xml``
 
-    <template id="404" inherit_id="http_routing.404">
-        <xpath expr="//*[@id='wrap']" position="replace">
+   <t t-set="pageName" t-value="'...'"/>
 
-            <t t-set="additional_title" t-value="'404 - Not found'"/>
+Hide the header.
 
-            <div id="wrap" class="oe_structure">
-                <!-- Content -->
-            </div>
+.. code-block:: xml
 
-        </xpath>
-    </template>
+   <t t-set="no_header" t-value="true"/>
 
-Theme Pages
+Hide the footer.
+
+.. code-block:: xml
+
+   <t t-set="no_footer" t-value="true"/>
+
+If needed, deactivate default pages.
+
+.. code-block:: xml
+   :caption: ``/website_airproof/data/pages/home.xml``
+
+   <record id="website.homepage" model="ir.ui.view">
+       <field name="active" eval="False"/>
+   </record>
+
+.. code-block:: xml
+   :caption: ``/website_airproof/data/pages/contactus.xml``
+
+   <record id="website.contactus" model="ir.ui.view">
+       <field name="active" eval="False"/>
+   </record>
+
+Alternatively, replace the default content of these pages using XPath.
+
+.. code-block:: xml
+   :caption: ``/website_airproof/data/pages/404.xml``
+
+   <template id="404" inherit_id="http_routing.404">
+       <xpath expr="//*[@id='wrap']" position="replace">
+
+           <t t-set="additional_title" t-value="'404 - Not found'"/>
+
+           <div id="wrap" class="oe_structure">
+               <!-- Content -->
+           </div>
+
+       </xpath>
+   </template>
+
+Theme pages
 ===========
-
-Declaration
------------
 
 You can add as many pages as you want to your website. Instead of defining a `<template>`, create a
 page object.
 
+**Declaration**
+
 .. code-block:: xml
-    :caption: ``/website_airproof/data/pages/about_us.xml``
+   :caption: ``/website_airproof/data/pages/about_us.xml``
 
-    <record id="page_about_us" model="website.page">
-        <field name="name">About us</field>
-        <field name="is_published" eval="True"/>
-        <field name="key">website_airproof.page_about_us</field>
-        <field name="url">/about-us</field>
-        <field name="type">qweb</field>
-        <field name="arch" type="xml">
-            <t t-name="website_airproof.page_about_us">
+   <record id="page_about_us" model="website.page">
+       <field name="name">About us</field>
+       <field name="is_published" eval="True"/>
+       <field name="key">website_airproof.page_about_us</field>
+       <field name="url">/about-us</field>
+       <field name="type">qweb</field>
+       <field name="arch" type="xml">
+           <t t-name="website_airproof.page_about_us">
 
-                <t t-call="website.layout">
-                    <div id="wrap" class="oe_structure">
+               <t t-call="website.layout">
+                   <div id="wrap" class="oe_structure">
 
-                        <!-- Content -->
+                       <!-- Content -->
 
-                    </div>
-                </t>
+                   </div>
+               </t>
 
-            </t>
-        </field>
-    </record>
+           </t>
+       </field>
+   </record>
 
 .. todo:: Missing description in table ...
 
@@ -146,44 +144,44 @@ page object.
    * - arch
      - ...
 
-Using `<t t-call="website.layout">` we will use the Odoo default page layout with our code.
+With `<t t-call="website.layout">` you use the Odoo default page layout with your code.
 
 .. _header_overlay:
 
-Header Overlay
+Header overlay
 --------------
 
-You can make the header background transparent and stand on top of the page content:
+Make the header background transparent and stand on top of the page content.
 
 .. code-block:: xml
 
-    <field name="header_overlay" eval="True"/>
+   <field name="header_overlay" eval="True"/>
 
-Medias
-======
+Media
+=====
 
 Images
 ------
 
-You can record images in the database and use them later on in your design/code. They will also be
-available for the end user through the Media Dialog.
+You can record images in the database and use them later in your design/code. They will also be
+available for the end user through the *media dialog*.
 
-.. image:: pages/medias-window.png
-    :alt: Medias window
+.. image:: pages/media-window.png
+   :alt: Media window
 
-Currently supported format by the Website Builder: JPG, GIF, PNG, SVG.
+The Website Builder supports the following image file formats: JPG, GIF, PNG, and SVG.
 
 **Declaration**
 
 .. code-block:: xml
-    :caption: ``/website_airproof/data/images.xml``
+   :caption: ``/website_airproof/data/images.xml``
 
-    <record id="img_about_01" model="ir.attachment">
-        <field name="name">About Image 01</field>
-        <field name="datas" type="base64" file="website_airproof/static/src/img/content/img_about_01.jpg"/>
-        <field name="res_model">ir.ui.view</field>
-        <field name="public" eval="True"/>
-    </record>
+   <record id="img_about_01" model="ir.attachment">
+       <field name="name">About Image 01</field>
+       <field name="datas" type="base64" file="website_airproof/static/src/img/content/img_about_01.jpg"/>
+       <field name="res_model">ir.ui.view</field>
+       <field name="public" eval="True"/>
+   </record>
 
 .. todo:: Missing description in table ...
 
@@ -195,7 +193,7 @@ Currently supported format by the Website Builder: JPG, GIF, PNG, SVG.
    * - Field
      - Description
    * - name
-     - Page name.
+     - Page name
    * - datas
      - Define if the page is published (visible to visitors).
    * - res_model
@@ -207,37 +205,37 @@ Use as a background image.
 
 .. code-block:: xml
 
-    <section style="background-image: url('/web/image/website_airproof.img_about_01');">
+   <section style="background-image: url('/web/image/website_airproof.img_about_01');">
 
 Use as a regular image.
 
 .. code-block:: xml
 
-    <img src="/web/image/website_airproof.img_about_01" alt=""/>
+   <img src="/web/image/website_airproof.img_about_01" alt=""/>
 
 Use as a regular image with a color filter.
 
 .. code-block:: xml
 
-    <img src="/web/image/website.s_media_list_default_image_1"
-        class="img img-fluid mx-auto" alt=""
-        data-gl-filter="custom"
-        data-filter-options='{"filterColor": "rgba(0, 0, 0, 0.5)"}'/>
+   <img src="/web/image/website.s_media_list_default_image_1"
+       class="img img-fluid mx-auto" alt=""
+       data-gl-filter="custom"
+       data-filter-options='{"filterColor": "rgba(0, 0, 0, 0.5)"}'/>
 
 .. tip::
-   Image sizes greatly influence the user experience, Search Engine Optimization, and overall
-   website performance. So, be sure that your images are correctly optimized.
+   The image size greatly influences the user experience, search engine optimization, and overall
+   website performance. So, be sure to size your images correctly.
 
 Videos
 ------
 
-As background.
+Add videos as background.
 
 .. code-block:: xml
 
-    <section class="o_background_video" data-bg-video-src="...">
-        <!-- Content -->
-    </section>
+   <section class="o_background_video" data-bg-video-src="...">
+       <!-- Content -->
+   </section>
 
 .. list-table::
    :header-rows: 1
@@ -249,18 +247,18 @@ As background.
    * - data-bg-video-src
      - Video URL.
 
-As content.
+Add videos as content.
 
 .. code-block:: xml
 
-    <div class="media_iframe_video" data-oe-expression="...">
-        <div class="css_editable_mode_display">&nbsp;</div>
-        <div class="media_iframe_video_size" contenteditable="false">&nbsp;</div>
-        <iframe src="..."
-            frameborder="0"
-            contenteditable="false"
-            allowfullscreen="allowfullscreen"/>
-    </div>
+   <div class="media_iframe_video" data-oe-expression="...">
+       <div class="css_editable_mode_display">&nbsp;</div>
+       <div class="media_iframe_video_size" contenteditable="false">&nbsp;</div>
+       <iframe src="..."
+           frameborder="0"
+           contenteditable="false"
+           allowfullscreen="allowfullscreen"/>
+   </div>
 
 .. list-table::
    :header-rows: 1
@@ -277,25 +275,26 @@ As content.
 Icons
 -----
 
-By default, the Font Awesome icons library is included within the Website Builder. You can place
-icons anywhere using the CSS Prefix `fa` and the icon's name. Font Awesome is designed to be used with
-inline elements. You can use `<i>` tag for brevity, but using a `<span>` is more semantically correct.
+By default, the Font Awesome icons library is included in the Website Builder. You can place icons
+anywhere using the CSS Prefix `fa` and the icon's name. Font Awesome is designed to be used with
+inline elements. You can use `<i>` tag for brevity, but using a `<span>` is more semantically
+correct.
 
 .. code-block:: xml
 
-    <span class="fa fa-picture-o"/>
+   <span class="fa fa-picture-o"/>
 
 .. seealso::
-   `Font Awesome <https://fontawesome.com/v4/icons/>`_
+   `Font Awesome v4 icons <https://fontawesome.com/v4/icons/>`_
 
-Enable Website Builder style options.
-
-.. code-block:: xml
-
-    <span class="fa fa-2x fa-picture-o rounded-circle"/>
-
-To increase icon sizes (fa-2x, fa-3x, fa-4x, or fa-5x classes).
+Enable the Website Builder style options.
 
 .. code-block:: xml
 
-    <span class="fa fa-2x fa-picture-o"/>
+   <span class="fa fa-2x fa-picture-o rounded-circle"/>
+
+Increase the icon size (fa-2x, fa-3x, fa-4x, or fa-5x classes).
+
+.. code-block:: xml
+
+   <span class="fa fa-2x fa-picture-o"/>

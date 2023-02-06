@@ -2,76 +2,68 @@
 Translations
 ============
 
-In addition to creating great modern websites, Odoo gives you the possibility to translate it in
-different languages.
+With Odoo, you can translate your website into different languages.
 
 In this chapter, you will learn how to:
 
 - Translate the content of a module.
-- Import and Export translations.
+- Import and export translations.
 - Integrate translations to a module.
 
 Frontend
 ========
 
-You can translate your website pages thanks to the website builder. Go to your site and switch to
-the language you want to translate and then, click on the *Translate* button. Everything in green
-are some translations that are done automatically. Everything in yellow are those that you can
-translate yourself.
+To translate your pages with the Website Builder, go to your website and click on the language
+selector to switch to it. If your website was never translated to the target language, click
+:guilabel:`Add a language...`, select it in the pop-up window, and click :guilabel:`Add`.
+
+Click :guilabel:`Translate` to start translating. Depending on the language, some text is
+automatically translated and highlighted in green, while everything that should be translated
+manually is highlighted in yellow.
 
 .. image:: translations/translate-button.png
-      :alt: Translate button
-      :width: 570
+   :alt: Translate button
+   :width: 570
 
 Backend
 =======
 
-You can also translate your pages directly from the backend. It will allow you to translate
-different languages at the same time. Go to the views and find the page you want to translate and
-then, click on the *Edit Translations* button.
+Translating pages directly from the backend allows you to translate several languages at the same
+time. To do so, go to :menuselection:`Settings --> Technical --> User Interface: Views`, search for
+the name of the page you want to translate, and click the :guilabel:`Edit Translations` button.
 
 .. image:: translations/edit-translations.png
-      :alt: Edit translations
-      :width: 718
-
+   :alt: Edit translations
+   :width: 718
 
 Export
 ======
 
-Once you have translated everything you wanted, you can export all your translations to integrate
-them into your module. To export all in once, go in your database and go to:
+Once you are done translating, you need to export the translations to integrate them into your
+module. To export everything at once, open your database, activate :ref:`developer mode
+<developer-mode>`, and go to :menuselection:`Settings --> Translations --> Export Translation`.
+Select the :guilabel:`Language` you translated, *PO File* under :guilabel:`File Format` and
+*website_airproof* as the :guilabel:`Apps To Export`.
 
-:menuselection:`Settings --> Translations --> Import/Export --> Export translations`
-
-**Export Settings**
-
-- Language: the language you translated, e.g.: fr_BE, nl_BE
-- File Format: .po
-- Apps to export: website_airproof
-
-Download the file and move it to the :file:`i18n` folder. You can always make changes directly in
-the :file:`.po` file afterwards if you want.
-
+Download the file and move it to the :file:`i18n` folder. If needed, you can manually edit the
+:file:`.po` file afterward.
 
 PO file
 =======
 
-Translate directly with :file:`.po` file.
+You can translate directly by editing a :file:`.po` file or create a the file yourself. Check out
+the :doc:`translating modules documentation <../translations>` to write your translations.
 
 .. code-block:: po
-    :caption: ``/website_coconuts/i18n/fr_BE.po``
+   :caption: ``/website_coconuts/i18n/fr_BE.po``
 
-    #. module: website_airproof
-    #: model_terms:ir.ui.view,arch_db:website_airproof.s_custom_snippet
-    msgid "..."
-    msgstr "..."
-
-You can create the :file:`*.po` file yourself. You can use the :doc:`Odoo documentation <../translations>`
-to write your translations.
+   #. module: website_airproof
+   #: model_terms:ir.ui.view,arch_db:website_airproof.s_custom_snippet
+   msgid "..."
+   msgstr "..."
 
 Import
 ======
 
-To import your translation files into Odoo, go to:
-
-:menuselection:`Settings --> Translations --> Import/Export --> Import translations`
+To import your translation files into Odoo, go to :menuselection:`Settings --> Translations -->
+Import Translation` and upload them.
