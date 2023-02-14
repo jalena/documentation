@@ -150,15 +150,34 @@ Define the styles of your shape.
            'illustration': map-merge(
                map-get($o-bg-shapes, 'illustration') or (),
                (
-                   'hexagons/01': ('position': center center, 'size': auto 100%, 'colors': (1), 'repeat-y': false),
+                   'hexagons/01': ('position': center center, 'size': auto 100%, 'colors': (1), 'repeat-x': true, 'repeat-y': true),
                ),
            ),
        )
    );
 
-- `hexagons/01` corresponds to the location of your file in the `shapes` folder.
-- `colors` represents the color c* you want it to have (this will override the color you specified
-  in your SVG).
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 20 80
+
+   * - Key
+     - Description
+   * - File location
+     - `hexagons/01` corresponds to the location of your file in the `shapes` folder.
+   * - Position
+     - `position` defines the position of your shape.
+   * - Size
+     - `size` defines the size of your shape.
+   * - Colors
+     - `colors` defines the color c* you want it to have (this will override the color you specified
+       in your SVG).
+   * - Repeat-x
+     - `repeat-x` defines if the shape is repeated horizontally. This key is optional and only needs
+       to be defined if set to `true`.
+   * - Repeat-y
+     - `repeat-y` defines if the shape is repeated vertically. This key is optional and only needs
+       to be defined if set to `true`.
 
 Lastly, add your shape to the list of shapes available on the Website Builder.
 

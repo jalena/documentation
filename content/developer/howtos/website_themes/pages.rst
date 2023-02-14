@@ -136,13 +136,13 @@ page object.
    * - is_published
      - Define if the page is published (visible to visitors).
    * - key
-     - ...
+     - View key (must be unique)
    * - url
      - URL where the page is reachable.
    * - type
-     - ...
+     - View type
    * - arch
-     - ...
+     - View architecture
 
 With `<t t-call="website.layout">` you use the Odoo default page layout with your code.
 
@@ -156,6 +156,9 @@ Make the header background transparent and stand on top of the page content.
 .. code-block:: xml
 
    <field name="header_overlay" eval="True"/>
+
+.. image:: pages/header-overlay.png
+   :alt: Header overlay
 
 Media
 =====
@@ -193,13 +196,11 @@ The Website Builder supports the following image file formats: JPG, GIF, PNG, an
    * - Field
      - Description
    * - name
-     - Page name
+     - Image name
    * - datas
-     - Define if the page is published (visible to visitors).
+     - Path to the image file
    * - res_model
-     - ...
-   * - public
-     - ...
+     - Name of the wizard model
 
 Use as a background image.
 
@@ -220,7 +221,7 @@ Use as a regular image with a color filter.
    <img src="/web/image/website.s_media_list_default_image_1"
        class="img img-fluid mx-auto" alt=""
        data-gl-filter="custom"
-       data-filter-options='{"filterColor": "rgba(0, 0, 0, 0.5)"}'/>
+       data-filter-options="{'filterColor': 'rgba(0, 0, 0, 0.5)'}"/>
 
 .. tip::
    The image size greatly influences the user experience, search engine optimization, and overall
@@ -298,3 +299,6 @@ Increase the icon size (fa-2x, fa-3x, fa-4x, or fa-5x classes).
 .. code-block:: xml
 
    <span class="fa fa-2x fa-picture-o"/>
+
+.. image:: pages/icon-options.png
+   :alt: Icon options

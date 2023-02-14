@@ -83,7 +83,8 @@ Initialization
 An Odoo module is also a Python package with a :file:`__init__.py` file containing import
 instructions for various Python files in the module. This file can remain empty for now.
 
-**Declaration**
+Declaration
+-----------
 
 An Odoo module is declared by its manifest file. This file declares a Python package as an Odoo
 module and specifies the module's metadata. It must at least contain the `name` field, which is
@@ -184,10 +185,10 @@ By reading the source code, variables related to options are easily noticeable.
 .. code-block:: xml
 
    <we-button title="..."
-   data-name="..."
-   data-customize-website-views="..."
-   data-customize-website-variable="'Sidebar'"
-   data-img="..."/>
+      data-name="..."
+      data-customize-website-views="..."
+      data-customize-website-variable="'Sidebar'"
+      data-img="..."/>
 
 These variables can be overridden through the `$o-website-value-palettes` map, for example.
 
@@ -212,7 +213,7 @@ Global
 .. tip::
    That file must only contain definitions and overrides of SCSS variables and mixins.
 
-.. example::
+.. seealso::
    `Primary variables SCSS
    <{GITHUB_PATH}/addons/website/static/src/scss/primary_variables.scss#L1954>`_
 
@@ -417,6 +418,10 @@ The colors used in a color combination are accessible and can be overridden thro
 .. note::
    For each `o-cc*`, replace the `*` with the digit (1 - 5) corresponding to the desired color
    combination.
+
+.. note::
+   The default text color is `o-color-5`. If the background is too dark, it will automatically
+   change to the `o-color-4` color.
 
 .. seealso::
    `Color combinations SCSS

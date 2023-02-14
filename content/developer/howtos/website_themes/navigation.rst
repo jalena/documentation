@@ -26,8 +26,6 @@ Delete default menu items.
    <delete model="website.menu" search="[('url','in', ['/', '/contactus']),
    ('website_id', '=', 1)]"/>
 
-.. code-block:: xml
-
    <!-- Shop -->
    <delete model="website.menu" search="[('url','in', ['/', '/shop']),
    ('website_id', '=', 1)]"/>
@@ -179,3 +177,36 @@ mega menu, you can use any kind of content (text, images, icons, ...).
      - Custom classes to be added to the main element
    * - mega_menu_content
      - Default content of the mega menu
+
+Custom template
+---------------
+
+Create your own template and add it to the list.
+
+**Layout**
+
+.. code-block:: xml
+   :caption: ``/website_airproof/views/website_templates.xml``
+
+   <template id="s_mega_menu_airproof" name="Airproof" groups="base.group_user">
+       <section class="s_mega_menu_airproof o_cc o_cc1 pt40">
+           <!-- Content -->
+       </section>
+   </template>
+
+**Option**
+
+Use the following code to add an option for your new custom mega menu on the Website Builder.
+
+.. code-block:: xml
+   :caption: ``/website_airproof/data/presets.xml``
+
+   <template id="snippet_options" inherit_id="website.snippet_options" name="Airproof - Mega Menu Options">
+       <xpath expr="//*[@data-name='mega_menu_template_opt']/*" position="before">
+           <t t-set="_label">Airproof</t>
+           <we-button t-att-data-select-label="_label"
+               data-select-template="website_website_airproof.s_mega_menu_airproof"
+               data-img="/website_airproof/static/src/img/builder/header_opt.svg"
+               t-out="_label"/>
+       </xpath>
+   </template>

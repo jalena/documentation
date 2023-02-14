@@ -89,13 +89,17 @@ For inner content snippets, any other HTML tag can be used.
      - Displayed in the right panel as the name of the snippet. If not found, it will fall back to
        *Block*.
    * - data-snippet
-     - ...
+     - Used by the system to identify the snippet
 
 The system automatically adds the `data-name` and `data-snippet` attributes during the drag and
 drop based on the template's name.
 
 .. warning::
    Those attributes should be specifically added when a snippet is declared in a theme page.
+
+.. warning::
+   Do not add a `section` tag inside an other `section` tag. You can use inner content snippets
+   instead.
 
 Columns
 -------
@@ -410,3 +414,92 @@ The Website Builder provides several events you can use to trigger your custom f
        triggered, the content is already inserted in the page.
    * - cleanForSave
      - Occurs before the publisher saves the page.
+
+Dynamic Content templates
+-------------------------
+
+By default, Dynamic Content blocks have a selection of templates available in the Website Builder.
+You can also add your own template to the list.
+
+Blog posts
+~~~~~~~~~~
+
+.. code-block:: xml
+   :caption: ``/website_airproof/views/snippets/options.xml``
+
+   <template id="dynamic_filter_template_blog_post_airproof" name="Airproof layout">
+       <div t-foreach="records" t-as="data" class="s_blog_posts_post w-100">
+           <t t-set="record" t-value="data['_record']"/>
+           <!-- Content -->
+       </div>
+   </template>
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 20 80
+
+   * - Attribute
+     - Description
+   * - id
+     - ID of the template. Has to start with `dynamic_filter_template_blog_post_`
+   * - name
+     - Human-readable name of the template
+
+Products
+~~~~~~~~
+
+.. code-block:: xml
+   :caption: ``/website_airproof/views/snippets/options.xml``
+
+   <template id="dynamic_filter_template_product_product_airproof" name="Airproof layout">
+       <t t-foreach="records" t-as="data" data-number-of-elements="4" data-number-of-elements-sm="1" data-number-of-elements-fetch="8">
+           <t t-set="record" t-value="data['_record']"/>
+           <!-- Content -->
+       </t>
+   </template>
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 40 60
+
+   * - Attribute
+     - Description
+   * - id
+     - ID of the template. Has to start with `dynamic_filter_template_product_product_`
+   * - name
+     - Human-readable name of the template
+   * - data-number-of-elements
+     - Number of products per slide on desktop
+   * - data-number-of-elements-sm
+     - Number of products per slide on mobile
+   * - data-number-of-elements-fetch
+     - Total amount of fetched products
+
+Events
+~~~~~~
+
+.. code-block:: xml
+   :caption: ``/website_airproof/views/snippets/options.xml``
+
+   <template id="dynamic_filter_template_event_event_airproof" name="Airproof Layout" priority="5">
+       <div t-foreach="records" t-as="data" class="pb32 w-100 s_events_event">
+           <t t-set="record" t-value="data['_record']._set_tz_context()"/>
+           <!-- Content -->
+       </div>
+   </template>
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 20 80
+
+   * - Attribute
+     - Description
+   * - id
+     - ID of the template. Has to start with `dynamic_filter_template_event_event_`
+   * - name
+     - Human-readable name of the template
+   * - priority
+     - Priority of order in the Website Builder's option
