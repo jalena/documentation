@@ -165,19 +165,19 @@ Define the styles of your shape.
      - Description
    * - File location
      - `hexagons/01` corresponds to the location of your file in the `shapes` folder.
-   * - Position
-     - `position` defines the position of your shape.
-   * - Size
-     - `size` defines the size of your shape.
-   * - Colors
-     - `colors` defines the color c* you want it to have (this will override the color you specified
-       in your SVG).
-   * - Repeat-x
-     - `repeat-x` defines if the shape is repeated horizontally. This key is optional and only needs
-       to be defined if set to `true`.
-   * - Repeat-y
-     - `repeat-y` defines if the shape is repeated vertically. This key is optional and only needs
-       to be defined if set to `true`.
+   * - position
+     - Defines the position of your shape.
+   * - size
+     - Defines the size of your shape.
+   * - colors
+     - Defines the color c* you want it to have (this will override the color you specified in your
+       SVG).
+   * - repeat-x
+     - Defines if the shape is repeated horizontally. This key is optional and only needs to be
+       defined if set to `true`.
+   * - repeat-y
+     - Defines if the shape is repeated vertically. This key is optional and only needs to be
+       defined if set to `true`.
 
 Lastly, add your shape to the list of shapes available on the Website Builder.
 

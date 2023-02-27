@@ -98,8 +98,8 @@ drop based on the template's name.
    Those attributes should be specifically added when a snippet is declared in a theme page.
 
 .. warning::
-   Do not add a `section` tag inside an other `section` tag. You can use inner content snippets
-   instead.
+   Avoid adding a `section` tag inside an other `section` tag: this will trigger twice the Website
+   Builder's options. You can use inner content snippets instead.
 
 Columns
 -------
@@ -427,8 +427,8 @@ Blog posts
 .. code-block:: xml
    :caption: ``/website_airproof/views/snippets/options.xml``
 
-   <template id="dynamic_filter_template_blog_post_airproof" name="Airproof layout">
-       <div t-foreach="records" t-as="data" class="s_blog_posts_post w-100">
+   <template id="dynamic_filter_template_blog_post_airproof" name="...">
+       <div t-foreach="records" t-as="data" class="s_blog_posts_post">
            <t t-set="record" t-value="data['_record']"/>
            <!-- Content -->
        </div>
@@ -452,7 +452,7 @@ Products
 .. code-block:: xml
    :caption: ``/website_airproof/views/snippets/options.xml``
 
-   <template id="dynamic_filter_template_product_product_airproof" name="Airproof layout">
+   <template id="dynamic_filter_template_product_product_airproof" name="...">
        <t t-foreach="records" t-as="data" data-number-of-elements="4" data-number-of-elements-sm="1" data-number-of-elements-fetch="8">
            <t t-set="record" t-value="data['_record']"/>
            <!-- Content -->
@@ -483,8 +483,8 @@ Events
 .. code-block:: xml
    :caption: ``/website_airproof/views/snippets/options.xml``
 
-   <template id="dynamic_filter_template_event_event_airproof" name="Airproof Layout" priority="5">
-       <div t-foreach="records" t-as="data" class="pb32 w-100 s_events_event">
+   <template id="dynamic_filter_template_event_event_airproof" name="...">
+       <div t-foreach="records" t-as="data" class="s_events_event">
            <t t-set="record" t-value="data['_record']._set_tz_context()"/>
            <!-- Content -->
        </div>
@@ -501,5 +501,3 @@ Events
      - ID of the template. Has to start with `dynamic_filter_template_event_event_`
    * - name
      - Human-readable name of the template
-   * - priority
-     - Priority of order in the Website Builder's option
