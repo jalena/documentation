@@ -73,6 +73,8 @@ Area* is created.
    While working, the operator process these transfers in the opposite order: first the picking,
    then the packing, then the delivery order.
 
+.. _inventory/routes/use_routes/push:
+
 Push Rules
 ----------
 
