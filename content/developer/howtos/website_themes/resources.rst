@@ -22,3 +22,13 @@ Domain name
 
 .. seealso::
    - `Odoo eLearning: Register a Free Domain Name <https://www.odoo.com/slides/slide/register-a-free-domain-name-1663>`_
+
+Exercises
+=========
+
+.. exercise::
+   In each chapter, you will find a series of exercises intended to quickly understand how to create
+   a custom Odoo website theme.
+
+   For the exercises, you will need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
+   and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.

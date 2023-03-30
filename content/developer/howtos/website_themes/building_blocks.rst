@@ -459,6 +459,9 @@ Blog posts
 
          The solution for this exercise is in the `Airnest Theme's source code <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
 
+         You might also need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
+         and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
+
 Products
 ~~~~~~~~
 
@@ -503,6 +506,9 @@ Products
 
          The solution for this exercise is in the `Airproof Theme's source code <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
 
+         You might also need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
+         and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
+
 Events
 ~~~~~~
 
@@ -540,3 +546,6 @@ Events
             :alt: Screenshot Event Dynamic Template
 
          The solution for this exercise is in the `Airpop Theme's source code <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
+
+         You might also need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
+         and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
