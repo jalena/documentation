@@ -47,6 +47,8 @@ In *Continental* accounting, the cost of a good is reported as soon as a product
 stock. Additionally, a single *Expense* account is used for both input and output accounts in
 the balance sheet.
 
+.. _inventory/inventory_valuation_config/costing_methods:
+
 Costing methods
 ---------------
 
@@ -86,8 +88,7 @@ menu (e.g. :guilabel:`Standard`, :guilabel:`Average Cost (AVCO)`, or :guilabel:`
 (FIFO)`) and switch the :guilabel:`Inventory Valuation` to :guilabel:`Automated`.
 
 .. seealso::
-   :doc:`Using the inventory valuation
-   </applications/inventory_and_mrp/inventory/management/reporting/using_inventory_valuation>`
+   :ref:`Using the inventory valuation<inventory/reporting/using_inventory_val>`
 
 .. note::
    When choosing :guilabel:`Average Cost (AVCO)` as the :guilabel:`Costing Method`, the numerical
