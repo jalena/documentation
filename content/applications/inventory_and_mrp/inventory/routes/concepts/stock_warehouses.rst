@@ -2,25 +2,28 @@
 Sell stock from multiple warehouses using virtual locations
 ===========================================================
 
-While keeping stock (and selling inventory) from one warehouse might work for smaller companies,
-bigger companies might need to keep stock in (and sell from) multiple warehouses in multiple
+While keeping stock and selling inventory from one warehouse might work for smaller companies,
+bigger companies might need to keep stock in, or sell from, multiple warehouses in multiple
 locations.
 
-Sometimes, products included in a single sales order might take stock from two (or more)
-:guilabel:`Warehouses`. In Odoo, this can be done by using *virtual locations*.
+In Odoo, sometimes products included in a single sales order might take stock from two (or more)
+warehouses. In Odoo, pulling products from multiple warehouses to satisfy sales demands can be done
+by using *virtual locations*.
 
 .. note::
-   To create virtual locations in warehouses, the :guilabel:`Storage Locations` and
-   :guilabel:`Multi-Step Routes` features will need to be enabled. To do so, go to
-   :menuselection:`Inventory --> Configuration --> Settings`, scroll down to the
-   :guilabel:`Warehouse` section, click the :guilabel:`checkbox` next to those two settings, and
-   :guilabel:`Save` changes.
+   In order to create virtual locations in warehouses and proceed to the following steps,
+   the :guilabel:`Storage Locations` and :guilabel:`Multi-Step Routes` features will need to be
+   enabled in the :menuselection:`Settings` app.
+
+   To do so, go to :menuselection:`Inventory --> Configuration --> Settings`, scroll down to the
+   :guilabel:`Warehouse` section, and click the checkboxes next to those two settings. Then,
+   :guilabel:`Save` the changes to finish.
 
 Create and configure a virtual parent location
 ==============================================
 
 Before creating any virtual stock locations, a new warehouse will need to be created. This new
-warehouse will act as a "virtual" warehouse, and will be the "parent" location of other physical
+warehouse will act as a *virtual* warehouse, and will be the *parent* location of other physical
 warehouses.
 
 .. spoiler:: Why a "virtual" warehouse?
@@ -39,14 +42,32 @@ Create a new warehouse
 
 To create a new warehouse, go to :menuselection:`Inventory --> Configuration --> Warehouses`, and
 click :guilabel:`Create`. From here, the warehouse :guilabel:`Name` and :guilabel:`Short Name` can
-be changed, and other warehouse details can be changed under the
-:guilabel:`Warehouse Configuration` tab.
+be changed, and other warehouse details can be changed under the :guilabel:`Warehouse Configuration`
+tab.
 
-Under :guilabel:`Shipments`, the number of steps used to process :guilabel:`Incoming Shipments` and
-:guilabel:`Outgoing Shipments` (1 step, 2 steps, or 3 steps) can be configured. Under
-:guilabel:`Resupply`, settings to resupply this warehouse can be configured. This includes whether
-this warehouse should :guilabel:`Manufacture` products, :guilabel:`Buy to Resupply` products, or
-:guilabel:`Resupply Subcontractors`.
+Under the :guilabel:`Shipments` heading, set the number of steps used to process :guilabel:`Incoming
+Shipments` and :guilabel:`Outgoing Shipments` by selecting between the :guilabel:`1 step`,
+:guilabel:`2 steps`, and :guilabel:`3 steps` radio buttons.
+
+.. seemore::
+   - :doc:`How to choose the right flow to handle receipts?
+     </applications/inventory_and_mrp/inventory/management/incoming/handle_receipts>`
+   - :doc:`How to choose the right inventory flow to handle delivery orders?
+     </applications/inventory_and_mrp/inventory/management/delivery/inventory_flow>
+
+Under the :guilabel:`Resupply` heading, configure the method(s) for how the warehouse resupplies its
+inventory:
+
+- :guilabel:`Resupply Subcontractors`: resupply subcontractors with components from this warehouse.
+- :guilabel:`Manufacture to Resupply`: when products are manufactured, they can be manufactured in
+  this warehouse.
+- :guilabel:`Manufacture`: to produce right away, move the components to the production location
+  directly and start the manufacturing process; to pick first and then produce, unload the
+  components from the stock to input location first, and then transfer it to the production
+  location.
+- :guilabel:`Buy to Resupply`: when products are bought, they can be delivered to this warehouse.
+- :guilabel:`Resupply from`: automatically create routes to resupply this warehouse from another
+  chosen warehouse
 
 .. tip::
    :guilabel:`Routes` can be set directly from the :guilabel:`Warehouse Form`, by clicking on the
