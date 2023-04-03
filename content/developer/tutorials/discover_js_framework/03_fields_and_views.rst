@@ -344,18 +344,19 @@ The view description can define a `props` function, which receives the standard 
 the base props of the concrete view. The `props` function is executed only once, and can be thought
 of as being some kind of factory. It is useful to parse the `arch` XML document, and to allow the
 view to be parameterized (for example, it can return a Renderer component that will be used as
-Renderer), but then it makes it easy to customize the specific renderer used by a sub view.
+Renderer). Then, it is easy to customize the specific renderer used by a sub view.
 
-These props will be extended before being given to the Controller. In particular, the search props
+The props will be extended before being given to the Controller. In particular, the search props
 (domain/context/groupby) will be added.
 
-Then, the root component, commonly called the `Controller`, coordinates everything. It uses the
+Finally, the root component, commonly called the `Controller`, coordinates everything. It uses the
 generic `Layout` component (to add a control panel), instantiates a `Model`, and uses a `Renderer`
 component in the `Layout` default slot. The `Model` is tasked with loading and updating data, and
 the `Renderer` is supposed to handle all rendering work, along with all user interactions.
 
 In practice, once the t-shirt order is printed, we need to print a label to put on the package. To
-do that, let us add a button in the order form view control panel which will call a model method.
+do that, let us add a button in the order's form view's control panel, which will call a model
+method.
 
 There is a service dedicated to calling models methods: `orm_service`, located in
 `core/orm_service.js`. It provides a way to call common model methods, as well as a generic
@@ -376,18 +377,27 @@ There is a service dedicated to calling models methods: `orm_service`, located i
 
 .. exercise::
 
-   #. Create a customized form view extending the web form view and register it as
+   #. Create a customized form view extending the `web` form view and register it as
       `awesome_tshirt.order_form_view`.
-   #. Add a `js_class` attribute to the arch of the form view so Odoo will load it.
-   #. Create a new template inheriting from the form controller template to add a button after the
-      create button.
-   #. Add a button. Clicking on this button should call the method `print_label` from the model
-      `awesome_tshirt.order` with the proper id. Note: `print_label` is a mock method, it only
-      displays a message in the logs.
-   #. The button should be disabled if the current order is in `create` mode (i.e., it does not
+   #. Add a `js_class="awesome_tshirt.order_form_view"` attribute to the arch of the form view so
+      that Odoo will load it.
+   #. Create a new template inheriting from the form controller template and add a "Print Label"
+      button after the "New" button.
+   #. Clicking on this button should call the method `print_label` from the model
+      `awesome_tshirt.order` with the proper id.
+
+      .. note::
+         `print_label` is a mock method; it only displays a message in the logs.
+
+   #. The button should not be disabled if the current order is in `create` mode (i.e., it does not
       exist yet).
+
+      .. tip::
+         Log `this.props.resId` and `this.model.root.resId` and compare the two values before and
+         after entering `create` mode.
+
    #. The button should be displayed as a primary button if the customer is properly set and if the
-      task stage is `printed`. Otherwise, it is displayed as a secondary button.
+      task stage is `printed`. Otherwise, it should be displayed as a secondary button.
    #. Bonus point: clicking twice on the button should not trigger 2 RPCs.
 
    .. image:: 03_fields_and_views/form_button.png
@@ -403,6 +413,9 @@ There is a service dedicated to calling models methods: `orm_service`, located i
    - `Code: orm service <{GITHUB_PATH}/addons/web/static/src/core/orm_service.js>`_
    - `Example: Using the orm service
      <{GITHUB_PATH}/addons/account/static/src/components/open_move_widget/open_move_widget.js>`_
+   - `Code: useDebounced hook
+     <https://github.com/odoo/odoo/blob/b44754dcaff26eaf30c8b5433aa798514dcfb471/
+     addons/web/static/src/core/utils/timing.js#L131-L147>`_
 
 7. Auto-reload the kanban view
 ==============================
