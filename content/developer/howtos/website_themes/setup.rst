@@ -12,12 +12,9 @@ In this chapter, you will learn:
 Install
 =======
 
-There are multiple ways to install Odoo, depending on the intended use case. This documentation
-assumes you use the **source install** (running Odoo from the source code), which is best suited
+There are multiple ways to :doc:`install Odoo <../../../administration/install/install>`, depending on the intended use case. This documentation
+assumes you use the :ref:`source install <setup/install/source>` (running Odoo from the source code), which is best suited
 for Odoo designers and developers.
-
-.. seealso::
-   :doc:`Installing Odoo <../../../administration/install/install>`
 
 Databases
 =========

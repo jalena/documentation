@@ -446,22 +446,6 @@ Blog posts
    * - name
      - Human-readable name of the template
 
-.. exercise::
-   Create your own dynamic template to display blog posts.
-
-   .. spoiler:: See the design
-
-      .. admonition:: Goal
-
-         .. image:: building_blocks/airnest_dynamic-template.png
-            :align: center
-            :alt: Screenshot Blog Dynamic Template
-
-         The solution for this exercise is in the `Airnest Theme's source code <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
-
-         You might also need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
-         and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
-
 Products
 ~~~~~~~~
 
@@ -493,22 +477,6 @@ Products
    * - data-number-of-elements-fetch
      - Total amount of fetched products
 
-.. exercise::
-   Create your own dynamic template to display products.
-
-   .. spoiler:: See the design
-
-      .. admonition:: Goal
-
-         .. image:: building_blocks/airproof_dynamic-template.png
-            :align: center
-            :alt: Screenshot Product Dynamic Template
-
-         The solution for this exercise is in the `Airproof Theme's source code <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
-
-         You might also need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
-         and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
-
 Events
 ~~~~~~
 
@@ -533,19 +501,3 @@ Events
      - ID of the template. Has to start with `dynamic_filter_template_event_event_`
    * - name
      - Human-readable name of the template
-
-.. exercise::
-   Create your own dynamic template to display events.
-
-   .. spoiler:: See the design
-
-      .. admonition:: Goal
-
-         .. image:: building_blocks/airpop_dynamic-template.png
-            :align: center
-            :alt: Screenshot Event Dynamic Template
-
-         The solution for this exercise is in the `Airpop Theme's source code <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
-
-         You might also need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
-         and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.

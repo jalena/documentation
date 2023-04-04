@@ -630,3 +630,4 @@ brings the benefit of a better developer experience with better integration with
    - `Odoo JavaScript coding guidelines <https://github.com/odoo/odoo/wiki/Javascript-coding-guidelines>`_
    - :doc:`Overview of the Odoo JavaScript framework
      <../../reference/frontend/javascript_reference>`
+   - `Odoo Experience Talk: 10 Tips to take your website design to the next level! <https://www.youtube.com/watch?v=vAgE_fPVXUQ&ab_channel=Odoo>`_

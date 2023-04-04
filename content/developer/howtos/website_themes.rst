@@ -22,17 +22,6 @@ core files, and this way, preserve the editing options of the Website Builder.
 The information compiled in this documentation is based on our past experiences - both failures and
 successes. We invite you to use it as a base to build your own website and adapt it to your needs.
 
-.. exercise::
-   In each chapter, you will find a series of exercises intended to quickly understand how to create
-   a custom Odoo website theme.
-
-   For the exercises, you will need the `full design <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_
-   and the the `demo data <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
-
-
-.. note::
-   This documentation is meant to work with Odoo 15.0
-
 .. toctree::
     :maxdepth: 2
 
@@ -48,4 +37,3 @@ successes. We invite you to use it as a base to build your own website and adapt
     website_themes/forms
     website_themes/translations
     website_themes/going_live
-    website_themes/resources

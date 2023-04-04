@@ -27,6 +27,9 @@ Superuser mode, log out and log back in.
 .. warning::
    The ZIP file size must be less than 50 MB.
 
+.. seealso::
+   - `Odoo eLearning: Register a Free Domain Name <https://www.odoo.com/slides/slide/register-a-free-domain-name-1663>`_
+
 Odoo.sh
 -------
 

@@ -90,6 +90,11 @@ Alternatively, replace the default content of these pages using XPath.
        </xpath>
    </template>
 
+.. seealso::
+   - `Odoo eLearning: Search Engine Optimization (SEO)
+     <https://www.odoo.com/slides/slide/search-engine-optimization-seo-648>`_
+   - :doc:`Odoo Documentation on SEO <../../../applications/websites/website/optimize/seo>`
+
 Theme pages
 ===========
 
