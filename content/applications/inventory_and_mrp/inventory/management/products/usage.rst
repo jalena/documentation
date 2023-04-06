@@ -8,6 +8,7 @@ allowing for a variety of configurations for products as they enter and leave th
 
 Units of measure
 ================
+
 *Units of measure* refers to different measurable quantities used to handle products, such as units,
 weight, time, size, etc. For example, different units of measure for weight can be kilos, pounds,
 ounces, grams, etc. In Odoo, stock is easily managed and products are more efficiently purchased
@@ -23,12 +24,16 @@ the orders' respective delivery orders/receipts. The only condition is that all 
 be in the *same category* (Unit, Weight, Volume, Length, etc.). For example, a product can have its
 :guilabel:`Unit of Measure` field set to `feet (ft)` and its :guilabel:`Purchase UoM` set to
 `centimeters (cm)`. When a :abbr:`PO (purchase order)` is created for that product, it will list the
-quantity in centimeters. Then, when the abbr:`PO (purchase order)` is confirmed, Odoo automatically
+quantity in centimeters. Then, when the :abbr:`PO (purchase order)` is confirmed, Odoo automatically
 generates a receipt and converts the centimeters to feet. The receipt will list the quantity in
 feet.
 
+.. seealso::
+   - :ref:`Unit of measure<inventory/units_of_measure>`
+
 Packages
 ========
+
 A *package* refers to the physical container that holds one or several products from a picking.
 Packages can be a reusable or disposable (shipping) box, and are **not** specific to a product.
 Reusable boxes temporarily hold products as they are picked, before being brought to either a
@@ -49,11 +54,11 @@ for each product, including which package each item is shipped out in. To use pa
 --> Operations`.
 
 On a delivery order, separate the products into different packages by clicking on the
-:guilabel:`Detailed Operations` icon next to each product. A pop up will appear, allowing the
-amounts to be specified for each product, and what pack(s) the product(s) will go into. Add a line
-for each additional package to be used, and specify the amount of the product to go in the specific
-package. Once all the products for each line has been entered, click :guilabel:`Confirm`. Repeat
-this for all products on the delivery order.
+:guilabel:`Detailed Operations` icon on the right of each product. A pop up will appear, allowing
+the amounts to be specified for each product, and what pack(s) the product(s) will go into. Add a
+line for each additional package to be used, and specify the amount of the product to go in the
+specific package. Once all the products for each line has been entered, click :guilabel:`Confirm`.
+Repeat this for all products on the delivery order.
 
 .. image:: usage/packages-detailed-14-15.png
    :align: center
@@ -78,6 +83,8 @@ configured as a 6-pack, a 12-pack, or a case of 36. Each flavor of soda would ne
 can packaging configured on the individual product since packagings are product specific, not
 generic.
 
+Create different packaging for a product
+----------------------------------------
 To use packagings, ensure :guilabel:`Product Packagings` is enabled under :menuselection:`Inventory
 --> Configuration --> Settings --> Products`. In Odoo, product packagings are used on sales/purchase
 orders and inventory transfers.
@@ -89,6 +96,9 @@ packaging, and the amount in each pack, then click :guilabel:`Save`.
 .. image:: usage/grape-soda-14.png
    :align: center
    :alt: Packaging specified on the product page form inventory tab.
+
+View all packagings
+-------------------
 
 To view all packagings that have been created, go to :menuselection:`Inventory --> Configuration -->
 Product Packagings`, and a list will appear with all packagings created for all products. In this
@@ -108,8 +118,6 @@ example, 18 cans of soda will be picked and/or packed using three 6-pack packagi
 
 .. tip::
    Packaging is also useful during product procurement at the reception level when used in
-   conjunction with Odoo Barcode. When scanning the barcode of the packaging, Odoo automatically
-   adds the number of units contained in the packing on the picking.
+   conjunction with Odoo :guilabel:`Barcode`. When scanning the barcode of the packaging, Odoo
+   automatically adds the number of units contained in the packing on the picking.
 
-.. seealso::
-   - :doc:`uom`
