@@ -5,36 +5,31 @@ Main accounting concepts
 Double-entry bookkeeping
 ========================
 
-Odoo automatically creates all the behind-the-scenes journal entries
-for each of your accounting transactions: customer invoices, point of
-sale order, expenses, inventory moves, etc.
+Odoo automatically creates all the underlying journal entries for each of your accounting
+transactions: customer invoices, point-of-sale orders, expenses, inventory moves, etc.
 
-Odoo uses the rules of double-entry bookkeeping system: all journal
-entries are automatically balanced (sum of debits = sum of credits).
+Odoo uses the rules of double-entry bookkeeping system: all journal entries are automatically
+balanced: the sum of debits equals the sum of credits.
 
 .. seealso::
-   - :doc:`Understand Odoo's accounting transactions per document
-     <cheat_sheet>`
+   - :doc:`Accounting Cheat Sheet <cheat_sheet>`
 
 Accrual and Cash Basis Methods
 ==============================
 
-Odoo supports both accrual and cash basis reporting. This allows you to
-report income / expense at the time transactions occur (i.e., accrual basis), or when
-payment is made or received (i.e., cash basis).
+Odoo supports both accrual and cash basis reporting. This allows you to report income/expense when
+transactions occur (i.e., accrual basis), or when payment is made or received (i.e., cash
+basis).
 
-Multi-companies
-===============
+Multi-company
+=============
 
-Odoo allows one to manage several companies within the same database. Each
-company has its own chart of accounts and rules. You can get
-consolidation reports following your consolidation rules.
+Odoo allows the management of several companies within the same database. Each company has its chart
+of accounts and gets consolidation reports following its rules. Users can access several
+companies but can only work in one company at a time.
 
-Users can access several companies but always work in one company at a
-time.
-
-Multi-currencies
-================
+Multi-currency environment
+==========================
 
 Every transaction is recorded in the default currency of the
 company. For transactions occurring in another currency, Odoo stores
